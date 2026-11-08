@@ -44,7 +44,7 @@ export const Version = z.strictObject({
   motor: z.strictObject({
     litros: z.number().positive().max(8).describe("Cilindrada en litros: 1.5"),
     descripcion: z.string().min(1).nullable().describe('Como en la ficha: "1.5 L i-VTEC, 4 cilindros"'),
-    hp: z.int().positive().max(1000).nullable().describe("Potencia en HP (solo el número)"),
+    hp: z.number().positive().max(1000).nullable().describe("Potencia en HP (solo el número, puede tener decimales: 101.9)"),
     potenciaTexto: z.string().min(1).nullable().describe('Como en la ficha, con rpm: "119 HP @ 6600 rpm"'),
     torqueTexto: z.string().min(1).nullable().describe('Como en la ficha: "107 lb-pie @ 4300 rpm"'),
     turbo: z.boolean().nullable().describe("Decide el veredicto de sierra"),

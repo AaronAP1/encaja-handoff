@@ -122,7 +122,7 @@
               "hp": {
                 "anyOf": [
                   {
-                    "type": "integer",
+                    "type": "number",
                     "exclusiveMinimum": 0,
                     "maximum": 1000
                   },
@@ -130,7 +130,7 @@
                     "type": "null"
                   }
                 ],
-                "description": "Potencia en HP (solo el número)"
+                "description": "Potencia en HP (solo el número, puede tener decimales: 101.9)"
               },
               "potenciaTexto": {
                 "anyOf": [

@@ -25,17 +25,30 @@
       "transmision": "CVT",
       "traccion": "delantera",
       "alturaPisoMm": null,
-      "maleteroLitros": { "conTerceraFila": null, "sinTerceraFila": null },
+      "maleteroLitros": {
+        "conTerceraFila": null,
+        "sinTerceraFila": null
+      },
       "glpCompatible": true,
-      "seguridad": { "airbags": null, "frenadoAutomatico": "versiones-altas", "latinNcap": null },
+      "seguridad": {
+        "airbags": null,
+        "frenadoAutomatico": "versiones-altas",
+        "latinNcap": null
+      },
       "fuente": {
         "url": null,
         "fecha": null,
-        "nota": "Tomado del paquete de diseño (data/detalle-honda-brv.json). Confirmar con la ficha oficial Perú."
+        "nota": "Datos del paquete de diseño (data/detalle-honda-brv.json); falta confirmarlos con la ficha oficial Perú. La web de Honda Perú (consultada el 2026-11-08) publica una sola versión, BR-V Touring 2026, con Honda Sensing (frenado de mitigación de colisión) y '7 asientos para adultos'; el catálogo completo solo se entrega llenando un formulario de contacto."
       }
     }
   ],
-  "redTalleresRegiones": { "valor": null, "fuente": { "url": null, "fecha": null } },
+  "redTalleresRegiones": {
+    "valor": null,
+    "fuente": {
+      "url": null,
+      "fecha": null
+    }
+  },
   "textos": {
     "motorResumen": "1.5 L · 119 HP · CVT",
     "resumen": "La más cómoda y segura en carretera. La caja CVT no es ideal para barro seguido.",

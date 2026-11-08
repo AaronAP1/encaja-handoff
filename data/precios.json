@@ -3,24 +3,36 @@
   "precios": [
     {
       "modelo": "toyota-rush",
-      "version": "base",
-      "precioListaUSD": null,
+      "version": "full-mt",
+      "precioListaUSD": 23290,
       "rangoCostoMensual": null,
-      "fuente": { "url": null, "fecha": null }
+      "fuente": {
+        "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/camioneta-rush",
+        "fecha": "2026-11-08",
+        "nota": "'Precio desde' US$ 23,290 o S/ 87,803.3. Toyota indica que aplica a la versión de menor precio, sin nombrarla."
+      }
     },
     {
       "modelo": "honda-br-v",
       "version": "base",
-      "precioListaUSD": null,
+      "precioListaUSD": 29990,
       "rangoCostoMensual": null,
-      "fuente": { "url": null, "fecha": null }
+      "fuente": {
+        "url": "https://autos.honda.com.pe/vehiculos/brv/",
+        "fecha": "2026-11-08",
+        "nota": "Precio de BR-V Touring 2026 (US$ 29,990 o S/ 102,566), única versión publicada."
+      }
     },
     {
       "modelo": "mitsubishi-xpander-cross",
-      "version": "base",
-      "precioListaUSD": null,
+      "version": "gls-at-2027",
+      "precioListaUSD": 25490,
       "rangoCostoMensual": null,
-      "fuente": { "url": null, "fecha": null }
+      "fuente": {
+        "url": "https://www.mitsubishi-motors.com.pe/suv/xpander-cross",
+        "fecha": "2026-11-08",
+        "nota": "Precio de lista 1.5 GLS AT 2027 (US$ 25,490 o S/ 89,215). El precio de US$ 23,990 es con financiamiento y bono de un banco."
+      }
     }
   ]
 }

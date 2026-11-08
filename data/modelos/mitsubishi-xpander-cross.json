@@ -5,37 +5,51 @@
   "nombre": "Mitsubishi Xpander Cross",
   "articulo": "la",
   "carroceria": "Crossover",
-  "versionReferencia": "base",
+  "versionReferencia": "gls-at-2027",
   "versiones": [
     {
-      "id": "base",
-      "nombre": null,
-      "anio": null,
+      "id": "gls-at-2027",
+      "nombre": "1.5 GLS AT",
+      "anio": 2027,
       "asientos": 7,
       "terceraFila": null,
       "motor": {
         "litros": 1.5,
-        "descripcion": null,
-        "hp": null,
-        "potenciaTexto": null,
-        "torqueTexto": null,
+        "descripcion": "1.5L DOHC MIVEC, 4 en línea, 16 válvulas, 1,499 cc",
+        "hp": 103.3,
+        "potenciaTexto": "103.3 HP @ 6,000 rpm",
+        "torqueTexto": "14.4 kg-m @ 4,000 rpm",
         "turbo": false,
         "inyeccion": null
       },
-      "transmision": null,
+      "transmision": "AT",
       "traccion": "delantera",
-      "alturaPisoMm": null,
-      "maleteroLitros": { "conTerceraFila": null, "sinTerceraFila": null },
-      "glpCompatible": true,
-      "seguridad": { "airbags": null, "frenadoAutomatico": null, "latinNcap": null },
+      "alturaPisoMm": 225,
+      "maleteroLitros": {
+        "conTerceraFila": null,
+        "sinTerceraFila": null
+      },
+      "glpCompatible": null,
+      "seguridad": {
+        "airbags": 6,
+        "frenadoAutomatico": "no",
+        "latinNcap": null
+      },
       "fuente": {
-        "url": null,
-        "fecha": null,
-        "nota": "Tomado del paquete de diseño (data/modelos-ejemplo.json). Confirmar con la ficha oficial Perú."
+        "url": "https://mitsubucket.s3.us-west-2.amazonaws.com/web/PDF/ft-xpander-cross-2027.pdf",
+        "fecha": "2026-11-08",
+        "pagina": 2,
+        "nota": "Ficha Rev. 04.2026. Turbo: el motor figura sin turbo. Frenado automático: solo trae asistente de frenado de emergencia (BA), que no frena solo. GLP: la ficha no lo menciona."
       }
     }
   ],
-  "redTalleresRegiones": { "valor": null, "fuente": { "url": null, "fecha": null } },
+  "redTalleresRegiones": {
+    "valor": null,
+    "fuente": {
+      "url": null,
+      "fecha": null
+    }
+  },
   "textos": {
     "motorResumen": "1.5 L · Tracción delantera",
     "resumen": "Suspensión cómoda en ripio y buena altura al piso. Más minivan que SUV.",
@@ -43,9 +57,18 @@
     "rasgoCorto": "suspensión cómoda en ripio"
   },
   "evaluacionEditorial": {
-    "ciudad": { "nivel": "Bien", "porque": "[Porqué por redactar con la ficha oficial]" },
-    "trocha": { "nivel": "Bien", "porque": "Suspensión cómoda en ripio y buena altura al piso." },
-    "talleres": { "nivel": "Justo", "porque": "[Porqué por redactar con la ficha oficial]" }
+    "ciudad": {
+      "nivel": "Bien",
+      "porque": "[Porqué por redactar con la ficha oficial]"
+    },
+    "trocha": {
+      "nivel": "Bien",
+      "porque": "Suspensión cómoda en ripio y buena altura al piso."
+    },
+    "talleres": {
+      "nivel": "Justo",
+      "porque": "[Porqué por redactar con la ficha oficial]"
+    }
   },
   "vidaReal": null
 }

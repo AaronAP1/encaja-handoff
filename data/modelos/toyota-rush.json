@@ -5,37 +5,191 @@
   "nombre": "Toyota Rush",
   "articulo": "el",
   "carroceria": "SUV",
-  "versionReferencia": "base",
+  "versionReferencia": "full-at",
   "versiones": [
     {
-      "id": "base",
-      "nombre": null,
-      "anio": null,
+      "id": "full-mt",
+      "nombre": "RUSH 1.5 FULL MT",
+      "anio": 2026,
       "asientos": 7,
       "terceraFila": null,
       "motor": {
         "litros": 1.5,
-        "descripcion": null,
-        "hp": null,
-        "potenciaTexto": null,
-        "torqueTexto": null,
+        "descripcion": "1,496 cc, 4 cilindros en línea, 16 válvulas DOHC Dual VVT-i",
+        "hp": 101.9,
+        "potenciaTexto": "101.9 HP @ 6,000 rpm",
+        "torqueTexto": "13.6 kg-m @ 4,200 rpm",
         "turbo": false,
         "inyeccion": null
       },
-      "transmision": null,
+      "transmision": "MT",
       "traccion": "trasera",
-      "alturaPisoMm": null,
-      "maleteroLitros": { "conTerceraFila": null, "sinTerceraFila": null },
+      "alturaPisoMm": 220,
+      "maleteroLitros": {
+        "conTerceraFila": null,
+        "sinTerceraFila": null
+      },
       "glpCompatible": true,
-      "seguridad": { "airbags": null, "frenadoAutomatico": null, "latinNcap": null },
+      "seguridad": {
+        "airbags": 6,
+        "frenadoAutomatico": "no",
+        "latinNcap": null
+      },
       "fuente": {
-        "url": null,
-        "fecha": null,
-        "nota": "Tomado del paquete de diseño (data/modelos-ejemplo.json). Confirmar con la ficha oficial Perú."
+        "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-01/catalogo-rush-2026.pdf",
+        "fecha": "2026-11-08",
+        "pagina": 8,
+        "nota": "Turbo: el motor figura sin turbo. GLP: Toyota vende versiones GLP de fábrica. Frenado automático: no figura en 'Seguridad y asistencia' (ABS, EBD, HAC, VSC, TRC). Inyección: la ficha solo dice EFI."
+      }
+    },
+    {
+      "id": "full-at",
+      "nombre": "RUSH 1.5 FULL AT",
+      "anio": 2026,
+      "asientos": 7,
+      "terceraFila": null,
+      "motor": {
+        "litros": 1.5,
+        "descripcion": "1,496 cc, 4 cilindros en línea, 16 válvulas DOHC Dual VVT-i",
+        "hp": 101.9,
+        "potenciaTexto": "101.9 HP @ 6,000 rpm",
+        "torqueTexto": "13.6 kg-m @ 4,200 rpm",
+        "turbo": false,
+        "inyeccion": null
+      },
+      "transmision": "AT",
+      "traccion": "trasera",
+      "alturaPisoMm": 220,
+      "maleteroLitros": {
+        "conTerceraFila": null,
+        "sinTerceraFila": null
+      },
+      "glpCompatible": true,
+      "seguridad": {
+        "airbags": 6,
+        "frenadoAutomatico": "no",
+        "latinNcap": null
+      },
+      "fuente": {
+        "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-01/catalogo-rush-2026.pdf",
+        "fecha": "2026-11-08",
+        "pagina": 8,
+        "nota": "Turbo: el motor figura sin turbo. GLP: Toyota vende versiones GLP de fábrica. Frenado automático: no figura en 'Seguridad y asistencia' (ABS, EBD, HAC, VSC, TRC). Inyección: la ficha solo dice EFI."
+      }
+    },
+    {
+      "id": "full-d-lux-mt",
+      "nombre": "RUSH 1.5 FULL D-LUX MT",
+      "anio": 2026,
+      "asientos": 7,
+      "terceraFila": null,
+      "motor": {
+        "litros": 1.5,
+        "descripcion": "1,496 cc, 4 cilindros en línea, 16 válvulas DOHC Dual VVT-i",
+        "hp": 101.9,
+        "potenciaTexto": "101.9 HP @ 6,000 rpm",
+        "torqueTexto": "13.6 kg-m @ 4,200 rpm",
+        "turbo": false,
+        "inyeccion": null
+      },
+      "transmision": "MT",
+      "traccion": "trasera",
+      "alturaPisoMm": 220,
+      "maleteroLitros": {
+        "conTerceraFila": null,
+        "sinTerceraFila": null
+      },
+      "glpCompatible": true,
+      "seguridad": {
+        "airbags": 6,
+        "frenadoAutomatico": "no",
+        "latinNcap": null
+      },
+      "fuente": {
+        "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-01/catalogo-rush-2026.pdf",
+        "fecha": "2026-11-08",
+        "pagina": 8,
+        "nota": "Turbo: el motor figura sin turbo. GLP: Toyota vende versiones GLP de fábrica. Frenado automático: no figura en 'Seguridad y asistencia' (ABS, EBD, HAC, VSC, TRC). Inyección: la ficha solo dice EFI."
+      }
+    },
+    {
+      "id": "full-d-lux-at",
+      "nombre": "RUSH 1.5 FULL D-LUX AT",
+      "anio": 2026,
+      "asientos": 7,
+      "terceraFila": null,
+      "motor": {
+        "litros": 1.5,
+        "descripcion": "1,496 cc, 4 cilindros en línea, 16 válvulas DOHC Dual VVT-i",
+        "hp": 101.9,
+        "potenciaTexto": "101.9 HP @ 6,000 rpm",
+        "torqueTexto": "13.6 kg-m @ 4,200 rpm",
+        "turbo": false,
+        "inyeccion": null
+      },
+      "transmision": "AT",
+      "traccion": "trasera",
+      "alturaPisoMm": 220,
+      "maleteroLitros": {
+        "conTerceraFila": null,
+        "sinTerceraFila": null
+      },
+      "glpCompatible": true,
+      "seguridad": {
+        "airbags": 6,
+        "frenadoAutomatico": "no",
+        "latinNcap": null
+      },
+      "fuente": {
+        "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-01/catalogo-rush-2026.pdf",
+        "fecha": "2026-11-08",
+        "pagina": 8,
+        "nota": "Turbo: el motor figura sin turbo. GLP: Toyota vende versiones GLP de fábrica. Frenado automático: no figura en 'Seguridad y asistencia' (ABS, EBD, HAC, VSC, TRC). Inyección: la ficha solo dice EFI."
+      }
+    },
+    {
+      "id": "full-mt-glp",
+      "nombre": "RUSH 1.5 FULL MT GLP",
+      "anio": 2026,
+      "asientos": 7,
+      "terceraFila": null,
+      "motor": {
+        "litros": 1.5,
+        "descripcion": "1,496 cc, 4 cilindros en línea, 16 válvulas DOHC Dual VVT-i",
+        "hp": 101.9,
+        "potenciaTexto": "101.9 HP @ 6,000 rpm",
+        "torqueTexto": "13.6 kg-m @ 4,200 rpm",
+        "turbo": false,
+        "inyeccion": null
+      },
+      "transmision": "MT",
+      "traccion": "trasera",
+      "alturaPisoMm": 220,
+      "maleteroLitros": {
+        "conTerceraFila": null,
+        "sinTerceraFila": null
+      },
+      "glpCompatible": true,
+      "seguridad": {
+        "airbags": 6,
+        "frenadoAutomatico": "no",
+        "latinNcap": null
+      },
+      "fuente": {
+        "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-01/catalogo-rush-2026.pdf",
+        "fecha": "2026-11-08",
+        "pagina": 8,
+        "nota": "Turbo: el motor figura sin turbo. GLP: Toyota vende versiones GLP de fábrica. Frenado automático: no figura en 'Seguridad y asistencia' (ABS, EBD, HAC, VSC, TRC). Inyección: la ficha solo dice EFI."
       }
     }
   ],
-  "redTalleresRegiones": { "valor": null, "fuente": { "url": null, "fecha": null } },
+  "redTalleresRegiones": {
+    "valor": null,
+    "fuente": {
+      "url": null,
+      "fecha": null
+    }
+  },
   "textos": {
     "motorResumen": "1.5 L · Tracción trasera",
     "resumen": "El más preparado para trocha frecuente. Simple, durable y con talleres en todo el país.",
@@ -43,9 +197,18 @@
     "rasgoCorto": "tracción trasera"
   },
   "evaluacionEditorial": {
-    "ciudad": { "nivel": "Bien", "porque": "[Porqué por redactar con la ficha oficial]" },
-    "trocha": { "nivel": "Bien", "porque": "Tracción trasera. El más preparado para trocha frecuente." },
-    "talleres": { "nivel": "Bien", "porque": "Simple, durable y con talleres en todo el país." }
+    "ciudad": {
+      "nivel": "Bien",
+      "porque": "[Porqué por redactar con la ficha oficial]"
+    },
+    "trocha": {
+      "nivel": "Bien",
+      "porque": "Tracción trasera. El más preparado para trocha frecuente."
+    },
+    "talleres": {
+      "nivel": "Bien",
+      "porque": "Simple, durable y con talleres en todo el país."
+    }
   },
   "vidaReal": null
 }
