@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ButtonLink } from "@/components/Button";
 import { Card } from "@/components/Card";
-import { FotoModelo } from "@/components/CarSilhouette";
+import { FotoModelo } from "@/components/FotoModelo";
 import { HeaderNav } from "@/components/SiteHeader";
 import { VerdictChip } from "@/components/VerdictChip";
 import { buscarModelo, CATALOGO, fichaTecnica, precioTexto, transmisionTexto } from "@/lib/catalogo";
@@ -62,7 +62,7 @@ export default async function PaginaAuto({ params, searchParams }: { params: Pro
         </Link>
 
         <div className="flex flex-wrap items-stretch gap-7">
-          <FotoModelo tipo={m.carroceria} leyenda="Foto oficial del modelo" className="min-h-[190px] flex-[1_1_420px] rounded-tarjeta sm:min-h-[280px]" />
+          <FotoModelo tipo={m.carroceria} slug={m.slug} nombre={m.nombre} leyenda="Foto oficial del modelo" className="min-h-[190px] flex-[1_1_420px] rounded-tarjeta sm:min-h-[280px]" />
           <div className="flex flex-[1_1_420px] flex-col justify-center gap-3.5">
             {conPerfil && posicion >= 0 ? (
               <span className="text-sm text-texto-2">

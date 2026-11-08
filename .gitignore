@@ -7,6 +7,9 @@
 next-env.d.ts
 *.tsbuildinfo
 
+# fotos oficiales de las marcas: solo para ver en local, sin permiso de publicación (docs/05)
+/public/fotos-locales/
+
 # varios
 .DS_Store
 *.pem

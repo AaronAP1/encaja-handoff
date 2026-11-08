@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useId, useMemo, useState } from "react";
 import { Button, clasesBoton } from "@/components/Button";
 import { Card } from "@/components/Card";
-import { FotoModelo } from "@/components/CarSilhouette";
+import { FotoModelo } from "@/components/FotoModelo";
 import { OptionButton } from "@/components/OptionButton";
 import { HeaderNav } from "@/components/SiteHeader";
 import { LeyendaVeredictos, VerdictBlock } from "@/components/VerdictChip";
@@ -223,7 +223,7 @@ export function Resultados({ inicial, compararInicial }: Props) {
               const marcado = seleccion.includes(m.slug);
               return (
                 <Card as="article" key={m.slug} className="flex flex-wrap items-stretch gap-5 p-5">
-                  <FotoModelo tipo={m.carroceria} className="min-h-[120px] flex-[0_0_180px] rounded-xl max-sm:flex-[1_1_100%]" />
+                  <FotoModelo tipo={m.carroceria} slug={m.slug} nombre={m.nombre} className="min-h-[120px] flex-[0_0_180px] rounded-xl max-sm:flex-[1_1_100%]" />
                   <div className="flex min-w-0 flex-[1_1_300px] flex-col gap-2.5">
                     <div className="flex flex-col gap-0.5">
                       <h2 className="m-0 text-xl font-semibold">{m.nombre}</h2>

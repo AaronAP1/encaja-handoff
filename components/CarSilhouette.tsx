@@ -31,21 +31,3 @@ export function CarSilhouette({ tipo, color = "#C9CED6", className, etiqueta }: 
   );
 }
 
-/** Espacio de foto (placeholder #E4E9F1) con la silueta del tipo de auto */
-export function FotoModelo({
-  tipo,
-  className = "",
-  leyenda,
-}: {
-  tipo: Carroceria;
-  className?: string;
-  /** "Foto oficial del modelo" en las vistas grandes */
-  leyenda?: string;
-}) {
-  return (
-    <div className={`flex flex-col items-center justify-center gap-2 bg-placeholder p-3 ${className}`}>
-      <CarSilhouette tipo={tipo} className="h-auto w-[78%] max-w-[360px]" />
-      {leyenda ? <span className="text-[13px] text-texto-2">{leyenda}</span> : null}
-    </div>
-  );
-}

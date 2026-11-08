@@ -3,7 +3,7 @@ import contenido from "@/data/landing-contenido.json";
 import { BuscadorModelo } from "@/components/BuscadorModelo";
 import { ButtonLink } from "@/components/Button";
 import { Card } from "@/components/Card";
-import { FotoModelo } from "@/components/CarSilhouette";
+import { FotoModelo } from "@/components/FotoModelo";
 import { KmPost } from "@/components/KmPost";
 import { SignalIcon } from "@/components/SignalIcon";
 import { Logo } from "@/components/SiteHeader";
@@ -194,7 +194,7 @@ export default function Portada() {
         </div>
         <Card as="article" className="flex flex-[1_1_440px] flex-col gap-[18px] p-[26px]">
           <div className="flex items-center gap-4">
-            <FotoModelo tipo="SUV" className="h-[68px] w-[104px] shrink-0 rounded-letrero !p-1.5" />
+            <FotoModelo tipo="SUV" slug="honda-br-v" nombre="Honda BR-V" className="h-[68px] w-[104px] shrink-0 rounded-letrero !p-1.5" />
             <div className="flex flex-col gap-0.5">
               <span className="text-[23px] font-extrabold">Honda BR-V</span>
               <span className="text-[15px] text-texto-2">Para 7 pasajeros, ciudad y trocha ocasional</span>

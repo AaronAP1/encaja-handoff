@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Card } from "@/components/Card";
-import { FotoModelo } from "@/components/CarSilhouette";
+import { FotoModelo } from "@/components/FotoModelo";
 import { VerdictChip } from "@/components/VerdictChip";
 import type { Segmento } from "@/lib/reglas";
 import type { Carroceria, Nivel } from "@/lib/tipos";
@@ -72,7 +72,7 @@ export function TablaComparar({ modelos, filas, perfil, recomendacion }: Props) 
         tabIndex={0}
         className="overflow-x-auto rounded-tarjeta border-2 border-borde bg-white"
       >
-        <table className="w-full min-w-[760px] border-collapse text-sm">
+        <table className="w-full min-w-[760px] table-fixed border-collapse text-sm">
           <thead>
             <tr>
               <th scope="col" className="w-[22%] px-5 py-[18px] text-left text-[13px] font-medium text-texto-2">
@@ -81,7 +81,7 @@ export function TablaComparar({ modelos, filas, perfil, recomendacion }: Props) 
               {modelos.map((m) => (
                 <th key={m.slug} scope="col" className="px-5 py-[18px] text-left align-top">
                   <div className="flex flex-col gap-2.5">
-                    <FotoModelo tipo={m.carroceria} className="h-24 rounded-boton !p-2" />
+                    <FotoModelo tipo={m.carroceria} slug={m.slug} nombre={m.nombre} className="h-24 rounded-boton !p-2" />
                     <Link href={m.href} className="flex min-h-11 items-center text-[17px] font-semibold text-asfalto">
                       {m.nombre}
                     </Link>

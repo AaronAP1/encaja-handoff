@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { clasesBoton } from "@/components/Button";
 import { Card } from "@/components/Card";
-import { FotoModelo } from "@/components/CarSilhouette";
+import { FotoModelo } from "@/components/FotoModelo";
 import { OptionButton } from "@/components/OptionButton";
 import { VerdictChip } from "@/components/VerdictChip";
 import { reemplazarUrl } from "@/lib/cliente";
@@ -47,7 +47,7 @@ export function RevisarModelo({ slug, inicial }: { slug: string; inicial: Respue
   return (
     <main className="mx-auto flex max-w-[1240px] flex-col gap-7 px-4 pb-14 pt-9 sm:px-8">
       <div className="flex flex-wrap items-center gap-7">
-        <FotoModelo tipo={m.carroceria} leyenda="Foto oficial del modelo" className="min-h-[200px] flex-[0_1_360px] rounded-tarjeta max-sm:flex-[1_1_100%]" />
+        <FotoModelo tipo={m.carroceria} slug={m.slug} nombre={m.nombre} leyenda="Foto oficial del modelo" className="min-h-[200px] flex-[0_1_360px] rounded-tarjeta max-sm:flex-[1_1_100%]" />
         <div className="flex flex-[1_1_420px] flex-col gap-2.5">
           <span className="text-[13px] font-semibold text-azul">Ya tienes uno en mente</span>
           <h1 className="m-0 text-[clamp(30px,4vw,46px)] font-extrabold leading-[1.1] tracking-display">
@@ -146,7 +146,7 @@ export function RevisarModelo({ slug, inicial }: { slug: string; inicial: Respue
                     href={`/auto/${a.modelo.slug}${q}`}
                     className="flex items-center gap-3 rounded-tarjeta border-2 border-borde p-3.5 text-asfalto no-underline hover:border-azul hover:text-asfalto"
                   >
-                    <FotoModelo tipo={a.modelo.carroceria} className="h-12 w-[72px] shrink-0 rounded-letrero !p-1" />
+                    <FotoModelo tipo={a.modelo.carroceria} slug={a.modelo.slug} nombre={a.modelo.nombre} className="h-12 w-[72px] shrink-0 rounded-letrero !p-1" />
                     <span className="flex flex-col gap-1">
                       <span className="text-[15px] font-semibold">{a.modelo.nombre}</span>
                       <span className="text-[13px] text-texto-2">{a.por}</span>
