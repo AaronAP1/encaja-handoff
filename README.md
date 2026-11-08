@@ -32,6 +32,7 @@ npm run build
 - `lib/` — lógica pura con tests: `reglas.ts` (motor de reglas), `catalogo.ts`, `deducciones.ts`, `contador.ts`, `respuestas.ts` (estado en la URL), `swipe.ts`, `costo.ts`, `situaciones.ts`, `hero.ts`, `senal.ts`. El nombre provisional está en `lib/marca.ts`.
 - `data/modelos/` — **catálogo real**: un JSON por modelo, con una entrada por versión y la fuente de cada dato. Guía de carga en [data/modelos/LEEME.md](data/modelos/LEEME.md). Esquema y validación en `lib/fichas/`.
 - `data/precios.json` — precio de lista por versión, con fecha y fuente (separado porque cambia más seguido).
+- `data/mercado.json` — listado de los modelos que cada marca vende en Perú (solo nombre, tipo y enlace oficial) para la página `/modelos`. Se genera con `scraping/exportar_mercado.py` después de una pasada del scraper (`scraping/LEEME.md`).
 - `data/esquemas/` — esquemas JSON generados para autocompletar en el editor (`npm run esquemas`).
 - El resto de `data/*.json` son los datos semilla del paquete de diseño; un test verifica que el catálogo siga fiel a ellos.
 

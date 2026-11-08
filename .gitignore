@@ -10,6 +10,10 @@ next-env.d.ts
 # fotos oficiales de las marcas: solo para ver en local, sin permiso de publicación (docs/05)
 /public/fotos-locales/
 
+# salida del scraper: páginas y PDF de las marcas (material con derechos), solo uso interno
+/scraping/salida/
+__pycache__/
+
 # varios
 .DS_Store
 *.pem

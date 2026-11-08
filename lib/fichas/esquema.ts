@@ -127,7 +127,51 @@ export const Precios = z.strictObject({
   precios: z.array(Precio),
 });
 
+/**
+ * data/mercado.json: los modelos que cada marca vende en Perú (página /modelos).
+ * Solo identificación: nombre, tipo y enlace. Lo generan los scripts de scraping/
+ * (scraper.py y exportar_mercado.py); precios y fichas se publican aparte, ya revisados.
+ */
+export const TIPOS_MERCADO = ["SUV", "Sedán", "Hatchback", "Minivan", "Pick-up", "Van", "Otro"] as const;
+
+export const ModeloMercado = z.strictObject({
+  nombre: z.string().min(1),
+  tipo: z.enum(TIPOS_MERCADO),
+  /** Página del modelo en el sitio oficial; null si solo se conoce por un concesionario */
+  url: z.url().nullable(),
+  /** slug en data/modelos/ si ya está evaluado en la web */
+  slugEncaja: z.string().regex(/^[a-z0-9-]+$/).nullable(),
+});
+
+export const Mercado = z
+  .strictObject({
+    $schema: z.string().optional(),
+    actualizado: fecha,
+    marcas: z
+      .array(
+        z.strictObject({
+          marca: z.string().min(1),
+          sitio: z.url().nullable().describe("Sitio oficial de la marca en Perú (null si no conviene enlazarlo)"),
+          fuente: z.strictObject({
+            tipo: z.enum(["oficial", "concesionario"]).describe("De dónde sale la lista de modelos"),
+            fecha,
+          }),
+          modelos: z.array(ModeloMercado).min(1),
+        }),
+      )
+      .min(1),
+  })
+  .superRefine((m, ctx) => {
+    for (const [i, marca] of m.marcas.entries()) {
+      const nombres = marca.modelos.map((x) => x.nombre.toLowerCase());
+      if (new Set(nombres).size !== nombres.length)
+        ctx.addIssue({ code: "custom", message: `${marca.marca}: modelos repetidos`, path: ["marcas", i, "modelos"] });
+    }
+  });
+
 export type FichaModelo = z.infer<typeof FichaModelo>;
 export type Version = z.infer<typeof Version>;
 export type Precio = z.infer<typeof Precio>;
 export type Precios = z.infer<typeof Precios>;
+export type Mercado = z.infer<typeof Mercado>;
+export type ModeloMercado = z.infer<typeof ModeloMercado>;

@@ -28,7 +28,7 @@ export function HeaderSimple({ lema }: { lema: string }) {
   );
 }
 
-export type SeccionNav = "encontrar" | "comparar" | "costo" | "evaluamos";
+export type SeccionNav = "encontrar" | "modelos" | "comparar" | "costo" | "evaluamos";
 
 interface NavProps {
   activo?: SeccionNav;
@@ -40,6 +40,7 @@ interface NavProps {
 export function HeaderNav({ activo, hrefs, accion }: NavProps) {
   const items: { id: SeccionNav; label: string; href: string }[] = [
     { id: "encontrar", label: "Encontrar auto", href: hrefs.encontrar },
+    { id: "modelos", label: "Modelos", href: "/modelos" },
     { id: "comparar", label: "Comparar", href: hrefs.comparar },
     { id: "costo", label: "Costo real", href: hrefs.costo },
     { id: "evaluamos", label: "Cómo evaluamos", href: "/como-evaluamos" },

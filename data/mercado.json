@@ -1,0 +1,1440 @@
+{
+  "$schema": "./esquemas/mercado.json",
+  "actualizado": "2026-11-08",
+  "marcas": [
+    {
+      "marca": "BYD",
+      "sitio": "https://www.byd.com/pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "Atto 8",
+          "tipo": "SUV",
+          "url": "https://www.byd.com/pe/car/atto-8",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Seagull",
+          "tipo": "Hatchback",
+          "url": "https://www.byd.com/pe/car/seagull",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Seal",
+          "tipo": "Sedán",
+          "url": "https://www.byd.com/pe/car/seal",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Sealion 7",
+          "tipo": "SUV",
+          "url": "https://www.byd.com/pe/car/sealion-7",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Shark",
+          "tipo": "Pick-up",
+          "url": "https://www.byd.com/pe/car/BYDSHARK",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Song Plus DM-i",
+          "tipo": "SUV",
+          "url": "https://www.byd.com/pe/car/song-plus-dmi",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tang EV",
+          "tipo": "SUV",
+          "url": "https://www.byd.com/pe/car/tang-ev",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Yuan Up",
+          "tipo": "SUV",
+          "url": "https://www.byd.com/pe/car/BYD-Yuan-Up",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Changan",
+      "sitio": "https://www.changan.com.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "Alsvin Plus",
+          "tipo": "Sedán",
+          "url": "https://www.changan.com.pe/vehiculos/changan/new-alsvin-plus/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "CS15",
+          "tipo": "SUV",
+          "url": "https://www.changan.com.pe/vehiculo/new-cs15/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "CS35 Max",
+          "tipo": "SUV",
+          "url": "https://www.changan.com.pe/vehiculo/new-cs35-max/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "CS55 Plus",
+          "tipo": "SUV",
+          "url": "https://www.changan.com.pe/vehiculo/new-cs55-plus/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "CS55 Plus iDD",
+          "tipo": "SUV",
+          "url": "https://www.changan.com.pe/vehiculos/changan/new-cs55-plus-idd/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "CS75 Plus",
+          "tipo": "SUV",
+          "url": "https://www.changan.com.pe/vehiculo/new-cs75-plus/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "F70",
+          "tipo": "Pick-up",
+          "url": "https://www.changan.com.pe/vehiculo/new-f70/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Grand Supervan",
+          "tipo": "Van",
+          "url": "https://www.changan.com.pe/vehiculo/grand-supervan/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Grand Van Turismo",
+          "tipo": "Van",
+          "url": "https://www.changan.com.pe/vehiculo/new-grand-van-turismo/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Honor S",
+          "tipo": "Otro",
+          "url": "https://www.changan.com.pe/vehiculo/honor-s/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "New Van",
+          "tipo": "Van",
+          "url": "https://www.changan.com.pe/vehiculo/new-van/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "UNI-K",
+          "tipo": "SUV",
+          "url": "https://www.changan.com.pe/vehiculo/uni-k/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "UNI-T",
+          "tipo": "SUV",
+          "url": "https://www.changan.com.pe/vehiculo/uni-t/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X7 Plus",
+          "tipo": "SUV",
+          "url": "https://www.changan.com.pe/vehiculo/x7-plus/",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Chery",
+      "sitio": "https://www.chery.com.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "Arrizo 5",
+          "tipo": "Sedán",
+          "url": "https://www.chery.com.pe/modelos/arrizo5",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Arrizo 5 Pro",
+          "tipo": "Sedán",
+          "url": "https://www.chery.com.pe/modelos/arrizo5-pro",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Himla",
+          "tipo": "Pick-up",
+          "url": "https://www.chery.com.pe/modelos/himla",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "M7",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/m7",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tiggo 2 Pro",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/tiggo2-pro",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tiggo 2 Pro Max",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/tiggo2-pro-max",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tiggo 4",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/new-tiggo4",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tiggo 4 Pro",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/tiggo4-pro",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tiggo 7",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/new-tiggo7",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tiggo 7 CSH",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/new-tiggo7-csh",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tiggo 7 Pro",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/tiggo7-pro",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tiggo 7 Pro Hybrid",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/tiggo7pro-hybrid",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tiggo 8",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/new-tiggo8",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tiggo 8 CSH",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/tiggo8-csh",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tiggo 8 Pro",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/new-tiggo8-pro",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tiggo 8 Pro Hybrid",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/tiggo8pro-hybrid",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tiggo 8 Pro Max",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/tiggo8pro-max",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tiggo 9",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/tiggo9",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tiggo 9 CSH",
+          "tipo": "SUV",
+          "url": "https://www.chery.com.pe/modelos/new-tiggo9-csh",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Chevrolet",
+      "sitio": "https://www.chevrolet.com.pe",
+      "fuente": {
+        "tipo": "concesionario",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "Captiva",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Captiva EV",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Captiva Híbrida",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Groove",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Sail",
+          "tipo": "Sedán",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Spark EV",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Suburban",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tahoe",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tracker",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Traverse",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "DFSK",
+      "sitio": "https://www.dfsk.com.pe",
+      "fuente": {
+        "tipo": "concesionario",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "Glory 500",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Glory 560 Pro",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Glory 600",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Geely",
+      "sitio": null,
+      "fuente": {
+        "tipo": "concesionario",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "Cityray",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Coolray",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Emgrand Sedán",
+          "tipo": "Sedán",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "EX5",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "GX3 Pro",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Monjaro EM-i",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Okavango",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Starray",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Haval (GWM)",
+      "sitio": "https://www.gwm.pe",
+      "fuente": {
+        "tipo": "concesionario",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "H6",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "H6 Híbrido",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "H9",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Jolion",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tank",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Honda",
+      "sitio": "https://autos.honda.com.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "BR-V",
+          "tipo": "SUV",
+          "url": "https://autos.honda.com.pe/vehiculos/brv/",
+          "slugEncaja": "honda-br-v"
+        },
+        {
+          "nombre": "CR-V",
+          "tipo": "SUV",
+          "url": "https://autos.honda.com.pe/vehiculos/crv/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "CR-V Hybrid",
+          "tipo": "SUV",
+          "url": "https://autos.honda.com.pe/vehiculos/crv-hybrid/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "HR-V",
+          "tipo": "SUV",
+          "url": "https://autos.honda.com.pe/vehiculos/hrv/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Pilot",
+          "tipo": "SUV",
+          "url": "https://autos.honda.com.pe/vehiculos/pilot/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "WR-V",
+          "tipo": "SUV",
+          "url": "https://autos.honda.com.pe/vehiculos/wrv/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "ZR-V Hybrid",
+          "tipo": "SUV",
+          "url": "https://autos.honda.com.pe/vehiculos/zrv-hybrid/",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Hyundai",
+      "sitio": "https://hyundai.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "Accent",
+          "tipo": "Sedán",
+          "url": "https://hyundai.pe/modelos/the-all-new-accent/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Creta",
+          "tipo": "SUV",
+          "url": "https://hyundai.pe/modelos/new-creta/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Exter",
+          "tipo": "SUV",
+          "url": "https://hyundai.pe/modelos/the-all-new-exter/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Grand i10 Hatch",
+          "tipo": "Hatchback",
+          "url": "https://hyundai.pe/modelos/grand-i10-hatch/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "H100",
+          "tipo": "Van",
+          "url": "https://hyundai.pe/modelos/h100/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "i20 Hatch",
+          "tipo": "Hatchback",
+          "url": "https://hyundai.pe/modelos/new-i20-hatch/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Santa Fe",
+          "tipo": "SUV",
+          "url": "https://hyundai.pe/modelos/all-new-santa-fe/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Santa Fe Híbrido",
+          "tipo": "SUV",
+          "url": "https://hyundai.pe/modelos/santa-fe-hibrido/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Solaty H35",
+          "tipo": "Van",
+          "url": "https://hyundai.pe/modelos/solaty-h35/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Staria Minibus",
+          "tipo": "Van",
+          "url": "https://hyundai.pe/modelos/staria-minibus/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tucson",
+          "tipo": "SUV",
+          "url": "https://hyundai.pe/modelos/new-tucson/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tucson Híbrido",
+          "tipo": "SUV",
+          "url": "https://hyundai.pe/modelos/tucson-hibrido/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Venue",
+          "tipo": "SUV",
+          "url": "https://hyundai.pe/modelos/the-all-new-venue/",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "JAC",
+      "sitio": "https://www.jac.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "E-JS4",
+          "tipo": "SUV",
+          "url": "https://www.jac.pe/vehiculo/e-js4/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "E-T9 4x4 BEV",
+          "tipo": "Pick-up",
+          "url": "https://www.jac.pe/vehiculos/jac/e-t9-4x4-bev/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "E30X",
+          "tipo": "SUV",
+          "url": "https://www.jac.pe/vehiculo/e-30x/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "JS2",
+          "tipo": "SUV",
+          "url": "https://www.jac.pe/vehiculo/js2/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "JS4",
+          "tipo": "SUV",
+          "url": "https://www.jac.pe/vehiculo/js4/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "JS8",
+          "tipo": "SUV",
+          "url": "https://www.jac.pe/vehiculo/js8/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "JS8 Pro",
+          "tipo": "SUV",
+          "url": "https://www.jac.pe/vehiculos/jac/js8-pro/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Refine Pasajeros",
+          "tipo": "Van",
+          "url": "https://www.jac.pe/vehiculo/refine-pasajeros/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Sunray",
+          "tipo": "Van",
+          "url": "https://www.jac.pe/vehiculo/sunray/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "T8",
+          "tipo": "Pick-up",
+          "url": "https://www.jac.pe/vehiculo/t8/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "T8 Pro",
+          "tipo": "Pick-up",
+          "url": "https://www.jac.pe/vehiculo/t8-pro/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "T8 Pro Automática",
+          "tipo": "Pick-up",
+          "url": "https://www.jac.pe/vehiculo/t8-pro-automatica/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "T9",
+          "tipo": "Pick-up",
+          "url": "https://www.jac.pe/vehiculo/t9/",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Jetour",
+      "sitio": "https://www.jetour.com.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "Dashing",
+          "tipo": "SUV",
+          "url": "https://www.jetour.com.pe/modelos/dashing",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "F700",
+          "tipo": "Pick-up",
+          "url": "https://www.jetour.com.pe/modelos/f700",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "G700",
+          "tipo": "SUV",
+          "url": "https://www.jetour.com.pe/modelos/g700",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "T1",
+          "tipo": "SUV",
+          "url": "https://www.jetour.com.pe/modelos/t1",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "T1 PHEV",
+          "tipo": "SUV",
+          "url": "https://www.jetour.com.pe/modelos/t1-phev",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "T2 PHEV",
+          "tipo": "SUV",
+          "url": "https://www.jetour.com.pe/modelos/t2-phev",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Traveller",
+          "tipo": "SUV",
+          "url": "https://www.jetour.com.pe/modelos/traveller",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X50",
+          "tipo": "SUV",
+          "url": "https://www.jetour.com.pe/modelos/x50",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X70 FL",
+          "tipo": "SUV",
+          "url": "https://www.jetour.com.pe/modelos/x70-fl",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Kia",
+      "sitio": "https://www.kia.com/pe/main.html",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "Carens",
+          "tipo": "Minivan",
+          "url": "https://www.kia.com/pe/showroom/new-carens.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Carnival HEV",
+          "tipo": "Minivan",
+          "url": "https://www.kia.com/pe/showroom/carnival-hev.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "EV5",
+          "tipo": "SUV",
+          "url": "https://www.kia.com/pe/showroom/ev5.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "EV9",
+          "tipo": "SUV",
+          "url": "https://www.kia.com/pe/showroom/ev9.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "K3",
+          "tipo": "Sedán",
+          "url": "https://www.kia.com/pe/showroom/k3.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "K3 Cross",
+          "tipo": "Hatchback",
+          "url": "https://www.kia.com/pe/showroom/k3-cross.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Picanto",
+          "tipo": "Hatchback",
+          "url": "https://www.kia.com/pe/showroom/picanto.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Seltos",
+          "tipo": "SUV",
+          "url": "https://www.kia.com/pe/showroom/new-seltos.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Soluto",
+          "tipo": "Sedán",
+          "url": "https://www.kia.com/pe/showroom/soluto.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Sonet",
+          "tipo": "SUV",
+          "url": "https://www.kia.com/pe/showroom/new-sonet.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Sorento",
+          "tipo": "SUV",
+          "url": "https://www.kia.com/pe/showroom/new-sorento.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Sorento HEV",
+          "tipo": "SUV",
+          "url": "https://www.kia.com/pe/showroom/sorento-hev.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Sportage",
+          "tipo": "SUV",
+          "url": "https://www.kia.com/pe/showroom/new-sportage.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Sportage HEV",
+          "tipo": "SUV",
+          "url": "https://www.kia.com/pe/showroom/sportage-hev.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tasman",
+          "tipo": "Pick-up",
+          "url": "https://www.kia.com/pe/showroom/tasman.html",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Mazda",
+      "sitio": "https://www.mazda.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "BT-50",
+          "tipo": "Pick-up",
+          "url": "https://www.mazda.pe/vehiculo/all-new-mazda-bt-50/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "CX-3",
+          "tipo": "SUV",
+          "url": "https://www.mazda.pe/vehiculo/mazda-cx-3/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "CX-30",
+          "tipo": "SUV",
+          "url": "https://www.mazda.pe/vehiculo/mazda-cx-30/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "CX-5",
+          "tipo": "SUV",
+          "url": "https://www.mazda.pe/vehiculo/all-new-mazda-cx-5/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "CX-60",
+          "tipo": "SUV",
+          "url": "https://www.mazda.pe/vehiculo/mazda-cx-60/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "CX-90",
+          "tipo": "SUV",
+          "url": "https://www.mazda.pe/vehiculo/mazda-cx-90/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Mazda3 Sedán",
+          "tipo": "Sedán",
+          "url": "https://www.mazda.pe/vehiculo/mazda-3-sedan/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Mazda3 Sport",
+          "tipo": "Hatchback",
+          "url": "https://www.mazda.pe/vehiculo/mazda3-sport/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "MX-5",
+          "tipo": "Otro",
+          "url": "https://www.mazda.pe/vehiculo/mazda-mx-5/",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Mitsubishi",
+      "sitio": "https://www.mitsubishi-motors.com.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "ASX",
+          "tipo": "SUV",
+          "url": "https://www.mitsubishi-motors.com.pe/suv/new-asx",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Destinator",
+          "tipo": "SUV",
+          "url": "https://www.mitsubishi-motors.com.pe/suv/destinator",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Eclipse Cross",
+          "tipo": "SUV",
+          "url": "https://www.mitsubishi-motors.com.pe/suv/eclipse-cross",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "L200",
+          "tipo": "Pick-up",
+          "url": "https://www.mitsubishi-motors.com.pe/pick-ups/new-l200",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Montero Sport",
+          "tipo": "SUV",
+          "url": "https://www.mitsubishi-motors.com.pe/suv/new-montero-sport",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Outlander",
+          "tipo": "SUV",
+          "url": "https://www.mitsubishi-motors.com.pe/suv/new-outlander",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Outlander Sport",
+          "tipo": "SUV",
+          "url": "https://www.mitsubishi-motors.com.pe/suv/outlander-sport",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Xpander",
+          "tipo": "SUV",
+          "url": "https://www.mitsubishi-motors.com.pe/suv/xpander",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Xpander Cross",
+          "tipo": "SUV",
+          "url": "https://www.mitsubishi-motors.com.pe/suv/xpander-cross",
+          "slugEncaja": "mitsubishi-xpander-cross"
+        }
+      ]
+    },
+    {
+      "marca": "Nissan",
+      "sitio": "https://www.nissan.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "Frontier",
+          "tipo": "Pick-up",
+          "url": "https://www.nissan.pe/vehiculos/nuevos/frontier.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Kicks",
+          "tipo": "SUV",
+          "url": "https://www.nissan.pe/vehiculos/nuevos/nissan-kicks.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Pathfinder",
+          "tipo": "SUV",
+          "url": "https://www.nissan.pe/vehiculos/nuevos/new-pathfinder.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Urvan",
+          "tipo": "Van",
+          "url": "https://www.nissan.pe/vehiculos/nuevos/nissan-urvan.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Versa",
+          "tipo": "Sedán",
+          "url": "https://www.nissan.pe/vehiculos/nuevos/nuevo-versa.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X-Trail",
+          "tipo": "SUV",
+          "url": "https://www.nissan.pe/vehiculos/nuevos/new-x-trail.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X-Trail e-Power",
+          "tipo": "SUV",
+          "url": "https://www.nissan.pe/vehiculos/nuevos/new-x-trail-epower.html",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Omoda | Jaecoo",
+      "sitio": "https://www.omodajaecoo.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "C5",
+          "tipo": "SUV",
+          "url": "https://www.omodajaecoo.pe/c5",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "C5 SHS",
+          "tipo": "SUV",
+          "url": "https://www.omodajaecoo.pe/c5shs",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "C7",
+          "tipo": "SUV",
+          "url": "https://www.omodajaecoo.pe/c7",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "C7 SHS",
+          "tipo": "SUV",
+          "url": "https://www.omodajaecoo.pe/c7shs",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "J5",
+          "tipo": "SUV",
+          "url": "https://www.omodajaecoo.pe/j5",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "J5 EV",
+          "tipo": "SUV",
+          "url": "https://www.omodajaecoo.pe/j5ev",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "J8",
+          "tipo": "SUV",
+          "url": "https://www.omodajaecoo.pe/j8",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Renault",
+      "sitio": "https://www.renault.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "Arkana",
+          "tipo": "SUV",
+          "url": "https://www.renault.pe/vehiculo/new-renault-arkana/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Duster",
+          "tipo": "SUV",
+          "url": "https://www.renault.pe/vehiculo/duster/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Kardian",
+          "tipo": "SUV",
+          "url": "https://www.renault.pe/automoviles/renault-kardian/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Koleos",
+          "tipo": "SUV",
+          "url": "https://www.renault.pe/vehiculo/new-renault-koleos/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Kwid",
+          "tipo": "Hatchback",
+          "url": "https://www.renault.pe/vehiculo/kwid/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Master",
+          "tipo": "Van",
+          "url": "https://www.renault.pe/vehiculo/master/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Minibus",
+          "tipo": "Van",
+          "url": "https://www.renault.pe/vehiculo/minibus/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Oroch",
+          "tipo": "Pick-up",
+          "url": "https://www.renault.pe/vehiculo/oroch/",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Soueast",
+      "sitio": null,
+      "fuente": {
+        "tipo": "concesionario",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "S06",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "S07",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        },
+        {
+          "nombre": "S09",
+          "tipo": "SUV",
+          "url": null,
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Subaru",
+      "sitio": "https://www.subaru.com.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "Crosstrek",
+          "tipo": "SUV",
+          "url": "https://www.subaru.com.pe/vehiculos/the-all-new-crosstrek",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Evoltis",
+          "tipo": "SUV",
+          "url": "https://www.subaru.com.pe/vehiculos/the-all-new-evoltis",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Forester",
+          "tipo": "SUV",
+          "url": "https://www.subaru.com.pe/vehiculos/all-new-forester",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Impreza Sport",
+          "tipo": "Hatchback",
+          "url": "https://www.subaru.com.pe/vehiculos/all-new-impreza-sport",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Outback",
+          "tipo": "SUV",
+          "url": "https://www.subaru.com.pe/vehiculos/all-new-outback",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Trailseeker",
+          "tipo": "SUV",
+          "url": "https://www.subaru.com.pe/vehiculos/all-new-trailseeker",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "WRX",
+          "tipo": "Sedán",
+          "url": "https://www.subaru.com.pe/vehiculos/wrx",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Suzuki",
+      "sitio": "https://www.suzuki.com.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "Across Smart Hybrid",
+          "tipo": "SUV",
+          "url": "https://www.suzuki.com.pe/vehiculo/new-across-smart-hybrid/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Alto",
+          "tipo": "Hatchback",
+          "url": "https://www.suzuki.com.pe/vehiculo/new-alto/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "APV",
+          "tipo": "Van",
+          "url": "https://www.suzuki.com.pe/vehiculo/apv/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "APV Van",
+          "tipo": "Van",
+          "url": "https://www.suzuki.com.pe/vehiculo/apv-van/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Baleno",
+          "tipo": "Hatchback",
+          "url": "https://www.suzuki.com.pe/vehiculo/baleno/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Celerio",
+          "tipo": "Hatchback",
+          "url": "https://www.suzuki.com.pe/vehiculo/celerio/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Dzire Smart Hybrid",
+          "tipo": "Sedán",
+          "url": "https://www.suzuki.com.pe/vehiculo/new-dzire-smarthybrid/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "e-Vitara",
+          "tipo": "SUV",
+          "url": "https://www.suzuki.com.pe/vehiculo/evitara/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Fronx",
+          "tipo": "SUV",
+          "url": "https://www.suzuki.com.pe/vehiculo/fronx/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Jimny",
+          "tipo": "SUV",
+          "url": "https://www.suzuki.com.pe/vehiculo/jimny/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Jimny 5 puertas",
+          "tipo": "SUV",
+          "url": "https://www.suzuki.com.pe/vehiculo/jimny-5-puertas/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "S-Presso",
+          "tipo": "Hatchback",
+          "url": "https://www.suzuki.com.pe/vehiculo/s-presso/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Swift Hybrid",
+          "tipo": "Hatchback",
+          "url": "https://www.suzuki.com.pe/vehiculo/swift-hybrid/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "XL7 Smart Hybrid",
+          "tipo": "SUV",
+          "url": "https://www.suzuki.com.pe/vehiculo/xl7-smart-hybrid/",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Toyota",
+      "sitio": "https://www.toyotaperu.com.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "4Runner",
+          "tipo": "SUV",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/camioneta-4runner",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Agya",
+          "tipo": "Hatchback",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/auto-agya",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Avanza",
+          "tipo": "Minivan",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/camioneta-toyota-avanza",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "bZ4X",
+          "tipo": "SUV",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/camioneta-bz4x",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Corolla",
+          "tipo": "Sedán",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/auto-corolla",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Corolla Cross",
+          "tipo": "SUV",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/camioneta-corolla-cross",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Fortuner",
+          "tipo": "SUV",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/camioneta-fortuner",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Hiace",
+          "tipo": "Van",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/van-hiace",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Hilux",
+          "tipo": "Pick-up",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/camioneta-hilux",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Innova",
+          "tipo": "Minivan",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/camioneta-innova",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Land Cruiser Prado",
+          "tipo": "SUV",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/camioneta-land-cruiser-prado",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Raize",
+          "tipo": "SUV",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/camioneta-raize",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "RAV4",
+          "tipo": "SUV",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/camioneta-rav4",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Rush",
+          "tipo": "SUV",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/camioneta-rush",
+          "slugEncaja": "toyota-rush"
+        },
+        {
+          "nombre": "Yaris Cross",
+          "tipo": "SUV",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/camioneta-yaris-cross",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Yaris Sedán",
+          "tipo": "Sedán",
+          "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/carro-yaris-sedan",
+          "slugEncaja": null
+        }
+      ]
+    }
+  ]
+}

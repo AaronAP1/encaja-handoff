@@ -12,6 +12,9 @@ export function SiteFooter() {
           concesionario y la entidad financiera.
         </span>
         <div className="flex gap-5">
+          <Link href="/modelos" className="flex min-h-11 items-center text-texto-2">
+            Todos los modelos
+          </Link>
           <Link href="/terminos" className="flex min-h-11 items-center text-texto-2">
             Términos
           </Link>
