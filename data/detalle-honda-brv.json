@@ -1,0 +1,50 @@
+{
+  "puntosVidaReal": [
+    {
+      "titulo": "Ciudad y carretera",
+      "nivel": "Bien",
+      "texto": "Suave y silenciosa. Es de las más potentes de su grupo (119 HP), así que adelanta sin sufrir en la Panamericana."
+    },
+    {
+      "titulo": "Trocha con barro",
+      "nivel": "Justo",
+      "texto": "Buena altura al piso, pero la caja CVT se esfuerza en subidas lentas y barro profundo. Para trocha ocasional va bien."
+    },
+    {
+      "titulo": "Sierra con 7 personas",
+      "nivel": "Justo",
+      "texto": "Motor sin turbo: sobre 3,000 m pierde fuerza y la sentirás lenta en subidas largas con el carro lleno."
+    },
+    {
+      "titulo": "Convertir a GLP",
+      "nivel": "Bien",
+      "texto": "Motor compatible. El tanque suele ir donde está el repuesto: pregunta dónde lo reubican y si se mantiene la garantía."
+    },
+    {
+      "titulo": "Seguridad en viaje",
+      "nivel": "Bien",
+      "texto": "Las versiones altas traen frenado automático y alerta de carril. Útil con lluvia y neblina."
+    },
+    {
+      "titulo": "Talleres en provincia",
+      "nivel": "Justo",
+      "texto": "Red oficial más chica que Toyota. Revisa si hay taller en las ciudades a las que viajas."
+    }
+  ],
+  "fichaTecnica": {
+    "motor": "1.5 L i-VTEC, 4 cilindros",
+    "potencia": "119 HP @ 6600 rpm",
+    "torque": "107 lb-pie @ 4300 rpm",
+    "transmision": "CVT",
+    "traccion": "Delantera",
+    "alturaAlPiso": "[mm según ficha Perú]"
+  },
+  "costoMensual": [
+    "Cuota del crédito",
+    "Combustible (GLP o gasolina)",
+    "Seguro vehicular",
+    "Mantenimiento",
+    "SOAT (prorrateado)",
+    "Cochera y peajes"
+  ]
+}

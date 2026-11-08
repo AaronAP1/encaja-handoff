@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Encaja · El auto que te sirve</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;800;900&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1A56C4}a:hover{color:#123E94}
+button{font:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #1A56C4;outline-offset:3px}
+</style>
+</helmet>
+<div style="background: #FFFFFF; color: #2A2D33; font-family: Overpass, 'Trebuchet MS', sans-serif">
+
+  <section style="position: relative; min-height: 860px; overflow: hidden; display: flex; flex-direction: column">
+    <div aria-hidden="true" style="position: absolute; top: 0; bottom: 0; left: 0; width: 50%; background: #2A2D33"></div>
+    <div aria-hidden="true" style="position: absolute; top: 0; bottom: 0; right: 0; width: 50%; background: #1A56C4"></div>
+
+    <header style="position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding: 18px 40px">
+      <span style="font-weight: 900; font-size: 30px; letter-spacing: -0.03em; color: #FFFFFF">encaja</span>
+      <nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-size: 16px; font-weight: 600">
+        <a href="#como-funciona" style="color: #FFFFFF; text-decoration: none; min-height: 44px; display: flex; align-items: center">Cómo funciona</a>
+        <a href="#independencia" style="color: #FFFFFF; text-decoration: none; min-height: 44px; display: flex; align-items: center">Cómo evaluamos</a>
+        <a href="Flujo.dc.html" style="color: #2A2D33; background: #FFFFFF; text-decoration: none; min-height: 44px; padding: 0 20px; border-radius: 8px; display: flex; align-items: center; font-weight: 800">Empezar</a>
+      </nav>
+    </header>
+
+    <div style="position: relative; flex-grow: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; padding: 4px 24px 44px">
+      <div style="width: 100%; max-width: 1200px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr))">
+        <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px; padding-right: 28px; text-align: right">
+          <span style="font-size: 16px; color: #C9CCD2">Pantalla grande, aros 18'' y buen diseño</span>
+          <h1 style="margin: 0; font-weight: 300; font-size: clamp(34px, 6vw, 86px); line-height: 0.95; letter-spacing: -0.03em; color: #FFFFFF">Que te<br>guste.</h1>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding-left: 28px">
+          <span style="font-size: 16px; color: #E3EBFA">Para tu uso: {{car.perfil}}</span>
+          <p style="margin: 0; font-weight: 900; font-size: clamp(34px, 6vw, 86px); line-height: 0.95; letter-spacing: -0.03em; color: #FFFFFF">Y que te<br>sirva.</p>
+        </div>
+      </div>
+
+      <div style="{{fadeStyle}}">
+      <svg viewBox="0 0 760 300" style="display: block; width: 100%; height: auto" role="img" aria-label="{{car.aria}}">
+        <defs>
+          <clipPath id="izq"><rect x="0" y="0" width="380" height="300"></rect></clipPath>
+          <clipPath id="der"><rect x="380" y="0" width="380" height="300"></rect></clipPath>
+        </defs>
+        <g clip-path="url(#izq)">
+          <path d="M60,262 L700,262" stroke="#4A4F58" stroke-width="3" stroke-linecap="round"></path>
+          <path d="{{car.body}}" fill="#565C66"></path>
+          <path d="{{car.win}}" fill="#8A909A"></path>
+          <path d="{{car.lines}}" fill="none" stroke="#6E747E" stroke-width="2"></path>
+          <circle cx="200" cy="215" r="38" fill="#16181B"></circle>
+          <circle cx="200" cy="215" r="20" fill="#B8BDC4"></circle>
+          <circle cx="200" cy="215" r="6" fill="#565C66"></circle>
+        </g>
+        <g clip-path="url(#der)" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-dasharray="7 5">
+          <path d="M60,262 L700,262" stroke-width="3"></path>
+          <path d="{{car.body}}"></path>
+          <path d="{{car.win}}"></path>
+          <path d="{{car.lines}}" stroke-opacity="0.55"></path>
+          <circle cx="560" cy="215" r="38"></circle>
+          <circle cx="560" cy="215" r="20"></circle>
+        </g>
+        <g stroke="#FFFFFF" stroke-width="1.6" fill="#FFFFFF" font-family="Overpass, sans-serif" font-size="14" font-weight="600">
+          <circle cx="470" cy="{{car.roofY}}" r="4.5" stroke="none"></circle>
+          <path d="{{car.c1}}" fill="none"></path>
+          <text x="728" y="34" text-anchor="end" stroke="none">{{car.l1}}</text>
+          <path d="{{s1.d}}" fill="{{s1.fill}}" stroke="#FFFFFF" stroke-width="1.5"></path>
+          <circle cx="470" cy="{{car.winY}}" r="4.5" stroke="none"></circle>
+          <path d="{{car.c2}}" fill="none"></path>
+          <text x="728" y="{{car.t2}}" text-anchor="end" stroke="none">{{car.l2}}</text>
+          <path d="{{s2.d}}" fill="{{s2.fill}}" stroke="#FFFFFF" stroke-width="1.5"></path>
+          <circle cx="640" cy="185" r="4.5" stroke="none"></circle>
+          <path d="M640,185 L740,185" fill="none"></path>
+          <text x="728" y="177" text-anchor="end" stroke="none">{{car.l3}}</text>
+          <path d="{{s3.d}}" fill="{{s3.fill}}" stroke="#FFFFFF" stroke-width="1.5"></path>
+          <circle cx="560" cy="215" r="4.5" stroke="none"></circle>
+          <path d="M560,215 L600,268 L740,268" fill="none"></path>
+          <text x="728" y="260" text-anchor="end" stroke="none">{{car.l4}}</text>
+          <path d="{{s4.d}}" fill="{{s4.fill}}" stroke="#FFFFFF" stroke-width="1.5"></path>
+        </g>
+      </svg>
+      </div>
+
+      <div role="group" aria-label="Tipo de auto" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px">
+        <sc-for list="{{tipos}}" as="t" hint-placeholder-count="5">
+          <button type="button" onClick="{{t.pick}}" aria-pressed="{{t.on}}" style="{{t.style}}">{{t.nombre}}</button>
+        </sc-for>
+      </div>
+
+      <a href="Flujo.dc.html" style="display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 60px; padding: 0 30px; background: #2A2D33; color: #FFFFFF; text-decoration: none; font-size: 20px; font-weight: 800; border-radius: 10px; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #2A2D33">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"></path><path d="M12 3l-5 5"></path><path d="M12 3l5 5"></path></svg>
+        Encuentra el que cumple las dos
+      </a>
+      <span style="font-size: 15px; color: #FFFFFF; background: #2A2D33; padding: 6px 14px; border-radius: 8px; text-align: center">1 minuto, sin registrarte y nadie te va a llamar</span>
+      <a href="Descubre.dc.html" style="font-size: 16px; font-weight: 700; color: #FFFFFF; min-height: 44px; display: flex; align-items: center">¿No sabes qué comprar? Desliza autos y te armamos tu perfil</a>
+    </div>
+  </section>
+
+  <section aria-label="Otras formas de empezar" style="background: #FFFFFF; border-bottom: 1px solid #D5D8DD">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 30px 32px; display: flex; flex-wrap: wrap; gap: 26px 56px; align-items: flex-end">
+      <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 10px">
+        <label for="modelo" style="font-size: 19px; font-weight: 800">¿Ya tienes uno en mente? <span style="font-weight: 400; color: #4E535C">Mira si te sirve de verdad.</span></label>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <input id="modelo" list="modelos" placeholder="Escribe un modelo, por ejemplo Honda BR-V" style="flex: 1 1 240px; min-height: 54px; border-radius: 8px; border: 2px solid #1A56C4; padding: 0 16px; font: inherit; font-size: 16px; color: #2A2D33; background: #FFFFFF">
+          <datalist id="modelos">
+            <option value="Honda BR-V"></option>
+            <option value="Toyota Rush"></option>
+            <option value="Mitsubishi Xpander Cross"></option>
+            <option value="Suzuki XL7"></option>
+          </datalist>
+          <a href="Revisar.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 22px; border-radius: 8px; background: #1A56C4; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 16px">Mira si te sirve</a>
+        </div>
+      </div>
+      <div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 19px; font-weight: 800">¿No sabes ni qué te gusta? <span style="font-weight: 400; color: #4E535C">Desliza autos y descúbrelo.</span></span>
+        <a href="Descubre.dc.html" style="align-self: flex-start; display: flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 22px; border-radius: 8px; background: #FFFFFF; border: 2px solid #1A56C4; color: #123E94; text-decoration: none; font-weight: 800; font-size: 16px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"></path></svg>
+          No sé qué comprar
+        </a>
+      </div>
+      <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 19px; font-weight: 800">O empieza por tu situación</span>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <sc-for list="{{situaciones}}" as="si" hint-placeholder-count="4">
+            <a href="Situacion.dc.html" style="display: flex; align-items: center; min-height: 48px; padding: 0 18px; border-radius: 8px; background: #FFFFFF; border: 2px solid #1A56C4; color: #123E94; text-decoration: none; font-size: 16px; font-weight: 600">{{si}}</a>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 1200px; margin: 0 auto; padding: 100px 32px 40px; display: flex; flex-direction: column; gap: 34px">
+    <h2 style="margin: 0; max-width: 820px; font-weight: 900; font-size: clamp(32px, 4.6vw, 58px); line-height: 1; letter-spacing: -0.03em">Otros te preguntan por el auto. Nosotros, por tu vida.</h2>
+    <div style="display: flex; flex-wrap: wrap">
+      <div style="flex: 1 1 360px; background: #FFFFFF; border: 2px solid #D5D8DD; border-radius: 14px; padding: 30px 32px; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 16px; font-weight: 600; color: #4E535C">Lo que suelen preguntarte</span>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 21px; color: #4E535C">
+          <li>¿SUV, crossover o sedán?</li>
+          <li>¿Transmisión manual o automática?</li>
+          <li>¿Cuántos litros de maletero?</li>
+          <li>¿Qué equipamiento te interesa?</li>
+        </ul>
+      </div>
+      <div aria-hidden="true" style="flex: 0 0 28px; display: flex; justify-content: center">
+        <div style="width: 4px; background: repeating-linear-gradient(to bottom, #9AA0A9 0 22px, transparent 22px 40px)"></div>
+      </div>
+      <div style="flex: 1 1 360px; background: #FFFFFF; color: #2A2D33; border: 2px solid #D5D8DD; border-radius: 14px; padding: 30px 32px; display: flex; flex-direction: column; gap: 16px">
+        <span style="font-size: 16px; font-weight: 600; color: #1A56C4">Lo que te preguntamos nosotros</span>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 21px; font-weight: 600">
+          <li>¿Cuántos viajan contigo normalmente?</li>
+          <li>¿Subes a la sierra o entras a trocha?</li>
+          <li>¿Cuántos kilómetros haces al mes?</li>
+          <li>¿Manejas de noche o con lluvia en carretera?</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona" style="padding: 60px 0 40px; display: flex; flex-direction: column; gap: 30px">
+    <h2 style="margin: 0 auto; width: 100%; max-width: 1200px; padding: 0 32px; box-sizing: border-box; font-weight: 900; font-size: clamp(30px, 4vw, 48px); letter-spacing: -0.03em">El camino, en tres kilómetros</h2>
+    <div aria-hidden="true" style="height: 64px; background: #6B7079; display: flex; align-items: center">
+      <div style="width: 100%; height: 5px; background: repeating-linear-gradient(to right, #FFFFFF 0 40px, transparent 40px 72px)"></div>
+    </div>
+    <ol style="margin: -86px auto 0; width: 100%; max-width: 1200px; padding: 0 32px; box-sizing: border-box; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
+      <sc-for list="{{pasos}}" as="p" hint-placeholder-count="3">
+        <li style="display: flex; flex-direction: column; gap: 14px">
+          <span style="align-self: flex-start; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 64px; height: 76px; background: #FFFFFF; border: 3px solid #1A56C4; color: #123E94; border-radius: 32px 32px 6px 6px; font-weight: 900; line-height: 1">
+            <span style="font-size: 12px; font-weight: 800">KM</span>
+            <span style="font-size: 28px">{{p.n}}</span>
+          </span>
+          <span style="font-size: 23px; font-weight: 800; letter-spacing: -0.01em">{{p.titulo}}</span>
+          <span style="font-size: 17px; line-height: 1.55; color: #4E535C; max-width: 34ch">{{p.texto}}</span>
+        </li>
+      </sc-for>
+    </ol>
+  </section>
+
+  <section style="max-width: 1200px; margin: 0 auto; padding: 60px 32px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+    <div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 18px">
+      <h2 style="margin: 0; font-weight: 900; font-size: clamp(30px, 4vw, 48px); line-height: 1; letter-spacing: -0.03em">No te decimos “compra este”. Te decimos por qué te sirve, o no.</h2>
+      <p style="margin: 0; font-size: 18px; line-height: 1.55; color: #4E535C; max-width: 46ch">Cada modelo se evalúa para tu uso con tres señales que reconoces de la pista. Siempre con el porqué en palabras simples.</p>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px 22px">
+        <sc-for list="{{leyenda}}" as="l" hint-placeholder-count="3">
+          <li style="display: flex; align-items: center; gap: 10px; font-size: 17px">
+            <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="{{l.d}}" fill="{{l.fill}}" stroke="{{l.stroke}}" stroke-width="2"></path></svg>
+            <span><strong>{{l.nivel}}</strong> {{l.que}}</span>
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+    <article style="flex: 1 1 440px; background: #FFFFFF; border-radius: 14px; border: 2px solid #D5D8DD; padding: 26px; display: flex; flex-direction: column; gap: 18px">
+      <div style="display: flex; align-items: center; gap: 16px">
+        <div style="width: 104px; height: 68px; border-radius: 8px; background: #E4E9F1; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #4E535C">Foto</div>
+        <div style="display: flex; flex-direction: column; gap: 2px">
+          <span style="font-size: 23px; font-weight: 800">Honda BR-V</span>
+          <span style="font-size: 15px; color: #4E535C">Para 7 pasajeros, ciudad y trocha ocasional</span>
+        </div>
+      </div>
+      <sc-for list="{{ejemplo}}" as="e" hint-placeholder-count="3">
+        <div style="display: flex; gap: 14px; align-items: flex-start">
+          <svg width="26" height="26" viewBox="0 0 26 26" role="img" aria-label="{{e.nivel}}" style="flex-shrink: 0"><path d="{{e.d}}" fill="{{e.fill}}" stroke="{{e.stroke}}" stroke-width="2"></path></svg>
+          <span style="font-size: 16px; line-height: 1.5"><strong>{{e.uso}}: {{e.nivel}}.</strong> {{e.texto}}</span>
+        </div>
+      </sc-for>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-top: 2px dashed #D5D8DD; padding-top: 16px">
+        <span style="font-size: 15px; color: #4E535C">Costo total estimado</span>
+        <span style="font-size: 22px; font-weight: 800">S/ [monto] al mes</span>
+      </div>
+    </article>
+  </section>
+
+  <section style="padding: 60px 0 20px; display: flex; flex-direction: column; gap: 10px">
+    <div style="max-width: 1200px; margin: 0 auto; width: 100%; padding: 0 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px">
+      <h2 style="margin: 0; font-weight: 900; font-size: clamp(30px, 4vw, 48px); letter-spacing: -0.03em">De la costa a la sierra, evaluado para Perú</h2>
+      <p style="margin: 0; font-size: 18px; color: #4E535C; max-width: 60ch">Un auto que va bien en Lima puede quedarse corto en la subida. Por eso evaluamos el camino completo.</p>
+    </div>
+    <div style="max-width: 1200px; margin: 0 auto; width: 100%; padding: 0 32px; box-sizing: border-box">
+      <svg viewBox="0 0 1100 260" style="display: block; width: 100%; height: auto" role="img" aria-label="Perfil del camino de la costa a la selva: arena en la costa, tierra en la subida, roca y nieve en la sierra alta, y vegetación al bajar a la selva">
+        <defs>
+          <clipPath id="cerro"><path d="M0,232 L60,226 L137,216 L250,192 L330,152 L412,122 L480,92 L540,62 L600,42 L650,50 L687,36 L740,62 L800,112 L880,170 L962,200 L1100,212 L1100,260 L0,260 Z"></path></clipPath>
+        </defs>
+        <g clip-path="url(#cerro)">
+          <rect x="0" y="0" width="1100" height="260" fill="#A9763F"></rect>
+          <polygon points="0,0 250,0 330,260 0,260" fill="#D8AD6E"></polygon>
+          <rect x="0" y="0" width="1100" height="104" fill="#7A6250"></rect>
+          <polygon points="760,104 1100,104 1100,260 740,260" fill="#4E9A5B"></polygon>
+          <polygon points="850,150 1100,150 1100,260 830,260" fill="#2E7B47"></polygon>
+          <rect x="0" y="0" width="1100" height="60" fill="#F2F4F7"></rect>
+          <path d="M520,72 L560,68 M610,58 L660,62 M700,56 L735,64" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none"></path>
+        </g>
+        <path d="M0,232 L60,226 L137,216 L250,192 L330,152 L412,122 L480,92 L540,62 L600,42 L650,50 L687,36 L740,62 L800,112 L880,170 L962,200 L1100,212" fill="none" stroke="#2A2D33" stroke-width="2"></path>
+        <path d="M0,232 L60,226 L137,216 L250,192 L330,152 L412,122 L480,92 L540,62 L600,42 L650,50 L687,36 L740,62 L800,112 L880,170 L962,200 L1100,212" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="14 12" transform="translate(0,6)"></path>
+        <g fill="#FFFFFF" stroke="#2A2D33" stroke-width="4">
+          <circle cx="137" cy="216" r="10"></circle>
+          <circle cx="412" cy="122" r="10"></circle>
+          <circle cx="687" cy="36" r="10"></circle>
+          <circle cx="962" cy="200" r="10"></circle>
+        </g>
+      </svg>
+    </div>
+    <div style="max-width: 1200px; margin: 0 auto; width: 100%; padding: 0 32px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px">
+      <sc-for list="{{peru}}" as="t" hint-placeholder-count="4">
+        <div style="display: flex; flex-direction: column; gap: 6px; padding-top: 10px; border-top: 3px solid #2A2D33">
+          <span style="display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; color: #4E535C"><span style="{{t.swatch}}"></span>{{t.donde}}</span>
+          <span style="font-size: 21px; font-weight: 800">{{t.titulo}}</span>
+          <span style="font-size: 16px; line-height: 1.55; color: #4E535C">{{t.texto}}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="independencia" style="background: #FFFFFF; color: #2A2D33; margin-top: 80px; border-top: 1px solid #D5D8DD; border-bottom: 1px solid #D5D8DD">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 84px 32px; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-end; justify-content: space-between">
+      <div style="flex: 1 1 560px; display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-weight: 900; font-size: clamp(32px, 4.6vw, 60px); line-height: 0.98; letter-spacing: -0.03em; color: #1A56C4">Ninguna marca paga por aparecer. Ni por subir en el ranking.</h2>
+        <p style="margin: 0; font-size: 18px; line-height: 1.55; color: #4E535C; max-width: 58ch">Nuestras evaluaciones siguen reglas públicas, basadas en fichas oficiales de los modelos vendidos en Perú. Si encuentras un dato incorrecto, lo corregimos.</p>
+      </div>
+      <a href="#" style="display: flex; align-items: center; min-height: 54px; padding: 0 24px; border-radius: 8px; border: 2px solid #1A56C4; color: #123E94; text-decoration: none; font-weight: 800; font-size: 17px">Ver cómo evaluamos</a>
+    </div>
+  </section>
+
+  <section style="padding: 96px 32px; display: flex; justify-content: center">
+    <div style="width: 100%; max-width: 980px; box-sizing: border-box; background: #FFFFFF; color: #2A2D33; border-radius: 18px; border: 2px solid #D5D8DD; padding: 56px 32px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center">
+      <h2 style="margin: 0; font-weight: 900; font-size: clamp(36px, 5.6vw, 72px); line-height: 0.95; letter-spacing: -0.03em">¿Cuál te sirve a ti?</h2>
+      <p style="margin: 0; font-size: 19px">Siete preguntas sobre tu día a día. Sin registrarte.</p>
+      <a href="Flujo.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 58px; padding: 0 32px; border-radius: 10px; background: #1A56C4; color: #FFFFFF; text-decoration: none; font-size: 19px; font-weight: 900">Empezar ahora</a>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #D5D8DD">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 28px 32px; display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; align-items: center; font-size: 14px; color: #4E535C">
+      <span style="font-weight: 900; font-size: 22px; color: #2A2D33; letter-spacing: -0.03em">encaja</span>
+      <span style="flex: 1 1 480px; line-height: 1.5">Evaluaciones editoriales independientes. Precios y costos son estimaciones referenciales; confirma condiciones con el concesionario y la entidad financiera.</span>
+      <div style="display: flex; gap: 20px">
+        <a href="#" style="color: #4E535C">Términos</a>
+        <a href="#" style="color: #4E535C">Privacidad</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3960}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { i: 0, fade: false };
+    this.cars = [{"nombre": "SUV", "perfil": "Familia grande · Trocha · Sierra", "body": "M110,192 Q108,162 130,156 L212,146 Q228,144 240,134 L294,94 Q302,88 316,88 L566,88 Q578,88 584,98 L608,146 Q612,152 618,154 L640,158 Q652,162 652,176 L652,205 Q652,215 642,215 L606,215 A46,46 0 0 0 514,215 L246,215 A46,46 0 0 0 154,215 L124,215 Q110,215 110,205 Z", "win": "M252,138 L300,100 Q306,96 316,96 L398,96 L398,138 Z M410,96 L500,96 L500,138 L410,138 Z M512,96 L560,96 Q568,96 572,104 L590,138 L512,138 Z", "lines": "M245,148 L604,148 M404,148 L404,204 M506,148 L506,204 M330,82 L552,82 M116,170 L142,166", "roofY": 88, "winY": 118, "c1": "M470,88 L520,40 L740,40", "c2": "M470,118 L740,118", "t2": 111, "l1": "7 pasajeros: Bien", "l2": "Sierra cargado: Justo", "l3": "GLP: Bien", "l4": "Trocha: Bien", "aria": "SUV partido en dos: a la izquierda como en el catálogo; a la derecha, en planos, cómo rinde en tu uso: 7 pasajeros: Bien, Sierra cargado: Justo, GLP: Bien, Trocha: Bien"}, {"nombre": "Sedán", "perfil": "Ciudad · Carretera · Costa", "body": "M110,194 Q110,170 128,166 L222,156 Q240,154 256,144 L318,104 Q330,96 346,96 L486,96 Q504,96 518,106 L566,146 Q572,150 584,151 L636,156 Q652,158 652,174 L652,205 Q652,215 642,215 L606,215 A46,46 0 0 0 514,215 L246,215 A46,46 0 0 0 154,215 L124,215 Q110,215 110,205 Z", "win": "M268,146 L322,110 Q330,104 344,104 L404,104 L404,146 Z M416,104 L484,104 Q498,104 508,112 L540,146 L416,146 Z", "lines": "M258,156 L600,156 M410,156 L410,204 M118,178 L146,174", "roofY": 96, "winY": 126, "c1": "M470,96 L520,40 L740,40", "c2": "M470,126 L740,126", "t2": 119, "l1": "Ciudad: Bien", "l2": "Carretera: Bien", "l3": "Maletero: Bien", "l4": "Trocha: Difícil", "aria": "Sedán partido en dos: a la izquierda como en el catálogo; a la derecha, en planos, cómo rinde en tu uso: Ciudad: Bien, Carretera: Bien, Maletero: Bien, Trocha: Difícil"}, {"nombre": "Pick-up", "perfil": "Trabajo · Carga · Trocha", "body": "M110,194 Q108,166 130,160 L230,150 Q244,148 252,138 L296,96 Q302,90 312,90 L424,90 Q434,90 436,100 L442,146 L652,146 L652,205 Q652,215 642,215 L606,215 A46,46 0 0 0 514,215 L246,215 A46,46 0 0 0 154,215 L124,215 Q110,215 110,205 Z", "win": "M262,140 L302,102 Q308,98 316,98 L356,98 L356,140 Z M366,98 L424,98 L428,140 L366,140 Z", "lines": "M448,154 L646,154 M361,146 L361,204 M638,150 L638,204 M118,176 L144,172", "roofY": 90, "winY": 120, "c1": "M470,90 L520,40 L740,40", "c2": "M470,120 L740,120", "t2": 113, "l1": "Carga: Bien", "l2": "Pasajeros atrás: Justo", "l3": "Ciudad y cochera: Justo", "l4": "Trocha: Bien", "aria": "Pick-up partido en dos: a la izquierda como en el catálogo; a la derecha, en planos, cómo rinde en tu uso: Carga: Bien, Pasajeros atrás: Justo, Ciudad y cochera: Justo, Trocha: Bien"}, {"nombre": "Van", "perfil": "Negocio · Reparto · Ciudad", "body": "M110,198 Q108,168 128,160 L176,150 Q188,146 196,134 L240,72 Q248,62 262,62 L620,62 Q646,62 648,86 L652,200 Q652,215 638,215 L606,215 A46,46 0 0 0 514,215 L246,215 A46,46 0 0 0 154,215 L124,215 Q110,215 110,205 Z", "win": "M206,138 L246,80 Q250,74 260,74 L320,74 L320,138 Z M336,74 L440,74 L440,120 L336,120 Z", "lines": "M330,68 L330,204 M446,68 L446,204 M200,150 L646,150 M118,178 L144,174", "roofY": 62, "winY": 100, "c1": "M470,62 L520,40 L740,40", "c2": "M470,100 L740,100", "t2": 93, "l1": "Carga: Bien", "l2": "Ciudad: Justo", "l3": "GLP: Bien", "l4": "Sierra cargada: Difícil", "aria": "Van partido en dos: a la izquierda como en el catálogo; a la derecha, en planos, cómo rinde en tu uso: Carga: Bien, Ciudad: Justo, GLP: Bien, Sierra cargada: Difícil"}, {"nombre": "Hatchback", "perfil": "Primer auto · Ciudad · Presupuesto justo", "body": "M110,194 Q110,170 128,164 L218,152 Q236,150 250,140 L310,100 Q320,92 336,92 L530,92 Q548,92 560,104 L612,152 Q640,156 648,164 L652,178 L652,205 Q652,215 642,215 L606,215 A46,46 0 0 0 514,215 L246,215 A46,46 0 0 0 154,215 L124,215 Q110,215 110,205 Z", "win": "M262,142 L314,106 Q322,100 336,100 L410,100 L410,142 Z M422,100 L528,100 Q540,100 548,108 L582,142 L422,142 Z", "lines": "M254,152 L606,152 M416,152 L416,204 M118,178 L146,174", "roofY": 92, "winY": 122, "c1": "M470,92 L520,40 L740,40", "c2": "M470,122 L740,122", "t2": 115, "l1": "Ciudad y cochera: Bien", "l2": "Costo mensual: Bien", "l3": "Carretera: Justo", "l4": "Trocha: Difícil", "aria": "Hatchback partido en dos: a la izquierda como en el catálogo; a la derecha, en planos, cómo rinde en tu uso: Ciudad y cochera: Bien, Costo mensual: Bien, Carretera: Justo, Trocha: Difícil"}];
+  }
+  componentDidMount() {
+    let reduce = false;
+    try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    if (!reduce) this.timer = setInterval(() => this.go((this.state.i + 1) % this.cars.length), 5000);
+  }
+  componentWillUnmount() { clearInterval(this.timer); clearTimeout(this.t2); }
+  go(n) {
+    this.setState({ fade: true });
+    clearTimeout(this.t2);
+    this.t2 = setTimeout(() => this.setState({ i: n, fade: false }), 300);
+  }
+  senal(nivel, cx, cy, r) {
+    if (nivel === 'Bien') return { d: 'M' + (cx - r) + ',' + cy + ' a' + r + ',' + r + ' 0 1,0 ' + (2 * r) + ',0 a' + r + ',' + r + ' 0 1,0 ' + (-2 * r) + ',0', fill: '#0E6B4E', stroke: '#0E6B4E' };
+    if (nivel === 'Justo') return { d: 'M' + cx + ',' + (cy - r - 1) + ' L' + (cx + r + 1) + ',' + cy + ' L' + cx + ',' + (cy + r + 1) + ' L' + (cx - r - 1) + ',' + cy + ' Z', fill: '#B54E08', stroke: '#B54E08' };
+    const pts = [];
+    for (let k = 0; k < 8; k++) { const a = Math.PI / 8 + k * Math.PI / 4; pts.push((cx + r * Math.cos(a)).toFixed(1) + ',' + (cy + r * Math.sin(a)).toFixed(1)); }
+    return { d: 'M' + pts.join(' L') + ' Z', fill: '#B3261E', stroke: '#B3261E' };
+  }
+  renderVals() {
+    const car = this.cars[this.state.i];
+    const lvl = (l) => l.split(': ')[1];
+    const ys = [30, car.t2 - 4, 173, 256];
+    const sv = [car.l1, car.l2, car.l3, car.l4].map((l, k) => this.senal(lvl(l), 744, ys[k], 7));
+    const ic = (nivel) => this.senal(nivel, 13, 13, 9);
+    return {
+      car, s1: sv[0], s2: sv[1], s3: sv[2], s4: sv[3],
+      fadeStyle: 'width: 100%; max-width: 820px; transition: opacity 300ms ease; opacity: ' + (this.state.fade ? '0' : '1') + ';',
+      tipos: this.cars.map((c, n) => ({ nombre: c.nombre, on: n === this.state.i ? 'true' : 'false',
+        style: 'min-height: 44px; padding: 0 18px; border-radius: 8px; font-size: 15px; font-weight: 800; border: 2px solid #2A2D33; ' + (n === this.state.i ? 'background: #2A2D33; color: #FFFFFF;' : 'background: #FFFFFF; color: #2A2D33;'),
+        pick: () => { clearInterval(this.timer); this.go(n); } })),
+      situaciones: ['Mi primer auto', 'Familia grande', 'Viajo a provincia', 'Lo uso para trabajar'],
+      pasos: [
+        { n: '1', titulo: 'Cuéntanos para qué lo usarás', texto: 'Cuántos viajan, por dónde manejas, cuánto recorres y cuánto puedes pagar al mes. Siete preguntas, un minuto.' },
+        { n: '2', titulo: 'Te explicamos el porqué', texto: 'Ves los modelos que encajan contigo y, para cada uno, qué tan bien rinde en tu uso real y por qué.' },
+        { n: '3', titulo: 'Ves cuánto cuesta de verdad', texto: 'Cuota, combustible, seguro y mantenimiento en un solo número mensual. Con GLP o sin GLP.' }
+      ],
+      leyenda: [
+        Object.assign({ nivel: 'Bien', que: 'te sirve para eso' }, ic('Bien')),
+        Object.assign({ nivel: 'Justo', que: 'funciona, con cuidado' }, ic('Justo')),
+        Object.assign({ nivel: 'Difícil', que: 'no es para eso' }, ic('Difícil'))
+      ],
+      ejemplo: [
+        Object.assign({ uso: 'Ciudad y carretera', nivel: 'Bien', texto: 'Suave, silenciosa y con buena potencia para adelantar.' }, ic('Bien')),
+        Object.assign({ uso: 'Trocha con barro', nivel: 'Justo', texto: 'Buena altura, pero la caja CVT se esfuerza en barro profundo.' }, ic('Justo')),
+        Object.assign({ uso: 'Convertir a GLP', nivel: 'Bien', texto: 'Motor compatible. Pregunta dónde reubican la llanta de repuesto.' }, ic('Bien'))
+      ],
+      peru: [
+        { swatch: 'width: 14px; height: 14px; border-radius: 3px; background: #D8AD6E; border: 1px solid #2A2D33; flex-shrink: 0;', donde: 'En la costa', titulo: 'GLP y tráfico', texto: 'Te decimos si tu motor se puede convertir, cuánto ahorras y si una automática te cambia el día.' },
+        { swatch: 'width: 14px; height: 14px; border-radius: 3px; background: #A9763F; border: 1px solid #2A2D33; flex-shrink: 0;', donde: 'En la subida', titulo: 'Trocha y lluvias', texto: 'Altura al piso, tipo de caja y tracción, evaluados para caminos sin asfaltar.' },
+        { swatch: 'width: 14px; height: 14px; border-radius: 3px; background: #F2F4F7; border: 1px solid #2A2D33; flex-shrink: 0;', donde: 'Sobre 3,000 m', titulo: 'Fuerza en altura', texto: 'Un motor sin turbo pierde potencia arriba. Lo tomamos en cuenta con el auto cargado.' },
+        { swatch: 'width: 14px; height: 14px; border-radius: 3px; background: #2E7B47; border: 1px solid #2A2D33; flex-shrink: 0;', donde: 'Hacia la selva', titulo: 'Talleres en regiones', texto: 'Importa dónde está el servicio oficial más cercano a donde viajas.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

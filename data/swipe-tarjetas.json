@@ -1,0 +1,98 @@
+[
+  {
+    "tipo": "SUV",
+    "color": "#B3261E",
+    "titulo": "SUV robusta con rieles",
+    "texto": "Alta, con aros grandes y presencia en la pista.",
+    "rasgos": [
+      "aventura",
+      "familiar"
+    ]
+  },
+  {
+    "tipo": "Sedán",
+    "color": "#AEB4BC",
+    "titulo": "Sedán sobrio y elegante",
+    "texto": "Líneas limpias, nada que sobre.",
+    "rasgos": [
+      "sobrio"
+    ]
+  },
+  {
+    "tipo": "Hatchback",
+    "color": "#1A56C4",
+    "titulo": "Hatchback compacto y ágil",
+    "texto": "Se estaciona en cualquier lado y se mueve rápido.",
+    "rasgos": [
+      "urbano",
+      "deportivo"
+    ]
+  },
+  {
+    "tipo": "Pick-up",
+    "color": "#E8EAED",
+    "titulo": "Pick-up doble cabina",
+    "texto": "Tolva para lo que sea y cinco asientos.",
+    "rasgos": [
+      "aventura",
+      "familiar"
+    ]
+  },
+  {
+    "tipo": "Van",
+    "color": "#8A9099",
+    "titulo": "Van espaciosa",
+    "texto": "Puertas corredizas y espacio de sobra.",
+    "rasgos": [
+      "familiar",
+      "sobrio"
+    ]
+  },
+  {
+    "tipo": "SUV",
+    "color": "#F7F8F9",
+    "titulo": "SUV familiar de siete asientos",
+    "texto": "Tercera fila y maletero grande.",
+    "rasgos": [
+      "familiar"
+    ]
+  },
+  {
+    "tipo": "Sedán",
+    "color": "#8E1B1B",
+    "titulo": "Sedán bajo y deportivo",
+    "texto": "Postura baja y diseño con carácter.",
+    "rasgos": [
+      "deportivo"
+    ]
+  },
+  {
+    "tipo": "Hatchback",
+    "color": "#2E7B47",
+    "titulo": "Hatchback con look aventurero",
+    "texto": "Compacto, pero un poco más alto y con protecciones.",
+    "rasgos": [
+      "urbano",
+      "aventura"
+    ]
+  },
+  {
+    "tipo": "Pick-up",
+    "color": "#4A4F58",
+    "titulo": "Pick-up con llantas todoterreno",
+    "texto": "Barras, protecciones y llantas para trocha.",
+    "rasgos": [
+      "aventura"
+    ]
+  },
+  {
+    "tipo": "Sedán",
+    "color": "#FFFFFF",
+    "titulo": "Sedán práctico",
+    "texto": "Cómodo, económico y sin complicaciones.",
+    "rasgos": [
+      "sobrio",
+      "urbano"
+    ]
+  }
+]

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Encaja · ¿Te sirve la Honda BR-V?</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;800;900&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1A56C4}a:hover{color:#123E94}
+button{font:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="background: #FFFFFF; color: #2A2D33; font-family: Overpass, 'Trebuchet MS', sans-serif; min-height: 1180px">
+  <header style="background: #FFFFFF; border-bottom: 1px solid #D5D8DD">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 12px 32px; min-height: 64px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px">
+      <a href="Landing.dc.html" style="font-family: Overpass, sans-serif; font-weight: 900; font-size: 26px; letter-spacing: -0.03em; color: #2A2D33; text-decoration: none">encaja</a>
+      <div style="flex: 1 1 320px; display: flex; gap: 8px; max-width: 560px">
+        <label for="buscar" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Modelo a revisar</label>
+        <input id="buscar" value="Honda BR-V" style="flex: 1 1 auto; min-height: 44px; border-radius: 12px; border: 2px solid #D5D8DD; padding: 0 14px; font: inherit; font-size: 15px; color: #2A2D33; background: #FFFFFF">
+        <a href="Revisar.dc.html" style="display: flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; background: #1A56C4; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600">Revisar</a>
+      </div>
+      <span style="font-size: 13px; color: #4E535C">Nadie te va a llamar</span>
+    </div>
+  </header>
+
+  <div style="max-width: 1240px; margin: 0 auto; padding: 36px 32px 56px; display: flex; flex-direction: column; gap: 28px">
+    <div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: center">
+      <div style="flex: 0 1 360px; min-height: 200px; border-radius: 14px; background: #E4E9F1; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #4E535C">Foto oficial del modelo</div>
+      <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #1A56C4">Ya tienes uno en mente</span>
+        <h1 style="margin: 0; font-family: Overpass, sans-serif; font-size: clamp(30px, 4vw, 46px); line-height: 1.1; letter-spacing: -0.03em">¿Te sirve la Honda BR-V?</h1>
+        <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #4E535C">Cuéntanos en tres toques para qué la quieres. El veredicto cambia con tus respuestas.</p>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+      <section style="flex: 1 1 380px; background: #FFFFFF; border: 2px solid #D5D8DD; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 22px; box-sizing: border-box">
+        <h2 style="margin: 0; font-size: 17px; font-weight: 600">Tu uso</h2>
+        <fieldset style="border: 0; margin: 0; padding: 0">
+          <legend style="font-size: 14px; font-weight: 600; padding: 0; margin-bottom: 10px">¿Por dónde vas a manejar?</legend>
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+            <sc-for list="{{usos}}" as="u" hint-placeholder-count="4">
+              <button type="button" onClick="{{u.pick}}" aria-pressed="{{u.on}}" style="{{u.style}}">{{u.label}}</button>
+            </sc-for>
+          </div>
+        </fieldset>
+        <fieldset style="border: 0; margin: 0; padding: 0">
+          <legend style="font-size: 14px; font-weight: 600; padding: 0; margin-bottom: 10px">¿Cuántos viajan normalmente?</legend>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+            <sc-for list="{{pasajeros}}" as="p" hint-placeholder-count="3">
+              <button type="button" onClick="{{p.pick}}" aria-pressed="{{p.on}}" style="{{p.style}}">{{p.label}}</button>
+            </sc-for>
+          </div>
+        </fieldset>
+        <fieldset style="border: 0; margin: 0; padding: 0">
+          <legend style="font-size: 14px; font-weight: 600; padding: 0; margin-bottom: 10px">¿Piensas convertirlo a GLP?</legend>
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+            <sc-for list="{{glp}}" as="g" hint-placeholder-count="2">
+              <button type="button" onClick="{{g.pick}}" aria-pressed="{{g.on}}" style="{{g.style}}">{{g.label}}</button>
+            </sc-for>
+          </div>
+        </fieldset>
+        <a href="Flujo.dc.html" style="font-size: 14px; font-weight: 600">Prefiero responder las 7 preguntas completas</a>
+      </section>
+
+      <section aria-live="polite" style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <div style="{{veredictoStyle}}">
+          <span style="font-size: 13px; opacity: 0.85">Veredicto para tu uso</span>
+          <span style="font-family: Overpass, sans-serif; font-size: clamp(24px, 3vw, 34px); font-weight: 700; line-height: 1.15">{{veredicto}}</span>
+          <span style="font-size: 15px; line-height: 1.5; opacity: 0.9">{{resumen}}</span>
+        </div>
+
+        <div style="background: #FFFFFF; border: 2px solid #D5D8DD; border-radius: 14px; padding: 8px 20px">
+          <sc-for list="{{filas}}" as="f" hint-placeholder-count="4">
+            <div style="display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid #E3E5E8">
+              <span style="{{f.style}}">{{f.nivel}}</span>
+              <div style="display: flex; flex-direction: column; gap: 4px">
+                <span style="font-size: 15px; font-weight: 600">{{f.uso}}</span>
+                <span style="font-size: 14px; line-height: 1.5; color: #33373E">{{f.texto}}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{hayAlternativas}}" hint-placeholder-val="{{ true }}">
+          <div style="background: #FFFFFF; border: 2px solid #D5D8DD; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+            <h2 style="margin: 0; font-size: 16px; font-weight: 600">{{altTitulo}}</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+              <sc-for list="{{alternativas}}" as="a" hint-placeholder-count="2">
+                <a href="Detalle.dc.html" style="display: flex; gap: 12px; align-items: center; padding: 14px; border-radius: 14px; border: 2px solid #D5D8DD; color: #2A2D33; text-decoration: none">
+                  <span style="width: 72px; height: 48px; border-radius: 8px; background: #E4E9F1; flex-shrink: 0"></span>
+                  <span style="display: flex; flex-direction: column; gap: 4px">
+                    <span style="font-size: 15px; font-weight: 600">{{a.nombre}}</span>
+                    <span style="font-size: 13px; color: #4E535C">{{a.por}}</span>
+                  </span>
+                </a>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 10px">
+          <a href="Detalle.dc.html" style="flex: 1 1 200px; display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 14px; background: #1A56C4; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px">Ver costo mensual</a>
+          <a href="Comparar.dc.html" style="flex: 1 1 200px; display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 14px; border: 2px solid #1A56C4; color: #2A2D33; text-decoration: none; font-weight: 600; font-size: 15px">Comparar con otras opciones</a>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { usos: { ciudad: true, carretera: true, trocha: true, sierra: false }, pas: '6–7', glp: 'Sí' };
+  }
+  renderVals() {
+    const btn = 'min-height: 48px; border-radius: 12px; font-size: 15px; font-weight: 600; color: #2A2D33; background: #FFFFFF; ';
+    const on = 'border: 2px solid #1A56C4; box-shadow: 0 0 0 3px rgba(26,86,196,0.25);';
+    const off = 'border: 2px solid #D5D8DD;';
+    const s = this.state;
+    const defs = [['ciudad', 'Ciudad'], ['carretera', 'Carretera'], ['trocha', 'Trocha'], ['sierra', 'Sierra']];
+    const usos = defs.map(([id, label]) => ({ label, on: s.usos[id] ? 'true' : 'false', style: btn + (s.usos[id] ? on : off), pick: () => this.setState({ usos: { ...s.usos, [id]: !s.usos[id] } }) }));
+    const pasajeros = ['1–4', '5', '6–7'].map((l) => ({ label: l, on: s.pas === l ? 'true' : 'false', style: btn + (s.pas === l ? on : off), pick: () => this.setState({ pas: l }) }));
+    const glp = ['Sí', 'No'].map((l) => ({ label: l, on: s.glp === l ? 'true' : 'false', style: btn + (s.glp === l ? on : off), pick: () => this.setState({ glp: l }) }));
+
+    const chip = 'flex-shrink: 0; min-width: 60px; text-align: center; font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px; ';
+    const tone = { Bien: chip + 'background: #0E6B4E; color: #FFFFFF;', Justo: chip + 'background: #B54E08; color: #FFFFFF;', 'Difícil': chip + 'background: #B3261E; color: #FFFFFF;' };
+    const filas = [];
+    if (s.usos.ciudad) filas.push({ uso: 'Ciudad', nivel: 'Bien', texto: 'Suave y fácil de manejar en tráfico. Su tamaño se maneja bien en cocheras normales.' });
+    if (s.usos.carretera) filas.push({ uso: 'Carretera', nivel: 'Bien', texto: 'Silenciosa y estable. Con 119 HP adelanta sin sufrir en la Panamericana.' });
+    if (s.usos.trocha) filas.push({ uso: 'Trocha', nivel: 'Justo', texto: 'Buena altura al piso, pero la caja CVT se esfuerza en barro profundo y subidas lentas.' });
+    if (s.usos.sierra) filas.push({ uso: 'Sierra', nivel: 'Justo', texto: 'Motor sin turbo: sobre 3,000 m pierde fuerza, más aún con el carro lleno.' });
+    if (s.pas === '6–7') filas.push({ uso: '6 o 7 pasajeros', nivel: 'Justo', texto: 'La tercera fila sirve para niños o trayectos cortos, y con ella en uso el maletero queda chico.' });
+    if (s.pas === '5') filas.push({ uso: '5 pasajeros', nivel: 'Bien', texto: 'Cinco van cómodos, y con la tercera fila plegada tienes buen maletero.' });
+    if (s.pas === '1–4') filas.push({ uso: 'Pocos pasajeros', nivel: 'Bien', texto: 'Te sobra espacio. Revisa si realmente necesitas un auto de 7 asientos.' });
+    if (s.glp === 'Sí') filas.push({ uso: 'Convertir a GLP', nivel: 'Bien', texto: 'Motor compatible. Pregunta dónde reubican la llanta de repuesto y si se mantiene la garantía.' });
+    const filasT = filas.map((f) => ({ ...f, style: tone[f.nivel] }));
+
+    const justos = filas.filter((f) => f.nivel === 'Justo').length;
+    const dificiles = filas.filter((f) => f.nivel === 'Difícil').length;
+    let veredicto, resumen, fondo;
+    if (dificiles > 0 || justos >= 3) { veredicto = 'Hay opciones que te sirven mejor'; resumen = 'Para tu uso, varias cosas quedan justas. Mira las alternativas antes de decidir.'; fondo = '#B3261E'; }
+    else if (justos > 0) { veredicto = 'Te sirve, con ' + justos + (justos === 1 ? ' cosa' : ' cosas') + ' a tener en cuenta'; resumen = 'Encaja con lo principal de tu uso. Revisa los puntos marcados como Justo.'; fondo = '#1A56C4'; }
+    else { veredicto = 'Te sirve bien'; resumen = 'Para lo que nos contaste, no vemos puntos débiles importantes.'; fondo = '#0E6B4E'; }
+
+    const alternativas = [];
+    if (s.usos.trocha) alternativas.push({ nombre: 'Toyota Rush', por: 'Trocha: Bien · tracción trasera' });
+    if (s.usos.trocha || s.usos.sierra) alternativas.push({ nombre: 'Mitsubishi Xpander Cross', por: 'Trocha: Bien · suspensión cómoda en ripio' });
+    const altTitulo = s.usos.trocha ? 'Si la trocha es frecuente, estas encajan mejor' : 'Para sierra, también mira estas';
+
+    return {
+      usos, pasajeros, glp, filas: filasT, veredicto, resumen,
+      veredictoStyle: 'background: #FFFFFF; color: #2A2D33; border: 2px solid #D5D8DD; border-top: 8px solid ' + fondo + '; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 6px;',
+      alternativas, hayAlternativas: alternativas.length > 0, altTitulo
+    };
+  }
+}
+</script>
+</body>
+</html>

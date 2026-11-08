@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* Tokens: docs/02-sistema-de-diseno.md, design-tokens.json y docs/tailwind-tema.css */
+@theme {
+  --color-asfalto: #2a2d33;
+  --color-azul: #1a56c4;
+  --color-azul-oscuro: #123e94;
+  --color-blanco: #ffffff;
+  --color-borde: #d5d8dd;
+  --color-divisor: #e3e5e8;
+  --color-texto-2: #4e535c;
+  --color-placeholder: #e4e9f1;
+  --color-pista: #6b7079;
+  --color-cerro: #8a9099;
+  --color-bien: #0e6b4e;
+  --color-justo: #b54e08;
+  --color-dificil: #b3261e;
+  --color-arena: #d8ad6e;
+  --color-tierra: #a9763f;
+  --color-puna: #7a6250;
+  --color-nieve: #f2f4f7;
+  --color-ceja-selva: #4e9a5b;
+  --color-selva: #2e7b47;
+
+  --font-sans: var(--font-overpass), "Trebuchet MS", sans-serif;
+
+  --radius-letrero: 8px;
+  --radius-boton: 10px;
+  --radius-tarjeta: 14px;
+  --radius-tarjeta-lg: 18px;
+
+  --shadow-halo: 0 0 0 3px rgba(26, 86, 196, 0.25);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-blanco);
+    color: var(--color-asfalto);
+    font-family: var(--font-sans);
+  }
+
+  a {
+    color: var(--color-azul);
+  }
+
+  a:hover {
+    color: var(--color-azul-oscuro);
+  }
+
+  button {
+    font: inherit;
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+  /* Foco visible: 3px azul con 3px de separación (design-tokens.json → focus) */
+  :focus-visible {
+    outline: 3px solid var(--color-azul);
+    outline-offset: 3px;
+  }
+
+  /* Sobre fondos oscuros o azules (portada, tarjeta de perfil) el foco va en blanco */
+  .foco-claro :focus-visible,
+  .foco-claro:focus-visible {
+    outline-color: var(--color-blanco);
+  }
+}
+
+@layer utilities {
+  .solo-lector {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .tracking-display {
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Solo hay dos animaciones (rotación del hero y swipe); ambas se apagan aquí además de en JS */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

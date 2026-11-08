@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Encaja web · Honda BR-V</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;800;900&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1A56C4}a:hover{color:#123E94}
+button{font:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="background: #FFFFFF; color: #2A2D33; font-family: Overpass, 'Trebuchet MS', sans-serif; min-height: 1240px">
+  <header style="background: #FFFFFF; border-bottom: 1px solid #D5D8DD">
+    <nav style="max-width: 1240px; margin: 0 auto; padding: 0 32px; min-height: 68px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px">
+      <span style="font-family: Overpass, sans-serif; font-weight: 900; font-size: 26px; letter-spacing: -0.03em">encaja</span>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; flex-grow: 1">
+        <a href="Opciones.dc.html" style="color: #4E535C; text-decoration: none">Encontrar auto</a>
+        <a href="Comparar.dc.html" style="color: #4E535C; text-decoration: none">Comparar</a>
+        <a href="Detalle.dc.html" style="color: #2A2D33; text-decoration: none; font-weight: 600">Costo real</a>
+        <a href="#" style="color: #4E535C; text-decoration: none">Cómo evaluamos</a>
+      </div>
+    </nav>
+  </header>
+
+  <div style="max-width: 1240px; margin: 0 auto; padding: 28px 32px 56px; display: flex; flex-direction: column; gap: 28px">
+    <a href="Opciones.dc.html" style="font-size: 14px; color: #4E535C; text-decoration: none; display: flex; align-items: center; gap: 6px; min-height: 44px; align-self: flex-start">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+      Volver a tus opciones
+    </a>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: stretch">
+      <div style="flex: 1 1 420px; min-height: 280px; border-radius: 14px; background: #E4E9F1; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #4E535C">Foto oficial del modelo</div>
+      <div style="flex: 1 1 420px; display: flex; flex-direction: column; justify-content: center; gap: 14px">
+        <span style="font-size: 14px; color: #4E535C">Opción 2 de 3 para tu perfil</span>
+        <h1 style="margin: 0; font-family: Overpass, sans-serif; font-size: 44px; letter-spacing: -0.03em">Honda BR-V</h1>
+        <span style="font-size: 16px; color: #4E535C">Desde US$ [precio] · 7 asientos · 1.5 L · CVT</span>
+        <div style="background: #FFFFFF; color: #2A2D33; border: 2px solid #D5D8DD; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 13px; opacity: 0.8">Veredicto para ti</span>
+          <span style="font-size: 18px; font-weight: 600; line-height: 1.35">Encaja bien en ciudad y carretera. Tiene 2 cosas que debes saber antes de comprar.</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+      <main style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+        <section style="display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-size: 20px; font-weight: 600">En tu vida real</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px">
+            <sc-for list="{{puntos}}" as="p" hint-placeholder-count="6">
+              <div style="background: #FFFFFF; border: 2px solid #D5D8DD; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 8px">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+                  <span style="font-size: 15px; font-weight: 600">{{p.titulo}}</span>
+                  <span style="{{p.style}}">{{p.nivel}}</span>
+                </div>
+                <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #33373E">{{p.texto}}</p>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+
+        <section style="background: #FFFFFF; border: 2px solid #D5D8DD; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-size: 16px; font-weight: 600">Ficha técnica</h2>
+          <dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px 20px; font-size: 14px">
+            <div><dt style="color: #4E535C; font-size: 12px">Motor</dt><dd style="margin: 2px 0 0">1.5 L i-VTEC, 4 cil.</dd></div>
+            <div><dt style="color: #4E535C; font-size: 12px">Potencia</dt><dd style="margin: 2px 0 0">119 HP @ 6600 rpm</dd></div>
+            <div><dt style="color: #4E535C; font-size: 12px">Torque</dt><dd style="margin: 2px 0 0">107 lb-pie @ 4300 rpm</dd></div>
+            <div><dt style="color: #4E535C; font-size: 12px">Transmisión</dt><dd style="margin: 2px 0 0">CVT</dd></div>
+            <div><dt style="color: #4E535C; font-size: 12px">Tracción</dt><dd style="margin: 2px 0 0">Delantera</dd></div>
+            <div><dt style="color: #4E535C; font-size: 12px">Altura al piso</dt><dd style="margin: 2px 0 0">[mm según ficha Perú]</dd></div>
+          </dl>
+        </section>
+      </main>
+
+      <aside style="flex: 1 1 340px; max-width: 100%; box-sizing: border-box; background: #FFFFFF; border: 2px solid #D5D8DD; border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 18px">
+        <h2 style="margin: 0; font-size: 18px; font-weight: 600">¿Cuánto te cuesta al mes?</h2>
+        <div style="background: #FFFFFF; color: #2A2D33; border: 2px solid #D5D8DD; border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 2px">
+          <span style="font-size: 13px; opacity: 0.8">Total estimado</span>
+          <span style="font-family: Overpass, sans-serif; font-size: 36px; font-weight: 700">S/ [total]</span>
+          <span style="font-size: 13px; opacity: 0.8">con {{fuel}} y crédito a {{plazo}} meses</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span id="w-fuel" style="font-size: 13px; color: #4E535C">Combustible</span>
+          <div role="group" aria-labelledby="w-fuel" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+            <sc-for list="{{fuels}}" as="f" hint-placeholder-count="2">
+              <button type="button" onClick="{{f.pick}}" aria-pressed="{{f.on}}" style="{{f.style}}">{{f.label}}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span id="w-plazo" style="font-size: 13px; color: #4E535C">Plazo del crédito</span>
+          <div role="group" aria-labelledby="w-plazo" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+            <sc-for list="{{plazos}}" as="p" hint-placeholder-count="3">
+              <button type="button" onClick="{{p.pick}}" aria-pressed="{{p.on}}" style="{{p.style}}">{{p.label}}</button>
+            </sc-for>
+          </div>
+        </div>
+        <label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #4E535C">
+          Kilómetros al mes
+          <input type="number" inputmode="numeric" placeholder="Ej. [km]" style="min-height: 44px; border-radius: 12px; border: 2px solid #D5D8DD; padding: 0 12px; font: inherit; font-size: 15px; color: #2A2D33; background: #FFFFFF">
+        </label>
+        <div style="display: flex; flex-direction: column">
+          <sc-for list="{{filas}}" as="r" hint-placeholder-count="6">
+            <div style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid #E3E5E8; font-size: 14px">
+              <span>{{r}}</span>
+              <span style="font-weight: 600">S/ [ ]</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="background: #FFFFFF; color: #2A2D33; border: 2px solid #D5D8DD; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 14px; font-weight: 600">La tasa cambia mucho el total</span>
+          <span style="font-size: 13px; line-height: 1.45">Compara la TCEA entre bancos antes de firmar.</span>
+          <a href="#" style="font-size: 13px; font-weight: 600; color: #1A56C4">Comparar créditos vehiculares</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1240}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { fuel: 'GLP', plazo: '48' };
+  }
+  renderVals() {
+    const chip = 'flex-shrink: 0; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; ';
+    const tone = { Bien: 'background: #0E6B4E; color: #FFFFFF;', Justo: 'background: #B54E08; color: #FFFFFF;', 'Difícil': 'background: #B3261E; color: #FFFFFF;' };
+    const puntos = [
+      { titulo: 'Ciudad y carretera', nivel: 'Bien', texto: 'Suave y silenciosa. Es de las más potentes de su grupo (119 HP), así que adelanta sin sufrir en la Panamericana.' },
+      { titulo: 'Trocha con barro', nivel: 'Justo', texto: 'Buena altura al piso, pero la caja CVT se esfuerza en subidas lentas y barro profundo. Para trocha ocasional va bien.' },
+      { titulo: 'Sierra con 7 personas', nivel: 'Justo', texto: 'Motor sin turbo: sobre 3,000 m pierde fuerza y la sentirás lenta en subidas largas con el carro lleno.' },
+      { titulo: 'Convertir a GLP', nivel: 'Bien', texto: 'Motor compatible. El tanque suele ir donde está el repuesto: pregunta dónde lo reubican y si se mantiene la garantía.' },
+      { titulo: 'Seguridad en viaje', nivel: 'Bien', texto: 'Las versiones altas traen frenado automático y alerta de carril. Útil con lluvia y neblina.' },
+      { titulo: 'Talleres en provincia', nivel: 'Justo', texto: 'Red oficial más chica que Toyota. Revisa si hay taller en las ciudades a las que viajas.' }
+    ].map((p) => ({ ...p, style: chip + tone[p.nivel] }));
+    const pill = 'min-height: 44px; border-radius: 12px; font-size: 14px; font-weight: 600; color: #2A2D33; background: #FFFFFF; ';
+    const on = 'border: 2px solid #1A56C4;';
+    const off = 'border: 2px solid #D5D8DD;';
+    const fuels = ['GLP', 'Gasolina'].map((l) => ({ label: l, on: this.state.fuel === l ? 'true' : 'false', style: pill + (this.state.fuel === l ? on : off), pick: () => this.setState({ fuel: l }) }));
+    const plazos = ['36', '48', '60'].map((l) => ({ label: l + ' m', on: this.state.plazo === l ? 'true' : 'false', style: pill + (this.state.plazo === l ? on : off), pick: () => this.setState({ plazo: l }) }));
+    const glp = this.state.fuel === 'GLP';
+    const filas = ['Cuota del crédito', glp ? 'Combustible (GLP)' : 'Combustible (gasolina)', 'Seguro vehicular', 'Mantenimiento', 'SOAT (prorrateado)', 'Cochera y peajes'];
+    return { puntos, fuels, plazos, filas, fuel: this.state.fuel, plazo: this.state.plazo };
+  }
+}
+</script>
+</body>
+</html>

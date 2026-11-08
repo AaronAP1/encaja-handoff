@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Encaja · Tu perfil</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;800;900&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1A56C4}a:hover{color:#123E94}
+button{font:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FFFFFF; color: #2A2D33; font-family: Overpass, 'Trebuchet MS', sans-serif; display: flex; flex-direction: column; padding: 24px 20px 28px; gap: 24px">
+  <div style="display: flex; align-items: center; justify-content: space-between">
+    <span style="font-family: Overpass, sans-serif; font-weight: 900; font-size: 24px; letter-spacing: -0.03em">encaja</span>
+    <span style="font-size: 13px; color: #4E535C">Tu perfil</span>
+  </div>
+  <div style="height: 6px; background: #D5D8DD; border-radius: 3px; overflow: hidden">
+    <div style="width: 100%; height: 6px; background: {{accent}}"></div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 8px">
+    <h1 style="margin: 0; font-family: Overpass, sans-serif; font-size: 28px; line-height: 1.15; letter-spacing: -0.03em">Cuéntanos cómo vas a usar tu auto</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 1.45; color: #4E535C">Sin términos técnicos. Con esto filtramos los modelos que de verdad te sirven.</p>
+  </div>
+
+  <fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px">
+    <legend style="font-size: 14px; font-weight: 600; padding: 0; margin-bottom: 10px">¿Por dónde vas a manejar? <span style="font-weight: 400; color: #4E535C">Elige todas las que apliquen</span></legend>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+      <sc-for list="{{usos}}" as="u" hint-placeholder-count="4">
+        <button type="button" onClick="{{u.pick}}" aria-pressed="{{u.on}}" style="{{u.style}}">
+          <span style="font-weight: 600; font-size: 15px">{{u.label}}</span>
+          <span style="font-size: 12px; color: #4E535C">{{u.sub}}</span>
+        </button>
+      </sc-for>
+    </div>
+  </fieldset>
+
+  <fieldset style="border: 0; margin: 0; padding: 0">
+    <legend style="font-size: 14px; font-weight: 600; padding: 0; margin-bottom: 10px">¿Cuántos viajan normalmente?</legend>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+      <sc-for list="{{pasajeros}}" as="p" hint-placeholder-count="3">
+        <button type="button" onClick="{{p.pick}}" aria-pressed="{{p.on}}" style="{{p.style}}">{{p.label}}</button>
+      </sc-for>
+    </div>
+  </fieldset>
+
+  <fieldset style="border: 0; margin: 0; padding: 0">
+    <legend style="font-size: 14px; font-weight: 600; padding: 0; margin-bottom: 10px">¿Qué combustible prefieres?</legend>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+      <sc-for list="{{combustibles}}" as="c" hint-placeholder-count="3">
+        <button type="button" onClick="{{c.pick}}" aria-pressed="{{c.on}}" style="{{c.style}}">{{c.label}}</button>
+      </sc-for>
+    </div>
+  </fieldset>
+
+  <div style="flex-grow: 1"></div>
+  <a href="Resultados.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 14px; background: #1A56C4; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 16px">Ver mis opciones</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#1A56C4","options":["#1A56C4","#0F766E","#2A2D33"]},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { usos: { ciudad: true, carretera: true, trocha: true, sierra: false }, pas: '6–7', fuel: 'GLP' };
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#1A56C4';
+    const base = 'display: flex; flex-direction: column; align-items: flex-start; gap: 2px; text-align: left; min-height: 64px; padding: 12px 14px; border-radius: 14px; color: #2A2D33; ';
+    const pill = 'min-height: 48px; border-radius: 12px; font-size: 15px; font-weight: 600; color: #2A2D33; ';
+    const on = 'background: #FFFFFF; border: 2px solid ' + accent + ';';
+    const off = 'background: #FFFFFF; border: 2px solid #D5D8DD;';
+    const defs = [
+      { id: 'ciudad', label: 'Ciudad', sub: 'Tráfico, cochera, rompemuelles' },
+      { id: 'carretera', label: 'Carretera', sub: 'Viajes largos asfaltados' },
+      { id: 'trocha', label: 'Trocha', sub: 'Caminos sin asfaltar, barro' },
+      { id: 'sierra', label: 'Sierra', sub: 'Subidas sobre 3,000 m' }
+    ];
+    const usos = defs.map((d) => {
+      const sel = !!this.state.usos[d.id];
+      return { ...d, on: sel ? 'true' : 'false', style: base + (sel ? on : off), pick: () => this.setState({ usos: { ...this.state.usos, [d.id]: !sel } }) };
+    });
+    const pasajeros = ['1–2', '3–5', '6–7'].map((l) => ({ label: l, on: this.state.pas === l ? 'true' : 'false', style: pill + (this.state.pas === l ? on : off), pick: () => this.setState({ pas: l }) }));
+    const combustibles = ['Gasolina', 'GLP', 'Me da igual'].map((l) => ({ label: l, on: this.state.fuel === l ? 'true' : 'false', style: pill + (this.state.fuel === l ? on : off), pick: () => this.setState({ fuel: l }) }));
+    return { accent, usos, pasajeros, combustibles };
+  }
+}
+</script>
+</body>
+</html>

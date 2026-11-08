@@ -1,0 +1,195 @@
+[
+  {
+    "key": "pas",
+    "multi": false,
+    "seccion": "Tu gente",
+    "titulo": "¿Cuántos viajan contigo normalmente?",
+    "ayuda": "Piensa en una semana normal, no en el viaje de una vez al año.",
+    "opciones": [
+      {
+        "v": "1-2",
+        "label": "Solo yo o con alguien",
+        "sub": "Uno o dos a bordo"
+      },
+      {
+        "v": "3-4",
+        "label": "Pareja e hijos chicos",
+        "sub": "Tres o cuatro"
+      },
+      {
+        "v": "5",
+        "label": "Familia de cinco",
+        "sub": "Atrás van tres"
+      },
+      {
+        "v": "6-7",
+        "label": "Seis o siete",
+        "sub": "Familia grande o amigos"
+      }
+    ]
+  },
+  {
+    "key": "usos",
+    "multi": true,
+    "seccion": "Tus caminos",
+    "titulo": "¿Por dónde vas a manejar?",
+    "ayuda": "Marca todo lo que aplique, aunque sea pocas veces al año.",
+    "opciones": [
+      {
+        "v": "ciudad",
+        "label": "Ciudad",
+        "sub": "Tráfico, rompemuelles, cochera"
+      },
+      {
+        "v": "carretera",
+        "label": "Carretera",
+        "sub": "Viajes largos asfaltados"
+      },
+      {
+        "v": "trocha",
+        "label": "Trocha",
+        "sub": "Caminos sin asfaltar o con barro"
+      },
+      {
+        "v": "sierra",
+        "label": "Sierra",
+        "sub": "Subidas sobre 3,000 m"
+      }
+    ]
+  },
+  {
+    "key": "km",
+    "multi": false,
+    "seccion": "Tus caminos",
+    "titulo": "¿Cuánto manejas al mes?",
+    "ayuda": "Si no sabes, piensa en tus trayectos diarios y en cuántas veces sales de la ciudad.",
+    "opciones": [
+      {
+        "v": "poco",
+        "label": "Poco",
+        "sub": "Trayectos cortos, algunos días"
+      },
+      {
+        "v": "medio",
+        "label": "Todos los días",
+        "sub": "Ida y vuelta al trabajo"
+      },
+      {
+        "v": "mucho",
+        "label": "Mucho",
+        "sub": "Trabajo en la calle o viajes frecuentes"
+      },
+      {
+        "v": "nose",
+        "label": "No sé",
+        "sub": "Lo estimamos por ti"
+      }
+    ]
+  },
+  {
+    "key": "trafico",
+    "multi": false,
+    "seccion": "Tu día a día",
+    "titulo": "¿Cuánto tráfico enfrentas?",
+    "ayuda": "Esto decide si una caja automática te cambia la vida o es un gasto extra.",
+    "opciones": [
+      {
+        "v": "mucho",
+        "label": "Mucho",
+        "sub": "Horas en hora punta"
+      },
+      {
+        "v": "algo",
+        "label": "Algo",
+        "sub": "Algunos atracos al día"
+      },
+      {
+        "v": "poco",
+        "label": "Poco",
+        "sub": "Calles fluidas casi siempre"
+      }
+    ]
+  },
+  {
+    "key": "noche",
+    "multi": false,
+    "seccion": "Tu día a día",
+    "titulo": "¿Manejas de noche, con lluvia o neblina en carretera?",
+    "ayuda": "Nos ayuda a saber qué equipamiento de seguridad sí importa para ti.",
+    "opciones": [
+      {
+        "v": "seguido",
+        "label": "Seguido",
+        "sub": "Varias veces al mes"
+      },
+      {
+        "v": "aveces",
+        "label": "A veces",
+        "sub": "Algunos viajes al año"
+      },
+      {
+        "v": "nunca",
+        "label": "Casi nunca",
+        "sub": "Manejo de día y en ciudad"
+      }
+    ]
+  },
+  {
+    "key": "carga",
+    "multi": true,
+    "seccion": "Lo que llevas",
+    "titulo": "¿Qué cargas seguido?",
+    "ayuda": "Marca todo lo que aplique.",
+    "opciones": [
+      {
+        "v": "bebe",
+        "label": "Coche de bebé",
+        "sub": "Y la pañalera"
+      },
+      {
+        "v": "mercado",
+        "label": "Mercado semanal",
+        "sub": "Varias bolsas"
+      },
+      {
+        "v": "viaje",
+        "label": "Equipaje de viaje",
+        "sub": "Maletas para varios días"
+      },
+      {
+        "v": "trabajo",
+        "label": "Cosas de trabajo",
+        "sub": "Herramientas o muestras"
+      }
+    ]
+  },
+  {
+    "key": "pres",
+    "multi": false,
+    "seccion": "Tu bolsillo",
+    "titulo": "¿Cuánto puedes pagar al mes por tener el auto?",
+    "ayuda": "Todo incluido: cuota, combustible, seguro y mantenimiento. No el precio de lista.",
+    "opciones": [
+      {
+        "v": "1",
+        "label": "Hasta S/ [monto 1]",
+        "sub": "Lo justo"
+      },
+      {
+        "v": "2",
+        "label": "S/ [monto 1] a S/ [monto 2]",
+        "sub": "Con algo de margen"
+      },
+      {
+        "v": "3",
+        "label": "S/ [monto 2] a S/ [monto 3]",
+        "sub": "Holgado"
+      },
+      {
+        "v": "4",
+        "label": "Más de S/ [monto 3]",
+        "sub": "Sin problema"
+      }
+    ]
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "rush",
+    "nombre": "Toyota Rush",
+    "motor": "1.5 L · Tracción trasera",
+    "resumen": "El más preparado para trocha frecuente. Simple, durable y con talleres en todo el país.",
+    "veredictos": [
+      {
+        "uso": "Ciudad",
+        "nivel": "Bien"
+      },
+      {
+        "uso": "Trocha",
+        "nivel": "Bien"
+      },
+      {
+        "uso": "Sierra cargado",
+        "nivel": "Justo"
+      },
+      {
+        "uso": "Usar GLP",
+        "nivel": "Bien"
+      }
+    ]
+  },
+  {
+    "id": "brv",
+    "nombre": "Honda BR-V",
+    "motor": "1.5 L · 119 HP · CVT",
+    "resumen": "La más cómoda y segura en carretera. La caja CVT no es ideal para barro seguido.",
+    "veredictos": [
+      {
+        "uso": "Ciudad",
+        "nivel": "Bien"
+      },
+      {
+        "uso": "Trocha",
+        "nivel": "Justo"
+      },
+      {
+        "uso": "Sierra cargado",
+        "nivel": "Justo"
+      },
+      {
+        "uso": "Usar GLP",
+        "nivel": "Bien"
+      }
+    ]
+  },
+  {
+    "id": "xpander",
+    "nombre": "Mitsubishi Xpander Cross",
+    "motor": "1.5 L · Tracción delantera",
+    "resumen": "Suspensión cómoda en ripio y buena altura al piso. Más minivan que SUV.",
+    "veredictos": [
+      {
+        "uso": "Ciudad",
+        "nivel": "Bien"
+      },
+      {
+        "uso": "Trocha",
+        "nivel": "Bien"
+      },
+      {
+        "uso": "Sierra cargado",
+        "nivel": "Justo"
+      },
+      {
+        "uso": "Usar GLP",
+        "nivel": "Bien"
+      }
+    ]
+  }
+]

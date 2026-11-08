@@ -1,0 +1,33 @@
+/* Tailwind v4: pegar en app/globals.css después de @import "tailwindcss"; */
+@theme {
+  --color-asfalto: #2A2D33;
+  --color-azul: #1A56C4;
+  --color-azul-oscuro: #123E94;
+  --color-borde: #D5D8DD;
+  --color-divisor: #E3E5E8;
+  --color-texto-2: #4E535C;
+  --color-placeholder: #E4E9F1;
+  --color-pista: #6B7079;
+  --color-cerro: #8A9099;
+  --color-bien: #0E6B4E;
+  --color-justo: #B54E08;
+  --color-dificil: #B3261E;
+  --color-arena: #D8AD6E;
+  --color-tierra: #A9763F;
+  --color-puna: #7A6250;
+  --color-nieve: #F2F4F7;
+  --color-ceja-selva: #4E9A5B;
+  --color-selva: #2E7B47;
+
+  --font-sans: var(--font-overpass), "Trebuchet MS", sans-serif;
+
+  --radius-letrero: 8px;
+  --radius-boton: 10px;
+  --radius-tarjeta: 14px;
+  --radius-tarjeta-lg: 18px;
+}
+
+/* app/layout.tsx:
+   import { Overpass } from "next/font/google";
+   const overpass = Overpass({ subsets: ["latin"], weight: ["300","400","600","800","900"], variable: "--font-overpass" });
+   <html lang="es" className={overpass.variable}>  */

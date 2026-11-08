@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Encaja · Costo mensual real</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;800;900&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1A56C4}a:hover{color:#123E94}
+button{font:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="width: 390px; min-height: 1120px; box-sizing: border-box; background: #FFFFFF; color: #2A2D33; font-family: Overpass, 'Trebuchet MS', sans-serif; display: flex; flex-direction: column; padding: 24px 20px 28px; gap: 20px">
+  <div style="display: flex; align-items: center; gap: 12px">
+    <a href="Detalle.dc.html" aria-label="Volver al detalle" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: #FFFFFF; color: #2A2D33">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+    </a>
+    <span style="font-size: 14px; color: #4E535C">Honda BR-V</span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-family: Overpass, sans-serif; font-size: 26px; line-height: 1.15; letter-spacing: -0.03em">¿Cuánto te cuesta de verdad al mes?</h1>
+    <p style="margin: 0; font-size: 14px; line-height: 1.45; color: #4E535C">No solo la cuota: todo lo que sale de tu bolsillo por tener el auto.</p>
+  </div>
+
+  <div style="background: #FFFFFF; color: #2A2D33; border: 2px solid #D5D8DD; border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 4px">
+    <span style="font-size: 13px; opacity: 0.8">Total estimado</span>
+    <span style="font-family: Overpass, sans-serif; font-size: 40px; font-weight: 700; letter-spacing: -0.03em">S/ [total]</span>
+    <span style="font-size: 13px; opacity: 0.8">al mes, con {{fuel}} y crédito a {{plazo}} meses</span>
+  </div>
+
+  <section style="background: #FFFFFF; border: 2px solid #D5D8DD; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 14px">
+    <h2 style="margin: 0; font-size: 15px; font-weight: 600">Ajusta a tu caso</h2>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <span id="lbl-fuel" style="font-size: 13px; color: #4E535C">Combustible</span>
+      <div role="group" aria-labelledby="lbl-fuel" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+        <sc-for list="{{fuels}}" as="f" hint-placeholder-count="2">
+          <button type="button" onClick="{{f.pick}}" aria-pressed="{{f.on}}" style="{{f.style}}">{{f.label}}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <span id="lbl-plazo" style="font-size: 13px; color: #4E535C">Plazo del crédito</span>
+      <div role="group" aria-labelledby="lbl-plazo" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+        <sc-for list="{{plazos}}" as="p" hint-placeholder-count="3">
+          <button type="button" onClick="{{p.pick}}" aria-pressed="{{p.on}}" style="{{p.style}}">{{p.label}}</button>
+        </sc-for>
+      </div>
+    </div>
+    <label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #4E535C">
+      Kilómetros que manejas al mes
+      <input type="number" inputmode="numeric" placeholder="Ej. [km]" style="min-height: 46px; border-radius: 12px; border: 2px solid #D5D8DD; padding: 0 12px; font: inherit; font-size: 15px; color: #2A2D33; background: #FFFFFF">
+    </label>
+  </section>
+
+  <section style="background: #FFFFFF; border: 2px solid #D5D8DD; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 4px">
+    <h2 style="margin: 0 0 8px; font-size: 15px; font-weight: 600">De dónde sale el total</h2>
+    <sc-for list="{{filas}}" as="r" hint-placeholder-count="6">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 10px 0; border-bottom: 1px solid #E3E5E8">
+        <div style="display: flex; flex-direction: column; gap: 2px">
+          <span style="font-size: 14px; font-weight: 500">{{r.concepto}}</span>
+          <span style="font-size: 12px; color: #4E535C">{{r.nota}}</span>
+        </div>
+        <span style="font-size: 14px; font-weight: 600; white-space: nowrap">S/ [ ]</span>
+      </div>
+    </sc-for>
+  </section>
+
+  <div style="background: #FFFFFF; color: #2A2D33; border: 2px solid #D5D8DD; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
+    <span style="font-size: 14px; font-weight: 600">La tasa del crédito cambia mucho el total</span>
+    <span style="font-size: 13px; line-height: 1.45">Compara la TCEA entre bancos antes de firmar, no solo la cuota.</span>
+    <a href="#" style="font-size: 13px; font-weight: 600; color: #1A56C4">Comparar créditos vehiculares</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1120}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { fuel: 'GLP', plazo: '48' };
+  }
+  renderVals() {
+    const pill = 'min-height: 46px; border-radius: 12px; font-size: 15px; font-weight: 600; color: #2A2D33; background: #FFFFFF; ';
+    const on = 'border: 2px solid #1A56C4;';
+    const off = 'border: 2px solid #D5D8DD;';
+    const fuels = ['GLP', 'Gasolina'].map((l) => ({ label: l, on: this.state.fuel === l ? 'true' : 'false', style: pill + (this.state.fuel === l ? on : off), pick: () => this.setState({ fuel: l }) }));
+    const plazos = ['36', '48', '60'].map((l) => ({ label: l + ' meses', on: this.state.plazo === l ? 'true' : 'false', style: pill + (this.state.plazo === l ? on : off), pick: () => this.setState({ plazo: l }) }));
+    const glp = this.state.fuel === 'GLP';
+    const filas = [
+      { concepto: 'Cuota del crédito', nota: 'Según inicial, plazo y TCEA' },
+      { concepto: glp ? 'Combustible (GLP)' : 'Combustible (gasolina)', nota: glp ? 'Precio GLP de tu zona + conversión prorrateada' : 'Precio gasohol de tu zona' },
+      { concepto: 'Seguro vehicular', nota: 'Obligatorio si es con crédito' },
+      { concepto: 'Mantenimiento', nota: 'Servicios oficiales cada 5,000 km' },
+      { concepto: 'SOAT', nota: 'Pago anual dividido entre 12' },
+      { concepto: 'Cochera y peajes', nota: 'Opcional, si aplica' }
+    ];
+    return { fuel: this.state.fuel, plazo: this.state.plazo, fuels, plazos, filas };
+  }
+}
+</script>
+</body>
+</html>

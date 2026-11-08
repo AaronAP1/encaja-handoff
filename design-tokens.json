@@ -1,0 +1,22 @@
+{
+  "color": {
+    "asfalto": "#2A2D33",
+    "azul": "#1A56C4",
+    "azulOscuro": "#123E94",
+    "blanco": "#FFFFFF",
+    "borde": "#D5D8DD",
+    "divisor": "#E3E5E8",
+    "texto2": "#4E535C",
+    "placeholder": "#E4E9F1",
+    "pista": "#6B7079",
+    "cerro": "#8A9099",
+    "veredicto": { "bien": "#0E6B4E", "justo": "#B54E08", "dificil": "#B3261E" },
+    "terreno": { "arena": "#D8AD6E", "tierra": "#A9763F", "puna": "#7A6250", "nieve": "#F2F4F7", "cejaSelva": "#4E9A5B", "selva": "#2E7B47" }
+  },
+  "font": { "family": "Overpass", "weights": [300, 400, 600, 800, 900], "tracking": { "display": "-0.03em" } },
+  "radius": { "letrero": "8px", "boton": "10px", "tarjeta": "14px", "tarjetaGrande": "18px", "pill": "999px" },
+  "border": { "tarjeta": "2px solid #D5D8DD" },
+  "focus": "3px solid #1A56C4, offset 3px",
+  "layout": { "maxWidth": "1200px", "gutter": "32px", "minTouch": "44px" },
+  "motion": { "heroRotacionMs": 5000, "fundidoMs": 300, "swipeUmbralPx": 110 }
+}

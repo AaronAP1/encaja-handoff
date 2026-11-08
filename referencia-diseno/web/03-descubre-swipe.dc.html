@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Encaja · Descubre qué te gusta</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;800;900&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1A56C4}a:hover{color:#123E94}
+button{font:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible{outline:3px solid #1A56C4;outline-offset:3px}
+</style>
+</helmet>
+<div style="background: #FFFFFF; color: #2A2D33; font-family: Overpass, 'Trebuchet MS', sans-serif; min-height: 980px">
+  <header style="border-bottom: 1px solid #D5D8DD">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px; min-height: 64px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+      <a href="Landing.dc.html" style="font-weight: 900; font-size: 26px; letter-spacing: -0.03em; color: #2A2D33; text-decoration: none">encaja</a>
+      <span style="font-size: 14px; color: #4E535C">Sin registrarte y nadie te va a llamar</span>
+    </div>
+  </header>
+
+  <sc-if value="{{jugando}}" hint-placeholder-val="{{ true }}">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 36px 32px 56px; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+    <main style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 22px">
+      <div style="width: 100%; max-width: 520px; display: flex; flex-direction: column; gap: 6px">
+        <h1 style="margin: 0; font-weight: 900; font-size: clamp(28px, 3.6vw, 42px); line-height: 1; letter-spacing: -0.03em">¿Te gusta o no?</h1>
+        <p style="margin: 0; font-size: 17px; color: #4E535C">Desliza a la derecha si te gusta, a la izquierda si no. Sin pensarlo mucho.</p>
+      </div>
+
+      <div style="position: relative; width: 100%; max-width: 520px; height: 470px">
+        <div aria-hidden="true" style="position: absolute; inset: 14px 14px -10px 14px; border-radius: 22px; background: #E4E9F1; border: 2px solid #D5D8DD"></div>
+        <article onPointerDown="{{down}}" onPointerMove="{{move}}" onPointerUp="{{up}}" onPointerCancel="{{up}}" aria-label="{{card.titulo}}" style="{{cardStyle}}">
+          <div style="position: relative; height: 290px; background: #E4E9F1; display: flex; align-items: flex-end; justify-content: center; overflow: hidden">
+            <div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 46px; background: #8A9099"></div>
+            <svg viewBox="70 60 620 220" style="position: relative; width: 92%; height: auto; margin-bottom: 18px" role="img" aria-label="Silueta de {{card.tipo}}">
+              <path d="{{card.body}}" fill="{{card.color}}" stroke="#2A2D33" stroke-width="2.5"></path>
+              <path d="{{card.win}}" fill="#2F3540" stroke="#2A2D33" stroke-width="2"></path>
+              <path d="{{card.lines}}" fill="none" stroke="#2A2D33" stroke-opacity="0.45" stroke-width="2"></path>
+              <circle cx="200" cy="215" r="38" fill="#1C1E22"></circle><circle cx="200" cy="215" r="19" fill="#B8BDC4"></circle>
+              <circle cx="560" cy="215" r="38" fill="#1C1E22"></circle><circle cx="560" cy="215" r="19" fill="#B8BDC4"></circle>
+            </svg>
+            <span style="{{likeTag}}">Me gusta</span>
+            <span style="{{nopeTag}}">No</span>
+          </div>
+          <div style="padding: 20px 22px; display: flex; flex-direction: column; gap: 6px">
+            <span style="font-size: 14px; font-weight: 600; color: #4E535C">{{card.tipo}}</span>
+            <h2 style="margin: 0; font-size: 26px; font-weight: 900; letter-spacing: -0.02em">{{card.titulo}}</h2>
+            <p style="margin: 0; font-size: 16px; color: #4E535C">{{card.texto}}</p>
+          </div>
+        </article>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 28px; padding-top: 6px">
+        <button type="button" onClick="{{nope}}" aria-label="No me gusta" style="width: 72px; height: 72px; border-radius: 50%; background: #FFFFFF; border: 3px solid #B3261E; color: #B3261E; display: flex; align-items: center; justify-content: center">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+        </button>
+        <span style="font-size: 15px; color: #4E535C; min-width: 70px; text-align: center">{{progreso}}</span>
+        <button type="button" onClick="{{like}}" aria-label="Me gusta" style="width: 72px; height: 72px; border-radius: 50%; background: #0E6B4E; border: 3px solid #0E6B4E; color: #FFFFFF; display: flex; align-items: center; justify-content: center">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"></path></svg>
+        </button>
+      </div>
+    </main>
+
+    <aside aria-live="polite" style="flex: 1 1 320px; max-width: 100%; box-sizing: border-box; border: 2px solid #D5D8DD; border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 16px">
+      <h2 style="margin: 0; font-size: 18px; font-weight: 800">Lo que vamos viendo de ti</h2>
+      <sc-if value="{{sinDatos}}" hint-placeholder-val="{{ false }}">
+        <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #4E535C">Después de un par de autos empezamos a notar tu estilo.</p>
+      </sc-if>
+      <sc-for list="{{barras}}" as="b" hint-placeholder-count="5">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <div style="display: flex; justify-content: space-between; font-size: 15px"><span style="font-weight: 600">{{b.nombre}}</span><span style="color: #4E535C">{{b.pct}}%</span></div>
+          <div style="height: 8px; border-radius: 4px; background: #E3E5E8; overflow: hidden"><div style="{{b.fill}}"></div></div>
+        </div>
+      </sc-for>
+    </aside>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{terminado}}" hint-placeholder-val="{{ false }}">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 48px 32px 64px; display: flex; flex-direction: column; gap: 28px">
+    <div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: stretch">
+      <section style="flex: 1 1 460px; background: #1A56C4; color: #FFFFFF; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+        <span style="font-size: 16px; color: #DCE6F7">Tu perfil</span>
+        <h1 style="margin: 0; font-weight: 900; font-size: clamp(36px, 5vw, 64px); line-height: 0.95; letter-spacing: -0.03em">{{perfil.nombre}}</h1>
+        <p style="margin: 0; font-size: 18px; line-height: 1.5">{{perfil.texto}}</p>
+        <p style="margin: 0; font-size: 16px; color: #DCE6F7">{{segundo}}</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 6px">
+          <sc-for list="{{tiposGusta}}" as="tg" hint-placeholder-count="2">
+            <span style="font-size: 15px; font-weight: 800; padding: 6px 14px; border-radius: 8px; background: #FFFFFF; color: #123E94">{{tg}}</span>
+          </sc-for>
+        </div>
+      </section>
+      <section style="flex: 1 1 340px; border: 2px solid #D5D8DD; border-radius: 18px; padding: 26px; display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 18px; font-weight: 800">Tu estilo, en números</h2>
+        <sc-for list="{{barras}}" as="b" hint-placeholder-count="5">
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <div style="display: flex; justify-content: space-between; font-size: 15px"><span style="font-weight: 600">{{b.nombre}}</span><span style="color: #4E535C">{{b.pct}}%</span></div>
+            <div style="height: 8px; border-radius: 4px; background: #E3E5E8; overflow: hidden"><div style="{{b.fill}}"></div></div>
+          </div>
+        </sc-for>
+      </section>
+    </div>
+
+    <section style="border: 2px solid #D5D8DD; border-radius: 18px; padding: 28px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between">
+      <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 22px; font-weight: 900; letter-spacing: -0.02em">Ya sabemos qué te gusta. Ahora veamos que te sirva.</span>
+        <span style="font-size: 16px; color: #4E535C">Siete preguntas sobre cómo lo vas a usar, y te mostramos los modelos que cumplen las dos cosas.</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px">
+        <a href="Flujo.dc.html" style="display: flex; align-items: center; min-height: 54px; padding: 0 24px; border-radius: 10px; background: #1A56C4; color: #FFFFFF; text-decoration: none; font-weight: 800; font-size: 16px">Seguir con mi uso</a>
+        <button type="button" onClick="{{reiniciar}}" style="min-height: 54px; padding: 0 22px; border-radius: 10px; background: #FFFFFF; border: 2px solid #1A56C4; color: #123E94; font-weight: 800; font-size: 16px">Volver a deslizar</button>
+      </div>
+    </section>
+  </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":980}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.cards = [{"tipo": "SUV", "color": "#B3261E", "titulo": "SUV robusta con rieles", "texto": "Alta, con aros grandes y presencia en la pista.", "rasgos": ["aventura", "familiar"], "body": "M110,192 Q108,162 130,156 L212,146 Q228,144 240,134 L294,94 Q302,88 316,88 L566,88 Q578,88 584,98 L608,146 Q612,152 618,154 L640,158 Q652,162 652,176 L652,205 Q652,215 642,215 L606,215 A46,46 0 0 0 514,215 L246,215 A46,46 0 0 0 154,215 L124,215 Q110,215 110,205 Z", "win": "M252,138 L300,100 Q306,96 316,96 L398,96 L398,138 Z M410,96 L500,96 L500,138 L410,138 Z M512,96 L560,96 Q568,96 572,104 L590,138 L512,138 Z", "lines": "M245,148 L604,148 M404,148 L404,204 M506,148 L506,204 M330,82 L552,82 M116,170 L142,166"}, {"tipo": "Sedán", "color": "#AEB4BC", "titulo": "Sedán sobrio y elegante", "texto": "Líneas limpias, nada que sobre.", "rasgos": ["sobrio"], "body": "M110,194 Q110,170 128,166 L222,156 Q240,154 256,144 L318,104 Q330,96 346,96 L486,96 Q504,96 518,106 L566,146 Q572,150 584,151 L636,156 Q652,158 652,174 L652,205 Q652,215 642,215 L606,215 A46,46 0 0 0 514,215 L246,215 A46,46 0 0 0 154,215 L124,215 Q110,215 110,205 Z", "win": "M268,146 L322,110 Q330,104 344,104 L404,104 L404,146 Z M416,104 L484,104 Q498,104 508,112 L540,146 L416,146 Z", "lines": "M258,156 L600,156 M410,156 L410,204 M118,178 L146,174"}, {"tipo": "Hatchback", "color": "#1A56C4", "titulo": "Hatchback compacto y ágil", "texto": "Se estaciona en cualquier lado y se mueve rápido.", "rasgos": ["urbano", "deportivo"], "body": "M110,194 Q110,170 128,164 L218,152 Q236,150 250,140 L310,100 Q320,92 336,92 L530,92 Q548,92 560,104 L612,152 Q640,156 648,164 L652,178 L652,205 Q652,215 642,215 L606,215 A46,46 0 0 0 514,215 L246,215 A46,46 0 0 0 154,215 L124,215 Q110,215 110,205 Z", "win": "M262,142 L314,106 Q322,100 336,100 L410,100 L410,142 Z M422,100 L528,100 Q540,100 548,108 L582,142 L422,142 Z", "lines": "M254,152 L606,152 M416,152 L416,204 M118,178 L146,174"}, {"tipo": "Pick-up", "color": "#E8EAED", "titulo": "Pick-up doble cabina", "texto": "Tolva para lo que sea y cinco asientos.", "rasgos": ["aventura", "familiar"], "body": "M110,194 Q108,166 130,160 L230,150 Q244,148 252,138 L296,96 Q302,90 312,90 L424,90 Q434,90 436,100 L442,146 L652,146 L652,205 Q652,215 642,215 L606,215 A46,46 0 0 0 514,215 L246,215 A46,46 0 0 0 154,215 L124,215 Q110,215 110,205 Z", "win": "M262,140 L302,102 Q308,98 316,98 L356,98 L356,140 Z M366,98 L424,98 L428,140 L366,140 Z", "lines": "M448,154 L646,154 M361,146 L361,204 M638,150 L638,204 M118,176 L144,172"}, {"tipo": "Van", "color": "#8A9099", "titulo": "Van espaciosa", "texto": "Puertas corredizas y espacio de sobra.", "rasgos": ["familiar", "sobrio"], "body": "M110,198 Q108,168 128,160 L176,150 Q188,146 196,134 L240,72 Q248,62 262,62 L620,62 Q646,62 648,86 L652,200 Q652,215 638,215 L606,215 A46,46 0 0 0 514,215 L246,215 A46,46 0 0 0 154,215 L124,215 Q110,215 110,205 Z", "win": "M206,138 L246,80 Q250,74 260,74 L320,74 L320,138 Z M336,74 L440,74 L440,120 L336,120 Z", "lines": "M330,68 L330,204 M446,68 L446,204 M200,150 L646,150 M118,178 L144,174"}, {"tipo": "SUV", "color": "#F7F8F9", "titulo": "SUV familiar de siete asientos", "texto": "Tercera fila y maletero grande.", "rasgos": ["familiar"], "body": "M110,192 Q108,162 130,156 L212,146 Q228,144 240,134 L294,94 Q302,88 316,88 L566,88 Q578,88 584,98 L608,146 Q612,152 618,154 L640,158 Q652,162 652,176 L652,205 Q652,215 642,215 L606,215 A46,46 0 0 0 514,215 L246,215 A46,46 0 0 0 154,215 L124,215 Q110,215 110,205 Z", "win": "M252,138 L300,100 Q306,96 316,96 L398,96 L398,138 Z M410,96 L500,96 L500,138 L410,138 Z M512,96 L560,96 Q568,96 572,104 L590,138 L512,138 Z", "lines": "M245,148 L604,148 M404,148 L404,204 M506,148 L506,204 M330,82 L552,82 M116,170 L142,166"}, {"tipo": "Sedán", "color": "#8E1B1B", "titulo": "Sedán bajo y deportivo", "texto": "Postura baja y diseño con carácter.", "rasgos": ["deportivo"], "body": "M110,194 Q110,170 128,166 L222,156 Q240,154 256,144 L318,104 Q330,96 346,96 L486,96 Q504,96 518,106 L566,146 Q572,150 584,151 L636,156 Q652,158 652,174 L652,205 Q652,215 642,215 L606,215 A46,46 0 0 0 514,215 L246,215 A46,46 0 0 0 154,215 L124,215 Q110,215 110,205 Z", "win": "M268,146 L322,110 Q330,104 344,104 L404,104 L404,146 Z M416,104 L484,104 Q498,104 508,112 L540,146 L416,146 Z", "lines": "M258,156 L600,156 M410,156 L410,204 M118,178 L146,174"}, {"tipo": "Hatchback", "color": "#2E7B47", "titulo": "Hatchback con look aventurero", "texto": "Compacto, pero un poco más alto y con protecciones.", "rasgos": ["urbano", "aventura"], "body": "M110,194 Q110,170 128,164 L218,152 Q236,150 250,140 L310,100 Q320,92 336,92 L530,92 Q548,92 560,104 L612,152 Q640,156 648,164 L652,178 L652,205 Q652,215 642,215 L606,215 A46,46 0 0 0 514,215 L246,215 A46,46 0 0 0 154,215 L124,215 Q110,215 110,205 Z", "win": "M262,142 L314,106 Q322,100 336,100 L410,100 L410,142 Z M422,100 L528,100 Q540,100 548,108 L582,142 L422,142 Z", "lines": "M254,152 L606,152 M416,152 L416,204 M118,178 L146,174"}, {"tipo": "Pick-up", "color": "#4A4F58", "titulo": "Pick-up con llantas todoterreno", "texto": "Barras, protecciones y llantas para trocha.", "rasgos": ["aventura"], "body": "M110,194 Q108,166 130,160 L230,150 Q244,148 252,138 L296,96 Q302,90 312,90 L424,90 Q434,90 436,100 L442,146 L652,146 L652,205 Q652,215 642,215 L606,215 A46,46 0 0 0 514,215 L246,215 A46,46 0 0 0 154,215 L124,215 Q110,215 110,205 Z", "win": "M262,140 L302,102 Q308,98 316,98 L356,98 L356,140 Z M366,98 L424,98 L428,140 L366,140 Z", "lines": "M448,154 L646,154 M361,146 L361,204 M638,150 L638,204 M118,176 L144,172"}, {"tipo": "Sedán", "color": "#FFFFFF", "titulo": "Sedán práctico", "texto": "Cómodo, económico y sin complicaciones.", "rasgos": ["sobrio", "urbano"], "body": "M110,194 Q110,170 128,166 L222,156 Q240,154 256,144 L318,104 Q330,96 346,96 L486,96 Q504,96 518,106 L566,146 Q572,150 584,151 L636,156 Q652,158 652,174 L652,205 Q652,215 642,215 L606,215 A46,46 0 0 0 514,215 L246,215 A46,46 0 0 0 154,215 L124,215 Q110,215 110,205 Z", "win": "M268,146 L322,110 Q330,104 344,104 L404,104 L404,146 Z M416,104 L484,104 Q498,104 508,112 L540,146 L416,146 Z", "lines": "M258,156 L600,156 M410,156 L410,204 M118,178 L146,174"}];
+    this.state = { i: 0, votos: [], dx: 0, drag: false, salida: 0 };
+    this.x0 = 0;
+  }
+  componentWillUnmount() { clearTimeout(this.t); }
+  decidir(gusta) {
+    if (this.state.salida !== 0 || this.state.i >= this.cards.length) return;
+    this.setState({ salida: gusta ? 1 : -1, dx: gusta ? 640 : -640, drag: false });
+    clearTimeout(this.t);
+    this.t = setTimeout(() => {
+      this.setState({ i: this.state.i + 1, votos: this.state.votos.concat([{ i: this.state.i, gusta }]), dx: 0, salida: 0 });
+    }, 260);
+  }
+  renderVals() {
+    const nombres = { aventura: 'Aventura', urbano: 'Ciudad y agilidad', familiar: 'Espacio y familia', deportivo: 'Deportivo', sobrio: 'Sobrio y elegante' };
+    const perfiles = {
+      aventura: { nombre: 'Explorador', texto: 'Te atraen los autos altos y robustos, listos para salir de la ciudad cuando se pueda.' },
+      urbano: { nombre: 'Urbano ágil', texto: 'Te gustan los autos compactos y fáciles de mover, hechos para el día a día en la ciudad.' },
+      familiar: { nombre: 'Práctico de casa grande', texto: 'Te fijas en el espacio: que entren todos y todo, sin apretarse.' },
+      deportivo: { nombre: 'Con chispa', texto: 'Te atrae el diseño con carácter: bajo, marcado y con presencia.' },
+      sobrio: { nombre: 'Elegante sin vueltas', texto: 'Prefieres líneas limpias y autos que no necesitan llamar la atención.' }
+    };
+    const vistos = {}, gustados = {};
+    Object.keys(nombres).forEach((k) => { vistos[k] = 0; gustados[k] = 0; });
+    const tiposGustaSet = {};
+    this.state.votos.forEach((v) => {
+      const c = this.cards[v.i];
+      c.rasgos.forEach((r) => { vistos[r] += 1; if (v.gusta) gustados[r] += 1; });
+      if (v.gusta) tiposGustaSet[c.tipo] = true;
+    });
+    const barras = Object.keys(nombres).map((k) => {
+      const pct = vistos[k] ? Math.round((gustados[k] / vistos[k]) * 100) : 0;
+      return { k, nombre: nombres[k], pct, fill: 'height: 8px; border-radius: 4px; background: #1A56C4; width: ' + pct + '%;' };
+    }).sort((a, b) => b.pct - a.pct);
+    const terminado = this.state.i >= this.cards.length;
+    const top = barras[0], seg = barras[1];
+    const perfil = top && top.pct > 0 ? perfiles[top.k] : { nombre: 'Difícil de convencer', texto: 'Ningún estilo te terminó de enamorar. Empecemos por cómo lo vas a usar y te mostramos opciones.' };
+    const segundo = seg && seg.pct > 0 ? 'Con un toque de: ' + seg.nombre.toLowerCase() + '.' : '';
+    const card = this.cards[Math.min(this.state.i, this.cards.length - 1)];
+    const dx = this.state.dx;
+    const like = Math.max(0, Math.min(1, dx / 120)), nope = Math.max(0, Math.min(1, -dx / 120));
+    const tag = 'position: absolute; top: 18px; font-size: 22px; font-weight: 900; padding: 4px 14px; border-radius: 8px; border: 3px solid ';
+    return {
+      jugando: !terminado, terminado, card,
+      progreso: Math.min(this.state.i + 1, this.cards.length) + ' de ' + this.cards.length,
+      cardStyle: 'position: absolute; inset: 0; background: #FFFFFF; border: 2px solid #D5D8DD; border-radius: 22px; overflow: hidden; touch-action: none; user-select: none; cursor: grab; transform: translateX(' + dx + 'px) rotate(' + (dx / 22).toFixed(1) + 'deg); transition: ' + (this.state.drag ? 'none' : 'transform 260ms ease') + ';',
+      likeTag: tag + '#0E6B4E; color: #0E6B4E; background: #FFFFFF; left: 18px; transform: rotate(-12deg); opacity: ' + like + ';',
+      nopeTag: tag + '#B3261E; color: #B3261E; background: #FFFFFF; right: 18px; transform: rotate(12deg); opacity: ' + nope + ';',
+      down: (e) => { this.x0 = e.clientX; try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {} this.setState({ drag: true }); },
+      move: (e) => { if (this.state.drag) this.setState({ dx: e.clientX - this.x0 }); },
+      up: () => { if (!this.state.drag) return; const d = this.state.dx; if (d > 110) this.decidir(true); else if (d < -110) this.decidir(false); else this.setState({ dx: 0, drag: false }); },
+      like: () => this.decidir(true), nope: () => this.decidir(false),
+      barras, sinDatos: this.state.votos.length < 2, perfil, segundo,
+      tiposGusta: Object.keys(tiposGustaSet).map((t) => 'Te gustan: ' + t),
+      reiniciar: () => this.setState({ i: 0, votos: [], dx: 0, salida: 0 })
+    };
+  }
+}
+</script>
+</body>
+</html>

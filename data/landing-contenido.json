@@ -1,0 +1,78 @@
+{
+  "pasos": [
+    {
+      "n": "1",
+      "titulo": "Cuéntanos para qué lo usarás",
+      "texto": "Cuántos viajan, por dónde manejas, cuánto recorres y cuánto puedes pagar al mes. Siete preguntas, un minuto."
+    },
+    {
+      "n": "2",
+      "titulo": "Te explicamos el porqué",
+      "texto": "Ves los modelos que encajan contigo y, para cada uno, qué tan bien rinde en tu uso real y por qué."
+    },
+    {
+      "n": "3",
+      "titulo": "Ves cuánto cuesta de verdad",
+      "texto": "Cuota, combustible, seguro y mantenimiento en un solo número mensual. Con GLP o sin GLP."
+    }
+  ],
+  "situaciones": [
+    "Mi primer auto",
+    "Familia grande",
+    "Viajo a provincia",
+    "Lo uso para trabajar"
+  ],
+  "leyendaVeredictos": [
+    {
+      "nivel": "Bien",
+      "significa": "te sirve para eso"
+    },
+    {
+      "nivel": "Justo",
+      "significa": "funciona, con cuidado"
+    },
+    {
+      "nivel": "Difícil",
+      "significa": "no es para eso"
+    }
+  ],
+  "ejemploResultado": [
+    {
+      "uso": "Ciudad y carretera",
+      "nivel": "Bien",
+      "texto": "Suave, silenciosa y con buena potencia para adelantar."
+    },
+    {
+      "uso": "Trocha con barro",
+      "nivel": "Justo",
+      "texto": "Buena altura, pero la caja CVT se esfuerza en barro profundo."
+    },
+    {
+      "uso": "Convertir a GLP",
+      "nivel": "Bien",
+      "texto": "Motor compatible. Pregunta dónde reubican la llanta de repuesto."
+    }
+  ],
+  "peru": [
+    {
+      "donde": "En la costa",
+      "titulo": "GLP y tráfico",
+      "texto": "Te decimos si tu motor se puede convertir, cuánto ahorras y si una automática te cambia el día."
+    },
+    {
+      "donde": "En la subida",
+      "titulo": "Trocha y lluvias",
+      "texto": "Altura al piso, tipo de caja y tracción, evaluados para caminos sin asfaltar."
+    },
+    {
+      "donde": "Sobre 3,000 m",
+      "titulo": "Fuerza en altura",
+      "texto": "Un motor sin turbo pierde potencia arriba. Lo tomamos en cuenta con el auto cargado."
+    },
+    {
+      "donde": "Hacia la selva",
+      "titulo": "Talleres en regiones",
+      "texto": "Importa dónde está el servicio oficial más cercano a donde viajas."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Encaja web · Comparar</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;800;900&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1A56C4}a:hover{color:#123E94}
+button{font:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="background: #FFFFFF; color: #2A2D33; font-family: Overpass, 'Trebuchet MS', sans-serif; min-height: 1060px">
+  <header style="background: #FFFFFF; border-bottom: 1px solid #D5D8DD">
+    <nav style="max-width: 1240px; margin: 0 auto; padding: 0 32px; min-height: 68px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px">
+      <span style="font-family: Overpass, sans-serif; font-weight: 900; font-size: 26px; letter-spacing: -0.03em">encaja</span>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 14px; flex-grow: 1">
+        <a href="Opciones.dc.html" style="color: #4E535C; text-decoration: none">Encontrar auto</a>
+        <a href="Comparar.dc.html" style="color: #2A2D33; text-decoration: none; font-weight: 600">Comparar</a>
+        <a href="Detalle.dc.html" style="color: #4E535C; text-decoration: none">Costo real</a>
+        <a href="#" style="color: #4E535C; text-decoration: none">Cómo evaluamos</a>
+      </div>
+    </nav>
+  </header>
+
+  <div style="max-width: 1240px; margin: 0 auto; padding: 36px 32px 56px; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <h1 style="margin: 0; font-family: Overpass, sans-serif; font-size: 36px; letter-spacing: -0.03em">Comparar para tu uso</h1>
+        <span style="font-size: 15px; color: #4E535C">6–7 pasajeros · Ciudad · Carretera · Trocha · GLP</span>
+      </div>
+      <label style="display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 14px; cursor: pointer">
+        <input type="checkbox" checked="{{soloDif}}" onChange="{{toggleDif}}" style="width: 18px; height: 18px; accent-color: #1A56C4">
+        Mostrar solo diferencias
+      </label>
+    </div>
+
+    <div style="background: #FFFFFF; border: 2px solid #D5D8DD; border-radius: 16px; padding: 18px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+      <span style="font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: #1A56C4; color: #FFFFFF">Según tu perfil</span>
+      <span style="font-size: 15px; line-height: 1.45">Si vas a trocha seguido, el <strong>Toyota Rush</strong>. Si casi todo es ciudad y carretera, la <strong>Honda BR-V</strong> es más cómoda y segura.</span>
+    </div>
+
+    <div style="overflow-x: auto; background: #FFFFFF; border: 2px solid #D5D8DD; border-radius: 14px">
+      <table style="width: 100%; min-width: 760px; border-collapse: collapse; font-size: 14px">
+        <thead>
+          <tr>
+            <th scope="col" style="text-align: left; padding: 18px 20px; width: 22%; font-size: 13px; color: #4E535C; font-weight: 500">Modelo</th>
+            <sc-for list="{{autos}}" as="a" hint-placeholder-count="3">
+              <th scope="col" style="text-align: left; padding: 18px 20px; vertical-align: top">
+                <div style="display: flex; flex-direction: column; gap: 10px">
+                  <div style="height: 96px; border-radius: 10px; background: #E4E9F1; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #4E535C; font-weight: 400">Foto</div>
+                  <span style="font-size: 17px; font-weight: 600">{{a}}</span>
+                </div>
+              </th>
+            </sc-for>
+          </tr>
+        </thead>
+        <tbody>
+          <sc-for list="{{filas}}" as="f" hint-placeholder-count="10">
+            <sc-if value="{{f.grupo}}" hint-placeholder-val="{{ false }}">
+              <tr>
+                <th scope="colgroup" colspan="4" style="text-align: left; padding: 18px 20px 8px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #4E535C; border-top: 1px solid #E3E5E8">{{f.label}}</th>
+              </tr>
+            </sc-if>
+            <sc-if value="{{f.visible}}" hint-placeholder-val="{{ true }}">
+              <tr style="border-top: 1px solid #E3E5E8">
+                <th scope="row" style="text-align: left; padding: 12px 20px; font-weight: 500">{{f.label}}</th>
+                <sc-for list="{{f.celdas}}" as="c" hint-placeholder-count="3">
+                  <td style="padding: 12px 20px">
+                    <span style="{{c.style}}">{{c.txt}}</span>
+                  </td>
+                </sc-for>
+              </tr>
+            </sc-if>
+          </sc-for>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin: 0; font-size: 12px; color: #4E535C">Datos entre corchetes se completan con la ficha oficial de cada versión vendida en Perú.</p>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1060}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { soloDif: false };
+  }
+  renderVals() {
+    const chip = 'display: inline-block; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 999px; ';
+    const tone = { Bien: chip + 'background: #0E6B4E; color: #FFFFFF;', Justo: chip + 'background: #B54E08; color: #FFFFFF;', 'Difícil': chip + 'background: #B3261E; color: #FFFFFF;' };
+    const plain = 'color: #2A2D33;';
+    const soloDif = !!this.state.soloDif;
+    const row = (label, vals, verdict) => {
+      const iguales = vals.every((v) => v === vals[0]);
+      return { grupo: false, label, visible: !(soloDif && iguales), celdas: vals.map((v) => ({ txt: v, style: verdict ? tone[v] : plain })) };
+    };
+    const grupo = (label) => ({ grupo: true, visible: false, label, celdas: [] });
+    const filas = [
+      grupo('Para tu uso'),
+      row('Ciudad', ['Bien', 'Bien', 'Bien'], true),
+      row('Trocha', ['Bien', 'Justo', 'Bien'], true),
+      row('Sierra con carro lleno', ['Justo', 'Justo', 'Justo'], true),
+      row('Convertir a GLP', ['Bien', 'Bien', 'Bien'], true),
+      row('Talleres en provincia', ['Bien', 'Justo', 'Justo'], true),
+      grupo('Costo'),
+      row('Precio desde', ['US$ [ ]', 'US$ [ ]', 'US$ [ ]'], false),
+      row('Total mensual estimado', ['S/ [ ]', 'S/ [ ]', 'S/ [ ]'], false),
+      grupo('Técnico'),
+      row('Motor', ['1.5 L', '1.5 L', '1.5 L'], false),
+      row('Potencia', ['[HP]', '119 HP', '[HP]'], false),
+      row('Transmisión', ['[según versión]', 'CVT', '[según versión]'], false),
+      row('Tracción', ['Trasera', 'Delantera', 'Delantera'], false)
+    ];
+    return { autos: ['Toyota Rush', 'Honda BR-V', 'Mitsubishi Xpander Cross'], filas, soloDif, toggleDif: () => this.setState({ soloDif: !soloDif }) };
+  }
+}
+</script>
+</body>
+</html>

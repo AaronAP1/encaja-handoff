@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Encaja · Honda BR-V en tu vida real</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;600;800;900&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#1A56C4}a:hover{color:#123E94}
+button{font:inherit;cursor:pointer}
+</style>
+</helmet>
+<div style="width: 390px; min-height: 1180px; box-sizing: border-box; background: #FFFFFF; color: #2A2D33; font-family: Overpass, 'Trebuchet MS', sans-serif; display: flex; flex-direction: column; padding: 24px 20px 28px; gap: 20px">
+  <div style="display: flex; align-items: center; gap: 12px">
+    <a href="Resultados.dc.html" aria-label="Volver a resultados" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: #FFFFFF; color: #2A2D33">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+    </a>
+    <span style="font-size: 14px; color: #4E535C">Opción 2 de 3</span>
+  </div>
+
+  <div style="height: 190px; border-radius: 14px; background: #E4E9F1; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #4E535C">Foto oficial del modelo</div>
+
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-family: Overpass, sans-serif; font-size: 28px; letter-spacing: -0.03em">Honda BR-V</h1>
+    <span style="font-size: 14px; color: #4E535C">Desde US$ [precio] · 7 asientos · Gasolina</span>
+  </div>
+
+  <div style="background: #FFFFFF; color: #2A2D33; border: 2px solid #D5D8DD; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 6px">
+    <span style="font-size: 13px; opacity: 0.8">Para tu perfil</span>
+    <span style="font-size: 17px; font-weight: 600; line-height: 1.35">Encaja bien en ciudad y carretera. Tiene 2 cosas que debes saber antes de comprar.</span>
+  </div>
+
+  <section style="display: flex; flex-direction: column; gap: 10px">
+    <h2 style="margin: 0; font-size: 16px; font-weight: 600">En tu vida real</h2>
+    <sc-for list="{{puntos}}" as="p" hint-placeholder-count="5">
+      <div style="background: #FFFFFF; border: 2px solid #D5D8DD; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+          <span style="font-size: 15px; font-weight: 600">{{p.titulo}}</span>
+          <span style="{{p.style}}">{{p.nivel}}</span>
+        </div>
+        <p style="margin: 0; font-size: 14px; line-height: 1.45; color: #33373E">{{p.texto}}</p>
+      </div>
+    </sc-for>
+  </section>
+
+  <section style="background: #FFFFFF; border: 2px solid #D5D8DD; border-radius: 14px">
+    <button type="button" onClick="{{toggle}}" aria-expanded="{{abiertoTxt}}" style="width: 100%; min-height: 52px; padding: 0 14px; border: 0; background: transparent; display: flex; align-items: center; justify-content: space-between; color: #2A2D33; font-size: 15px; font-weight: 600">
+      <span>Ficha técnica completa</span>
+      <span style="font-size: 13px; color: #4E535C; font-weight: 500">{{toggleLabel}}</span>
+    </button>
+    <sc-if value="{{abierto}}" hint-placeholder-val="{{ false }}">
+      <dl style="margin: 0; padding: 0 14px 14px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px; font-size: 13px">
+        <dt style="color: #4E535C">Motor</dt><dd style="margin: 0">1.5 L i-VTEC, 4 cil.</dd>
+        <dt style="color: #4E535C">Potencia</dt><dd style="margin: 0">119 HP @ 6600 rpm</dd>
+        <dt style="color: #4E535C">Torque</dt><dd style="margin: 0">107 lb-pie @ 4300 rpm</dd>
+        <dt style="color: #4E535C">Transmisión</dt><dd style="margin: 0">CVT</dd>
+        <dt style="color: #4E535C">Tracción</dt><dd style="margin: 0">Delantera</dd>
+        <dt style="color: #4E535C">Altura al piso</dt><dd style="margin: 0">[mm según ficha Perú]</dd>
+      </dl>
+    </sc-if>
+  </section>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+    <a href="Resultados.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 14px; background: #FFFFFF; border: 2px solid #1A56C4; color: #2A2D33; text-decoration: none; font-weight: 600; font-size: 15px">Comparar</a>
+    <a href="Costo.dc.html" style="display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 14px; background: #1A56C4; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px">Costo mensual</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1180}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { abierto: false };
+  }
+  renderVals() {
+    const chip = 'flex-shrink: 0; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; ';
+    const tone = { Bien: 'background: #0E6B4E; color: #FFFFFF;', Justo: 'background: #B54E08; color: #FFFFFF;', 'Difícil': 'background: #B3261E; color: #FFFFFF;' };
+    const puntos = [
+      { titulo: 'Ciudad y carretera', nivel: 'Bien', texto: 'Suave y silenciosa. Es de las más potentes de su grupo (119 HP), así que adelanta sin sufrir en la Panamericana.' },
+      { titulo: 'Trocha con barro', nivel: 'Justo', texto: 'Buena altura al piso, pero la caja CVT se esfuerza en subidas lentas y barro profundo. Para trocha ocasional va bien; para trocha diaria hay mejores.' },
+      { titulo: 'Sierra con 7 personas', nivel: 'Justo', texto: 'Motor sin turbo: sobre 3,000 m pierde fuerza y vas a sentirla lenta en subidas largas con el carro lleno.' },
+      { titulo: 'Convertir a GLP', nivel: 'Bien', texto: 'Motor compatible. Ojo: el tanque suele ir donde está la llanta de repuesto. Pregunta dónde la reubican y si se mantiene la garantía.' },
+      { titulo: 'Seguridad en viaje', nivel: 'Bien', texto: 'Las versiones altas traen frenado automático y alerta de carril. Útil en carretera con lluvia y neblina.' },
+      { titulo: 'Talleres en provincia', nivel: 'Justo', texto: 'Red oficial más chica que Toyota. Revisa si hay taller en las ciudades a las que viajas.' }
+    ].map((p) => ({ ...p, style: chip + tone[p.nivel] }));
+    const abierto = !!this.state.abierto;
+    return { puntos, abierto, abiertoTxt: abierto ? 'true' : 'false', toggleLabel: abierto ? 'Ocultar' : 'Ver', toggle: () => this.setState({ abierto: !abierto }) };
+  }
+}
+</script>
+</body>
+</html>

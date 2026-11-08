@@ -1,0 +1,154 @@
+[
+  {
+    "nombre": "Mi primer auto",
+    "titulo": "Tu primer auto: que te dé libertad, no dolores de cabeza",
+    "intro": "En el primer auto casi todos miran el precio de lista y el diseño. Lo que de verdad decide si fue buena compra es cuánto te cuesta cada mes y qué tan fácil es vivir con él.",
+    "tipos": [
+      "Hatchback",
+      "Sedán",
+      "SUV pequeña"
+    ],
+    "yaSabemos": "que es tu primer auto",
+    "faltan": 5,
+    "importa": [
+      {
+        "n": "01",
+        "titulo": "El costo mensual total",
+        "texto": "No solo la cuota: combustible, seguro, mantenimiento y SOAT. Ese número es el que tienes que poder pagar tranquilo."
+      },
+      {
+        "n": "02",
+        "titulo": "Fácil de estacionar",
+        "texto": "Un auto compacto se maneja mejor en cocheras chicas y calles angostas mientras ganas experiencia."
+      },
+      {
+        "n": "03",
+        "titulo": "Automática si hay tráfico",
+        "texto": "Si manejas en hora punta, una caja automática te quita mucho estrés al empezar."
+      },
+      {
+        "n": "04",
+        "titulo": "Repuestos y talleres accesibles",
+        "texto": "Los primeros golpes y servicios cuestan menos en modelos con repuestos comunes."
+      }
+    ],
+    "errores": [
+      "Comprar al límite del presupuesto, sin margen para el seguro y los gastos de placas.",
+      "Elegir por la pantalla o los aros y no por cómo lo vas a usar.",
+      "No cotizar el seguro antes: para conductores con poca experiencia puede costar más."
+    ]
+  },
+  {
+    "nombre": "Familia grande",
+    "titulo": "Familia grande: siete asientos que sirvan de verdad",
+    "intro": "No todos los autos de 7 asientos son iguales. En muchos, la tercera fila es solo para niños, y con ella en uso casi no queda maletero.",
+    "tipos": [
+      "SUV de 7 asientos",
+      "Minivan"
+    ],
+    "yaSabemos": "que viajan varios",
+    "faltan": 5,
+    "importa": [
+      {
+        "n": "01",
+        "titulo": "Tercera fila real",
+        "texto": "Revisamos si caben adultos o solo niños, y para qué trayectos."
+      },
+      {
+        "n": "02",
+        "titulo": "Maletero con todos a bordo",
+        "texto": "Con 7 personas, importa el maletero con la tercera fila en uso, no el plegado."
+      },
+      {
+        "n": "03",
+        "titulo": "Seguridad",
+        "texto": "Airbags, frenado automático y anclajes para sillas de niños."
+      },
+      {
+        "n": "04",
+        "titulo": "Fuerza con el auto lleno",
+        "texto": "Un motor que va bien con dos personas puede sentirse justo con siete y equipaje."
+      }
+    ],
+    "errores": [
+      "Asumir que 7 asientos significa 7 adultos cómodos.",
+      "Olvidar el maletero: con la tercera fila arriba puede no entrar el coche de bebé."
+    ]
+  },
+  {
+    "nombre": "Viajo a provincia",
+    "titulo": "Viajas a provincia: un auto para la carretera que de verdad usas",
+    "intro": "Entre la sierra, la trocha y las lluvias, un auto pensado para Lima puede quedarse corto. Y si viajas lejos, importa dónde está el taller más cercano.",
+    "tipos": [
+      "SUV",
+      "Pick-up",
+      "Minivan elevada"
+    ],
+    "yaSabemos": "que sales de la ciudad",
+    "faltan": 5,
+    "importa": [
+      {
+        "n": "01",
+        "titulo": "Fuerza en altura",
+        "texto": "Sobre 3,000 m los motores sin turbo pierden potencia. Lo tomamos en cuenta según a dónde vas."
+      },
+      {
+        "n": "02",
+        "titulo": "Altura al piso y caja",
+        "texto": "Para trocha y barro importa la altura, la tracción y qué tipo de caja aguanta mejor."
+      },
+      {
+        "n": "03",
+        "titulo": "GLP y autonomía",
+        "texto": "Si recorres mucho, el GLP suele convenir. Calculamos en cuánto tiempo recuperas la conversión."
+      },
+      {
+        "n": "04",
+        "titulo": "Talleres en regiones",
+        "texto": "Revisamos la red de servicio oficial en las zonas a las que viajas."
+      }
+    ],
+    "errores": [
+      "Elegir un motor pequeño sin probarlo cargado en subida.",
+      "Convertir a GLP sin preguntar dónde va la llanta de repuesto."
+    ]
+  },
+  {
+    "nombre": "Lo uso para trabajar",
+    "titulo": "Lo usas para trabajar: que cada kilómetro te cueste menos",
+    "intro": "Si el auto genera ingresos, lo que importa es el costo por kilómetro, cuánto aguanta y cuánto tiempo pasa en el taller.",
+    "tipos": [
+      "Van",
+      "Pick-up",
+      "Sedán"
+    ],
+    "yaSabemos": "que es tu herramienta de trabajo",
+    "faltan": 5,
+    "importa": [
+      {
+        "n": "01",
+        "titulo": "Costo por kilómetro",
+        "texto": "Con muchos km al mes, el GLP y el consumo pesan más que el precio de compra."
+      },
+      {
+        "n": "02",
+        "titulo": "Espacio de carga",
+        "texto": "Lo justo para lo que cargas: más grande de lo necesario también cuesta."
+      },
+      {
+        "n": "03",
+        "titulo": "Durabilidad y repuestos",
+        "texto": "Modelos con repuestos comunes pasan menos días parados."
+      },
+      {
+        "n": "04",
+        "titulo": "Comodidad para muchas horas",
+        "texto": "Asientos, suspensión y aire acondicionado importan si manejas todo el día."
+      }
+    ],
+    "errores": [
+      "Comprar más grande de lo que realmente cargas.",
+      "No calcular el mantenimiento con el kilometraje alto que vas a hacer."
+    ]
+  }
+]
