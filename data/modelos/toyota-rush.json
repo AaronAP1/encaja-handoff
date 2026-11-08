@@ -1,0 +1,51 @@
+{
+  "$schema": "../esquemas/modelo.json",
+  "slug": "toyota-rush",
+  "marca": "Toyota",
+  "nombre": "Toyota Rush",
+  "articulo": "el",
+  "carroceria": "SUV",
+  "versionReferencia": "base",
+  "versiones": [
+    {
+      "id": "base",
+      "nombre": null,
+      "anio": null,
+      "asientos": 7,
+      "terceraFila": null,
+      "motor": {
+        "litros": 1.5,
+        "descripcion": null,
+        "hp": null,
+        "potenciaTexto": null,
+        "torqueTexto": null,
+        "turbo": false,
+        "inyeccion": null
+      },
+      "transmision": null,
+      "traccion": "trasera",
+      "alturaPisoMm": null,
+      "maleteroLitros": { "conTerceraFila": null, "sinTerceraFila": null },
+      "glpCompatible": true,
+      "seguridad": { "airbags": null, "frenadoAutomatico": null, "latinNcap": null },
+      "fuente": {
+        "url": null,
+        "fecha": null,
+        "nota": "Tomado del paquete de diseño (data/modelos-ejemplo.json). Confirmar con la ficha oficial Perú."
+      }
+    }
+  ],
+  "redTalleresRegiones": { "valor": null, "fuente": { "url": null, "fecha": null } },
+  "textos": {
+    "motorResumen": "1.5 L · Tracción trasera",
+    "resumen": "El más preparado para trocha frecuente. Simple, durable y con talleres en todo el país.",
+    "destaca": "es el más preparado para trocha frecuente",
+    "rasgoCorto": "tracción trasera"
+  },
+  "evaluacionEditorial": {
+    "ciudad": { "nivel": "Bien", "porque": "[Porqué por redactar con la ficha oficial]" },
+    "trocha": { "nivel": "Bien", "porque": "Tracción trasera. El más preparado para trocha frecuente." },
+    "talleres": { "nivel": "Bien", "porque": "Simple, durable y con talleres en todo el país." }
+  },
+  "vidaReal": null
+}

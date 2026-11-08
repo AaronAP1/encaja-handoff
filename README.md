@@ -30,7 +30,12 @@ npm run build
 - `app/` — rutas: `/`, `/preguntas`, `/resultados`, `/auto/[slug]`, `/comparar`, `/revisar/[modelo]`, `/situacion/[slug]`, `/descubre`, `/como-evaluamos`, `/terminos`, `/privacidad`.
 - `components/` — base: `Button`, `SignalIcon`, `VerdictChip`, `Card`, `OptionButton`, `ProgressBar`, `KmPost`, `SplitCarHero`, `LiveDeductionsPanel`, `SwipeCard`, `TerrainProfile`, `CarSilhouette`.
 - `lib/` — lógica pura con tests: `reglas.ts` (motor de reglas), `catalogo.ts`, `deducciones.ts`, `contador.ts`, `respuestas.ts` (estado en la URL), `swipe.ts`, `costo.ts`, `situaciones.ts`, `hero.ts`, `senal.ts`. El nombre provisional está en `lib/marca.ts`.
-- `data/*.json` se importa tal cual como datos semilla.
+- `data/modelos/` — **catálogo real**: un JSON por modelo, con una entrada por versión y la fuente de cada dato. Guía de carga en [data/modelos/LEEME.md](data/modelos/LEEME.md). Esquema y validación en `lib/fichas/`.
+- `data/precios.json` — precio de lista por versión, con fecha y fuente (separado porque cambia más seguido).
+- `data/esquemas/` — esquemas JSON generados para autocompletar en el editor (`npm run esquemas`).
+- El resto de `data/*.json` son los datos semilla del paquete de diseño; un test verifica que el catálogo siga fiel a ellos.
+
+`npm run build` corre primero los tests (`prebuild`), así que una ficha mal cargada frena el build.
 
 ### Cómo decide el motor (`lib/reglas.ts`)
 

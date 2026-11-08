@@ -1,144 +1,19 @@
-import detalleBrv from "@/data/detalle-honda-brv.json";
-import modelosEjemplo from "@/data/modelos-ejemplo.json";
-import type { Modelo, Nivel } from "./tipos";
+import { aModelo } from "./fichas/cargar";
+import { FICHAS, PRECIOS } from "./fichas/indice";
+import type { Modelo } from "./tipos";
 
 /**
- * Catálogo tipado. Solo datos que vienen del paquete de diseño:
- * nada de precios, potencias ni alturas inventadas (null = placeholder visible).
- * Completar desde fichas oficiales vendidas en Perú (docs/05-pendientes-y-legal.md).
+ * Catálogo tipado, armado desde data/modelos/*.json (ficha por versión) y data/precios.json.
+ * Nada de precios, potencias ni alturas inventadas: null = placeholder visible.
+ * Cómo cargar una ficha nueva: data/modelos/LEEME.md.
  */
+export const CATALOGO: readonly Modelo[] = FICHAS.map((f) => aModelo(f, PRECIOS));
 
-/** Texto visible cuando falta el porqué de una evaluación editorial */
+/** Texto que se ve cuando falta el porqué de una evaluación editorial */
 export const PORQUE_POR_REDACTAR = "[Porqué por redactar con la ficha oficial]";
-
-function ejemplo(id: "rush" | "brv" | "xpander") {
-  const m = modelosEjemplo.find((x) => x.id === id);
-  if (!m) throw new Error(`Falta ${id} en data/modelos-ejemplo.json`);
-  return m;
-}
-
-const rush = ejemplo("rush");
-const brv = ejemplo("brv");
-const xpander = ejemplo("xpander");
-
-export const CATALOGO: readonly Modelo[] = [
-  {
-    slug: "toyota-rush",
-    marca: "Toyota",
-    nombre: rush.nombre,
-    articulo: "el",
-    version: null,
-    carroceria: "SUV",
-    precioListaUSD: null,
-    asientos: 7,
-    terceraFila: null,
-    motor: { litros: 1.5, descripcion: null, hp: null, potenciaTexto: null, torqueTexto: null, turbo: false, inyeccion: null },
-    transmision: null,
-    traccion: "trasera",
-    alturaPisoMm: null,
-    maleteroLitros: { conTerceraFila: null, sinTerceraFila: null },
-    glpCompatible: true,
-    seguridad: { airbags: null, frenadoAutomatico: null, latinNcap: null },
-    redTalleresRegiones: null,
-    rangoCostoMensual: null,
-    motorResumen: rush.motor,
-    resumen: rush.resumen,
-    destaca: "es el más preparado para trocha frecuente",
-    rasgoCorto: "tracción trasera",
-    editorial: {
-      ciudad: { nivel: "Bien", porque: PORQUE_POR_REDACTAR },
-      trocha: { nivel: "Bien", porque: "Tracción trasera. El más preparado para trocha frecuente." },
-      talleres: { nivel: "Bien", porque: "Simple, durable y con talleres en todo el país." },
-    },
-    vidaReal: null,
-    fuente: { url: null, fecha: null },
-  },
-  {
-    slug: "honda-br-v",
-    marca: "Honda",
-    nombre: brv.nombre,
-    articulo: "la",
-    version: null,
-    carroceria: "SUV",
-    precioListaUSD: null,
-    asientos: 7,
-    terceraFila: "niños",
-    motor: {
-      litros: 1.5,
-      descripcion: detalleBrv.fichaTecnica.motor,
-      hp: 119,
-      potenciaTexto: detalleBrv.fichaTecnica.potencia,
-      torqueTexto: detalleBrv.fichaTecnica.torque,
-      turbo: false,
-      inyeccion: null,
-    },
-    transmision: "CVT",
-    traccion: "delantera",
-    alturaPisoMm: null,
-    maleteroLitros: { conTerceraFila: null, sinTerceraFila: null },
-    glpCompatible: true,
-    seguridad: { airbags: null, frenadoAutomatico: "versiones-altas", latinNcap: null },
-    redTalleresRegiones: null,
-    rangoCostoMensual: null,
-    motorResumen: brv.motor,
-    resumen: brv.resumen,
-    destaca: "es más cómoda y segura",
-    rasgoCorto: "la más cómoda y segura en carretera",
-    editorial: {
-      ciudad: { nivel: "Bien", porque: "Suave y fácil de manejar en tráfico. Su tamaño se maneja bien en cocheras normales." },
-      carretera: { nivel: "Bien", porque: "Silenciosa y estable. Con 119 HP adelanta sin sufrir en la Panamericana." },
-      trocha: { nivel: "Justo", porque: "Buena altura al piso, pero la caja CVT se esfuerza en barro profundo y subidas lentas." },
-      seguridad: { nivel: "Bien", porque: textoVidaReal("Seguridad en viaje") },
-      talleres: { nivel: "Justo", porque: textoVidaReal("Talleres en provincia") },
-    },
-    vidaReal: detalleBrv.puntosVidaReal.map((p) => ({ ...p, nivel: p.nivel as Nivel })),
-    fuente: { url: null, fecha: null },
-  },
-  {
-    slug: "mitsubishi-xpander-cross",
-    marca: "Mitsubishi",
-    nombre: xpander.nombre,
-    articulo: "la",
-    version: null,
-    carroceria: "Crossover",
-    precioListaUSD: null,
-    asientos: 7,
-    terceraFila: null,
-    motor: { litros: 1.5, descripcion: null, hp: null, potenciaTexto: null, torqueTexto: null, turbo: false, inyeccion: null },
-    transmision: null,
-    traccion: "delantera",
-    alturaPisoMm: null,
-    maleteroLitros: { conTerceraFila: null, sinTerceraFila: null },
-    glpCompatible: true,
-    seguridad: { airbags: null, frenadoAutomatico: null, latinNcap: null },
-    redTalleresRegiones: null,
-    rangoCostoMensual: null,
-    motorResumen: xpander.motor,
-    resumen: xpander.resumen,
-    destaca: "tiene suspensión cómoda en ripio",
-    rasgoCorto: "suspensión cómoda en ripio",
-    editorial: {
-      ciudad: { nivel: "Bien", porque: PORQUE_POR_REDACTAR },
-      trocha: { nivel: "Bien", porque: "Suspensión cómoda en ripio y buena altura al piso." },
-      talleres: { nivel: "Justo", porque: PORQUE_POR_REDACTAR },
-    },
-    vidaReal: null,
-    fuente: { url: null, fecha: null },
-  },
-];
-
-function textoVidaReal(titulo: string): string {
-  const p = detalleBrv.puntosVidaReal.find((x) => x.titulo === titulo);
-  if (!p) throw new Error(`Falta "${titulo}" en data/detalle-honda-brv.json`);
-  return p.texto;
-}
 
 export function buscarModelo(slug: string): Modelo | undefined {
   return CATALOGO.find((m) => m.slug === slug);
-}
-
-export function nombreCompleto(m: Modelo): string {
-  return m.nombre;
 }
 
 function normalizar(texto: string): string {
@@ -179,7 +54,7 @@ const TRACCION: Record<Modelo["traccion"], string> = {
 };
 
 export function fichaTecnica(m: Modelo): { etiqueta: string; valor: string }[] {
-  return [
+  const filas = [
     { etiqueta: "Motor", valor: m.motor.descripcion ?? `${m.motor.litros} L` },
     { etiqueta: "Potencia", valor: m.motor.potenciaTexto ?? (m.motor.hp ? `${m.motor.hp} HP` : "[HP]") },
     { etiqueta: "Torque", valor: m.motor.torqueTexto ?? "[torque según ficha Perú]" },
@@ -187,18 +62,22 @@ export function fichaTecnica(m: Modelo): { etiqueta: string; valor: string }[] {
     { etiqueta: "Tracción", valor: TRACCION[m.traccion] },
     { etiqueta: "Altura al piso", valor: m.alturaPisoMm ? `${m.alturaPisoMm} mm` : "[mm según ficha Perú]" },
   ];
+  // los veredictos se calculan con una versión: si se conoce su nombre, se dice cuál
+  return m.version ? [{ etiqueta: "Versión evaluada", valor: m.version }, ...filas] : filas;
 }
 
 export function precioTexto(m: Modelo): string {
-  return m.precioListaUSD ? `US$ ${m.precioListaUSD.toLocaleString("es-PE")}` : "US$ [precio]";
+  return m.precioListaUSD ? `US$ ${m.precioListaUSD.toLocaleString("en-US")}` : "US$ [precio]";
 }
 
 export function potenciaCorta(m: Modelo): string {
   return m.motor.hp ? `${m.motor.hp} HP` : "[HP]";
 }
 
+/** "CVT", "MT o CVT" si las versiones cambian de caja, o "[según versión]" si no se conoce */
 export function transmisionTexto(m: Modelo): string {
-  return m.transmision ?? "[según versión]";
+  const cajas = [...new Set(m.versiones.flatMap((v) => (v.transmision ? [v.transmision] : [])))];
+  return cajas.length ? cajas.join(" o ") : "[según versión]";
 }
 
 export function traccionTexto(m: Modelo): string {

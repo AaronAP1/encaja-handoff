@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import modelosEjemplo from "@/data/modelos-ejemplo.json";
-import { buscarModelo, buscarPorTexto, CATALOGO } from "./catalogo";
+import { buscarPorTexto, CATALOGO } from "./catalogo";
+import { CATALOGO_DISENO, modeloDiseno } from "./fixtures/catalogo-diseno";
 import {
   alternativas,
   dimensionesDelPerfil,
@@ -18,9 +19,10 @@ import {
 import { elegir, respuestasVacias } from "./respuestas";
 import type { Modelo, Respuestas } from "./tipos";
 
-const brv = buscarModelo("honda-br-v")!;
-const rush = buscarModelo("toyota-rush")!;
-const xpander = buscarModelo("mitsubishi-xpander-cross")!;
+// Conformidad con los prototipos: copia fija del catálogo del paquete de diseño
+const brv = modeloDiseno("honda-br-v");
+const rush = modeloDiseno("toyota-rush");
+const xpander = modeloDiseno("mitsubishi-xpander-cross");
 
 /** Perfil del diseño: 6–7 pasajeros, ciudad, carretera, trocha, GLP */
 function perfilDelDiseno(): Respuestas {
@@ -51,17 +53,7 @@ describe("catálogo", () => {
     }
   });
 
-  it("no inventa precios, alturas ni potencias que no están en el paquete", () => {
-    for (const m of CATALOGO) {
-      expect(m.precioListaUSD).toBeNull();
-      expect(m.alturaPisoMm).toBeNull();
-    }
-    expect(rush.motor.hp).toBeNull();
-    expect(xpander.motor.hp).toBeNull();
-    expect(brv.motor.hp).toBe(119);
-  });
-
-  it("todo veredicto lleva un porqué", () => {
+  it("todo veredicto del catálogo vivo lleva un porqué", () => {
     for (const m of CATALOGO)
       for (const d of ORDEN_DIMENSIONES) {
         const e = evaluar(m, d, perfilDelDiseno());
@@ -86,7 +78,7 @@ describe("catálogo", () => {
     expect(buscarPorTexto("brv")?.slug).toBe("honda-br-v");
     expect(buscarPorTexto("  rush ")?.slug).toBe("toyota-rush");
     expect(buscarPorTexto("xpander")?.slug).toBe("mitsubishi-xpander-cross");
-    expect(buscarPorTexto("Suzuki XL7")).toBeUndefined();
+    expect(buscarPorTexto("Modelo Inexistente 9000")).toBeUndefined();
     expect(buscarPorTexto("a")).toBeUndefined();
   });
 });
@@ -147,7 +139,7 @@ describe("reglas declarativas (docs/04)", () => {
 
 describe("resultados", () => {
   it("con el perfil del diseño encajan los 3 modelos, en el orden del diseño", () => {
-    const res = resultados(perfilDelDiseno());
+    const res = resultados(perfilDelDiseno(), CATALOGO_DISENO);
     // Rush suma más; BR-V y Xpander empatan y se desempata por orden del catálogo
     expect(res.map((x) => x.modelo.slug)).toEqual(["toyota-rush", "honda-br-v", "mitsubishi-xpander-cross"]);
   });
@@ -216,12 +208,12 @@ describe("frases", () => {
   });
 
   it("alternativas de /revisar para la BR-V con trocha", () => {
-    const alt = alternativas(brv, perfilDelDiseno());
+    const alt = alternativas(brv, perfilDelDiseno(), CATALOGO_DISENO);
     expect(alt?.titulo).toBe("Si la trocha es frecuente, estas encajan mejor");
     expect(alt?.lista.map((a) => [a.modelo.nombre, a.por])).toEqual([
       ["Toyota Rush", "Trocha: Bien · tracción trasera"],
       ["Mitsubishi Xpander Cross", "Trocha: Bien · suspensión cómoda en ripio"],
     ]);
-    expect(alternativas(rush, perfilDelDiseno())).toBeNull();
+    expect(alternativas(rush, perfilDelDiseno(), CATALOGO_DISENO)).toBeNull();
   });
 });

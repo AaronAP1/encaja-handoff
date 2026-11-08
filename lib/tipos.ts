@@ -115,5 +115,8 @@ export interface Modelo {
   editorial: Partial<Record<Dimension, Veredicto>>;
   /** Puntos "En tu vida real" escritos a mano para la ficha; si falta, se generan */
   vidaReal: { titulo: string; nivel: Nivel; texto: string }[] | null;
+  /** Fuente de la ficha de la versión de referencia */
   fuente: { url: string | null; fecha: string | null };
+  /** Todas las versiones cargadas (los veredictos usan la de referencia) */
+  versiones: { id: string; nombre: string | null; transmision: Transmision | null; precioListaUSD: number | null }[];
 }

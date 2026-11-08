@@ -1,0 +1,43 @@
+{
+  "$schema": "../esquemas/modelo.json",
+  "slug": "",
+  "marca": "",
+  "nombre": "",
+  "articulo": "el",
+  "carroceria": "SUV",
+  "versionReferencia": "",
+  "versiones": [
+    {
+      "id": "",
+      "nombre": null,
+      "anio": null,
+      "asientos": 0,
+      "terceraFila": null,
+      "motor": {
+        "litros": 0,
+        "descripcion": null,
+        "hp": null,
+        "potenciaTexto": null,
+        "torqueTexto": null,
+        "turbo": null,
+        "inyeccion": null
+      },
+      "transmision": null,
+      "traccion": "delantera",
+      "alturaPisoMm": null,
+      "maleteroLitros": { "conTerceraFila": null, "sinTerceraFila": null },
+      "glpCompatible": null,
+      "seguridad": { "airbags": null, "frenadoAutomatico": null, "latinNcap": null },
+      "fuente": { "url": null, "fecha": null, "pagina": null, "nota": null }
+    }
+  ],
+  "redTalleresRegiones": { "valor": null, "fuente": { "url": null, "fecha": null } },
+  "textos": {
+    "motorResumen": "",
+    "resumen": "",
+    "destaca": "",
+    "rasgoCorto": ""
+  },
+  "evaluacionEditorial": {},
+  "vidaReal": null
+}

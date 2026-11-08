@@ -1,0 +1,257 @@
+[
+  {
+    "slug": "toyota-rush",
+    "marca": "Toyota",
+    "nombre": "Toyota Rush",
+    "articulo": "el",
+    "carroceria": "SUV",
+    "versionReferencia": "base",
+    "versiones": [
+      {
+        "id": "base",
+        "nombre": null,
+        "anio": null,
+        "asientos": 7,
+        "terceraFila": null,
+        "motor": {
+          "litros": 1.5,
+          "descripcion": null,
+          "hp": null,
+          "potenciaTexto": null,
+          "torqueTexto": null,
+          "turbo": false,
+          "inyeccion": null
+        },
+        "transmision": null,
+        "traccion": "trasera",
+        "alturaPisoMm": null,
+        "maleteroLitros": {
+          "conTerceraFila": null,
+          "sinTerceraFila": null
+        },
+        "glpCompatible": true,
+        "seguridad": {
+          "airbags": null,
+          "frenadoAutomatico": null,
+          "latinNcap": null
+        },
+        "fuente": {
+          "url": null,
+          "fecha": null,
+          "nota": "Tomado del paquete de diseño (data/modelos-ejemplo.json). Confirmar con la ficha oficial Perú."
+        }
+      }
+    ],
+    "redTalleresRegiones": {
+      "valor": null,
+      "fuente": {
+        "url": null,
+        "fecha": null
+      }
+    },
+    "textos": {
+      "motorResumen": "1.5 L · Tracción trasera",
+      "resumen": "El más preparado para trocha frecuente. Simple, durable y con talleres en todo el país.",
+      "destaca": "es el más preparado para trocha frecuente",
+      "rasgoCorto": "tracción trasera"
+    },
+    "evaluacionEditorial": {
+      "ciudad": {
+        "nivel": "Bien",
+        "porque": "[Porqué por redactar con la ficha oficial]"
+      },
+      "trocha": {
+        "nivel": "Bien",
+        "porque": "Tracción trasera. El más preparado para trocha frecuente."
+      },
+      "talleres": {
+        "nivel": "Bien",
+        "porque": "Simple, durable y con talleres en todo el país."
+      }
+    },
+    "vidaReal": null
+  },
+  {
+    "slug": "honda-br-v",
+    "marca": "Honda",
+    "nombre": "Honda BR-V",
+    "articulo": "la",
+    "carroceria": "SUV",
+    "versionReferencia": "base",
+    "versiones": [
+      {
+        "id": "base",
+        "nombre": null,
+        "anio": null,
+        "asientos": 7,
+        "terceraFila": "niños",
+        "motor": {
+          "litros": 1.5,
+          "descripcion": "1.5 L i-VTEC, 4 cilindros",
+          "hp": 119,
+          "potenciaTexto": "119 HP @ 6600 rpm",
+          "torqueTexto": "107 lb-pie @ 4300 rpm",
+          "turbo": false,
+          "inyeccion": null
+        },
+        "transmision": "CVT",
+        "traccion": "delantera",
+        "alturaPisoMm": null,
+        "maleteroLitros": {
+          "conTerceraFila": null,
+          "sinTerceraFila": null
+        },
+        "glpCompatible": true,
+        "seguridad": {
+          "airbags": null,
+          "frenadoAutomatico": "versiones-altas",
+          "latinNcap": null
+        },
+        "fuente": {
+          "url": null,
+          "fecha": null,
+          "nota": "Tomado del paquete de diseño (data/detalle-honda-brv.json). Confirmar con la ficha oficial Perú."
+        }
+      }
+    ],
+    "redTalleresRegiones": {
+      "valor": null,
+      "fuente": {
+        "url": null,
+        "fecha": null
+      }
+    },
+    "textos": {
+      "motorResumen": "1.5 L · 119 HP · CVT",
+      "resumen": "La más cómoda y segura en carretera. La caja CVT no es ideal para barro seguido.",
+      "destaca": "es más cómoda y segura",
+      "rasgoCorto": "la más cómoda y segura en carretera"
+    },
+    "evaluacionEditorial": {
+      "ciudad": {
+        "nivel": "Bien",
+        "porque": "Suave y fácil de manejar en tráfico. Su tamaño se maneja bien en cocheras normales."
+      },
+      "carretera": {
+        "nivel": "Bien",
+        "porque": "Silenciosa y estable. Con 119 HP adelanta sin sufrir en la Panamericana."
+      },
+      "trocha": {
+        "nivel": "Justo",
+        "porque": "Buena altura al piso, pero la caja CVT se esfuerza en barro profundo y subidas lentas."
+      },
+      "seguridad": {
+        "nivel": "Bien",
+        "porque": "Las versiones altas traen frenado automático y alerta de carril. Útil con lluvia y neblina."
+      },
+      "talleres": {
+        "nivel": "Justo",
+        "porque": "Red oficial más chica que Toyota. Revisa si hay taller en las ciudades a las que viajas."
+      }
+    },
+    "vidaReal": [
+      {
+        "titulo": "Ciudad y carretera",
+        "nivel": "Bien",
+        "texto": "Suave y silenciosa. Es de las más potentes de su grupo (119 HP), así que adelanta sin sufrir en la Panamericana."
+      },
+      {
+        "titulo": "Trocha con barro",
+        "nivel": "Justo",
+        "texto": "Buena altura al piso, pero la caja CVT se esfuerza en subidas lentas y barro profundo. Para trocha ocasional va bien."
+      },
+      {
+        "titulo": "Sierra con 7 personas",
+        "nivel": "Justo",
+        "texto": "Motor sin turbo: sobre 3,000 m pierde fuerza y la sentirás lenta en subidas largas con el carro lleno."
+      },
+      {
+        "titulo": "Convertir a GLP",
+        "nivel": "Bien",
+        "texto": "Motor compatible. El tanque suele ir donde está el repuesto: pregunta dónde lo reubican y si se mantiene la garantía."
+      },
+      {
+        "titulo": "Seguridad en viaje",
+        "nivel": "Bien",
+        "texto": "Las versiones altas traen frenado automático y alerta de carril. Útil con lluvia y neblina."
+      },
+      {
+        "titulo": "Talleres en provincia",
+        "nivel": "Justo",
+        "texto": "Red oficial más chica que Toyota. Revisa si hay taller en las ciudades a las que viajas."
+      }
+    ]
+  },
+  {
+    "slug": "mitsubishi-xpander-cross",
+    "marca": "Mitsubishi",
+    "nombre": "Mitsubishi Xpander Cross",
+    "articulo": "la",
+    "carroceria": "Crossover",
+    "versionReferencia": "base",
+    "versiones": [
+      {
+        "id": "base",
+        "nombre": null,
+        "anio": null,
+        "asientos": 7,
+        "terceraFila": null,
+        "motor": {
+          "litros": 1.5,
+          "descripcion": null,
+          "hp": null,
+          "potenciaTexto": null,
+          "torqueTexto": null,
+          "turbo": false,
+          "inyeccion": null
+        },
+        "transmision": null,
+        "traccion": "delantera",
+        "alturaPisoMm": null,
+        "maleteroLitros": {
+          "conTerceraFila": null,
+          "sinTerceraFila": null
+        },
+        "glpCompatible": true,
+        "seguridad": {
+          "airbags": null,
+          "frenadoAutomatico": null,
+          "latinNcap": null
+        },
+        "fuente": {
+          "url": null,
+          "fecha": null,
+          "nota": "Tomado del paquete de diseño (data/modelos-ejemplo.json). Confirmar con la ficha oficial Perú."
+        }
+      }
+    ],
+    "redTalleresRegiones": {
+      "valor": null,
+      "fuente": {
+        "url": null,
+        "fecha": null
+      }
+    },
+    "textos": {
+      "motorResumen": "1.5 L · Tracción delantera",
+      "resumen": "Suspensión cómoda en ripio y buena altura al piso. Más minivan que SUV.",
+      "destaca": "tiene suspensión cómoda en ripio",
+      "rasgoCorto": "suspensión cómoda en ripio"
+    },
+    "evaluacionEditorial": {
+      "ciudad": {
+        "nivel": "Bien",
+        "porque": "[Porqué por redactar con la ficha oficial]"
+      },
+      "trocha": {
+        "nivel": "Bien",
+        "porque": "Suspensión cómoda en ripio y buena altura al piso."
+      },
+      "talleres": {
+        "nivel": "Justo",
+        "porque": "[Porqué por redactar con la ficha oficial]"
+      }
+    },
+    "vidaReal": null
+  }
+]

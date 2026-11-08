@@ -1,0 +1,51 @@
+{
+  "$schema": "../esquemas/modelo.json",
+  "slug": "mitsubishi-xpander-cross",
+  "marca": "Mitsubishi",
+  "nombre": "Mitsubishi Xpander Cross",
+  "articulo": "la",
+  "carroceria": "Crossover",
+  "versionReferencia": "base",
+  "versiones": [
+    {
+      "id": "base",
+      "nombre": null,
+      "anio": null,
+      "asientos": 7,
+      "terceraFila": null,
+      "motor": {
+        "litros": 1.5,
+        "descripcion": null,
+        "hp": null,
+        "potenciaTexto": null,
+        "torqueTexto": null,
+        "turbo": false,
+        "inyeccion": null
+      },
+      "transmision": null,
+      "traccion": "delantera",
+      "alturaPisoMm": null,
+      "maleteroLitros": { "conTerceraFila": null, "sinTerceraFila": null },
+      "glpCompatible": true,
+      "seguridad": { "airbags": null, "frenadoAutomatico": null, "latinNcap": null },
+      "fuente": {
+        "url": null,
+        "fecha": null,
+        "nota": "Tomado del paquete de diseño (data/modelos-ejemplo.json). Confirmar con la ficha oficial Perú."
+      }
+    }
+  ],
+  "redTalleresRegiones": { "valor": null, "fuente": { "url": null, "fecha": null } },
+  "textos": {
+    "motorResumen": "1.5 L · Tracción delantera",
+    "resumen": "Suspensión cómoda en ripio y buena altura al piso. Más minivan que SUV.",
+    "destaca": "tiene suspensión cómoda en ripio",
+    "rasgoCorto": "suspensión cómoda en ripio"
+  },
+  "evaluacionEditorial": {
+    "ciudad": { "nivel": "Bien", "porque": "[Porqué por redactar con la ficha oficial]" },
+    "trocha": { "nivel": "Bien", "porque": "Suspensión cómoda en ripio y buena altura al piso." },
+    "talleres": { "nivel": "Justo", "porque": "[Porqué por redactar con la ficha oficial]" }
+  },
+  "vidaReal": null
+}

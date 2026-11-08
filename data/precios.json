@@ -1,0 +1,26 @@
+{
+  "$schema": "./esquemas/precios.json",
+  "precios": [
+    {
+      "modelo": "toyota-rush",
+      "version": "base",
+      "precioListaUSD": null,
+      "rangoCostoMensual": null,
+      "fuente": { "url": null, "fecha": null }
+    },
+    {
+      "modelo": "honda-br-v",
+      "version": "base",
+      "precioListaUSD": null,
+      "rangoCostoMensual": null,
+      "fuente": { "url": null, "fecha": null }
+    },
+    {
+      "modelo": "mitsubishi-xpander-cross",
+      "version": "base",
+      "precioListaUSD": null,
+      "rangoCostoMensual": null,
+      "fuente": { "url": null, "fecha": null }
+    }
+  ]
+}

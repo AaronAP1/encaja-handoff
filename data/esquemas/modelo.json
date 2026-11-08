@@ -1,0 +1,609 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "Igual al nombre del archivo, sin .json"
+    },
+    "marca": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nombre": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Nombre completo con marca: \"Honda BR-V\""
+    },
+    "articulo": {
+      "type": "string",
+      "enum": [
+        "el",
+        "la"
+      ],
+      "description": "\"el\" Toyota Rush, \"la\" Honda BR-V"
+    },
+    "carroceria": {
+      "type": "string",
+      "enum": [
+        "SUV",
+        "Sedán",
+        "Hatchback",
+        "Pick-up",
+        "Van",
+        "Crossover"
+      ]
+    },
+    "versionReferencia": {
+      "type": "string",
+      "description": "id de la versión con la que se calculan los veredictos"
+    },
+    "versiones": {
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$",
+            "description": "Identificador estable dentro del modelo: \"base\", \"ex-cvt\", \"lx-mt\"…"
+          },
+          "nombre": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Nombre comercial de la versión (\"EX CVT\"); null si aún no se confirma"
+          },
+          "anio": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 2000,
+                "maximum": 2100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Año modelo según la ficha"
+          },
+          "asientos": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 9
+          },
+          "terceraFila": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "adultos",
+                  "niños"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Para quién sirve la tercera fila; null si no tiene o no se sabe"
+          },
+          "motor": {
+            "type": "object",
+            "properties": {
+              "litros": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 8,
+                "description": "Cilindrada en litros: 1.5"
+              },
+              "descripcion": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Como en la ficha: \"1.5 L i-VTEC, 4 cilindros\""
+              },
+              "hp": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 1000
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Potencia en HP (solo el número)"
+              },
+              "potenciaTexto": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Como en la ficha, con rpm: \"119 HP @ 6600 rpm\""
+              },
+              "torqueTexto": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Como en la ficha: \"107 lb-pie @ 4300 rpm\""
+              },
+              "turbo": {
+                "description": "Decide el veredicto de sierra",
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "inyeccion": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "indirecta",
+                      "directa"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Indirecta suele permitir convertir a GLP"
+              }
+            },
+            "required": [
+              "litros",
+              "descripcion",
+              "hp",
+              "potenciaTexto",
+              "torqueTexto",
+              "turbo",
+              "inyeccion"
+            ],
+            "additionalProperties": false
+          },
+          "transmision": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "MT",
+                  "AT",
+                  "CVT",
+                  "DCT"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "traccion": {
+            "type": "string",
+            "enum": [
+              "delantera",
+              "trasera",
+              "4x4",
+              "AWD"
+            ]
+          },
+          "alturaPisoMm": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 100,
+                "maximum": 400
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Altura al piso en MILÍMETROS (no centímetros)"
+          },
+          "maleteroLitros": {
+            "type": "object",
+            "properties": {
+              "conTerceraFila": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 3000
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Litros con la tercera fila en uso"
+              },
+              "sinTerceraFila": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 3000
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Litros con la tercera fila plegada (o sin tercera fila)"
+              }
+            },
+            "required": [
+              "conTerceraFila",
+              "sinTerceraFila"
+            ],
+            "additionalProperties": false
+          },
+          "glpCompatible": {
+            "description": "Si el motor admite conversión a GLP según la marca o la ficha",
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "seguridad": {
+            "type": "object",
+            "properties": {
+              "airbags": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 12
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "frenadoAutomatico": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "si",
+                      "no",
+                      "versiones-altas"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "latinNcap": {
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 5
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Estrellas Latin NCAP (latinncap.com)"
+              }
+            },
+            "required": [
+              "airbags",
+              "frenadoAutomatico",
+              "latinNcap"
+            ],
+            "additionalProperties": false
+          },
+          "fuente": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Enlace a la ficha o página oficial de donde sale el dato"
+              },
+              "fecha": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "description": "Día en que consultaste la fuente (AAAA-MM-DD)"
+              },
+              "pagina": {
+                "description": "Página del PDF, si aplica",
+                "anyOf": [
+                  {
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "nota": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "url",
+              "fecha"
+            ],
+            "additionalProperties": false,
+            "description": "Ficha oficial Perú de esta versión"
+          }
+        },
+        "required": [
+          "id",
+          "nombre",
+          "anio",
+          "asientos",
+          "terceraFila",
+          "motor",
+          "transmision",
+          "traccion",
+          "alturaPisoMm",
+          "maleteroLitros",
+          "glpCompatible",
+          "seguridad",
+          "fuente"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Una entrada por versión vendida en Perú"
+    },
+    "redTalleresRegiones": {
+      "type": "object",
+      "properties": {
+        "valor": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fuente": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Enlace a la ficha o página oficial de donde sale el dato"
+            },
+            "fecha": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Día en que consultaste la fuente (AAAA-MM-DD)"
+            },
+            "pagina": {
+              "description": "Página del PDF, si aplica",
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "nota": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "url",
+            "fecha"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "valor",
+        "fuente"
+      ],
+      "additionalProperties": false,
+      "description": "Talleres oficiales fuera de Lima (es de la marca, no de la versión)"
+    },
+    "textos": {
+      "type": "object",
+      "properties": {
+        "motorResumen": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Línea bajo el nombre en resultados: \"1.5 L · 119 HP · CVT\""
+        },
+        "resumen": {
+          "type": "string",
+          "minLength": 1
+        },
+        "destaca": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Para /comparar: \"… la Honda BR-V es más cómoda y segura\""
+        },
+        "rasgoCorto": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Para alternativas en /revisar: \"Trocha: Bien · tracción trasera\""
+        }
+      },
+      "required": [
+        "motorResumen",
+        "resumen",
+        "destaca",
+        "rasgoCorto"
+      ],
+      "additionalProperties": false
+    },
+    "evaluacionEditorial": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "enum": [
+          "ciudad",
+          "carretera",
+          "trocha",
+          "sierra",
+          "glp",
+          "trafico",
+          "seguridad",
+          "talleres"
+        ]
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "nivel": {
+            "type": "string",
+            "enum": [
+              "Bien",
+              "Justo",
+              "Difícil"
+            ]
+          },
+          "porque": {
+            "type": "string",
+            "minLength": 5,
+            "description": "Por qué, en palabras simples"
+          }
+        },
+        "required": [
+          "nivel",
+          "porque"
+        ],
+        "additionalProperties": false
+      },
+      "description": "Criterio propio. Nunca contradice a las reglas cuando la ficha alcanza (lo verifica un test)"
+    },
+    "vidaReal": {
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "titulo": {
+                "type": "string",
+                "minLength": 1
+              },
+              "nivel": {
+                "type": "string",
+                "enum": [
+                  "Bien",
+                  "Justo",
+                  "Difícil"
+                ]
+              },
+              "texto": {
+                "type": "string",
+                "minLength": 5
+              }
+            },
+            "required": [
+              "titulo",
+              "nivel",
+              "texto"
+            ],
+            "additionalProperties": false
+          }
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Puntos \"En tu vida real\" escritos a mano; null = se generan desde las reglas"
+    }
+  },
+  "required": [
+    "slug",
+    "marca",
+    "nombre",
+    "articulo",
+    "carroceria",
+    "versionReferencia",
+    "versiones",
+    "redTalleresRegiones",
+    "textos",
+    "evaluacionEditorial",
+    "vidaReal"
+  ],
+  "additionalProperties": false
+}
