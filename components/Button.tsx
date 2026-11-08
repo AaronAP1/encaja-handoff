@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ComponentProps } from "react";
 
-export type Variante = "primario" | "secundario" | "letrero" | "claro";
+export type Variante = "primario" | "secundario" | "letrero" | "claro" | "contorno";
 export type Tamano = "md" | "lg" | "xl";
 
 const BASE =
@@ -18,6 +18,8 @@ const VARIANTES: Record<Variante, string> = {
     "border-[3px] border-white bg-asfalto text-white shadow-[0_0_0_3px_#2A2D33] hover:bg-[#1f2126] hover:text-white",
   // blanco sobre fondo oscuro (nav de la portada)
   claro: "bg-white text-asfalto hover:bg-placeholder hover:text-asfalto",
+  // solo borde blanco sobre fondo oscuro (lado "Que te guste" del hero)
+  contorno: "border-[3px] border-white bg-transparent text-white hover:bg-white/10 hover:text-white",
 };
 
 const TAMANOS: Record<Tamano, string> = {

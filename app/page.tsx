@@ -19,9 +19,9 @@ const SWATCH: Record<string, string> = {
   "Hacia la selva": "#2E7B47",
 };
 
-function IconoCorazon({ size = 20 }: { size?: number }) {
+function IconoCorazon({ size = 20, className }: { size?: number; className?: string }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className={className}>
       <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z" />
     </svg>
   );
@@ -53,20 +53,40 @@ export default function Portada() {
         <div className="relative flex flex-grow flex-col items-center justify-center gap-[22px] px-4 pb-11 pt-1 sm:px-6">
           <SplitCarHero />
 
-          <ButtonLink href="/preguntas" variante="letrero" tamano="xl" className="max-w-full !text-lg sm:!text-xl">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.6} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M12 3v18" />
-              <path d="M12 3l-5 5" />
-              <path d="M12 3l5 5" />
-            </svg>
-            Encuentra el que cumple las dos
-          </ButtonLink>
-          <span className="rounded-letrero bg-asfalto px-3.5 py-1.5 text-center text-[15px] text-white">
-            1 minuto, sin registrarte y nadie te va a llamar
-          </span>
-          <Link href="/descubre" className="flex min-h-11 items-center text-center text-base font-bold text-white hover:text-white">
-            ¿No sabes qué comprar? Desliza autos y te armamos tu perfil
-          </Link>
+          {/* Botones partidos como el titular: "Que te guste" a la izquierda, "Y que te sirva" a la derecha */}
+          <div className="grid w-full max-w-[1200px] grid-cols-2">
+            <div className="flex flex-col items-end gap-2.5 pr-3 text-right sm:pr-7">
+              <ButtonLink href="/descubre" variante="contorno" tamano="xl" className="!px-4 !text-[15px] sm:!px-[30px] sm:!text-lg lg:!text-xl">
+                <IconoCorazon size={22} className="hidden shrink-0 sm:block" />
+                No sé qué comprar
+              </ButtonLink>
+              <span className="text-sm text-[#C9CCD2] sm:text-[15px]">Desliza autos y te armamos tu perfil</span>
+            </div>
+            <div className="flex flex-col items-start gap-2.5 pl-3 sm:pl-7">
+              <ButtonLink href="/preguntas" variante="letrero" tamano="xl" className="!px-4 !text-[15px] sm:!px-[30px] sm:!text-lg lg:!text-xl">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.6}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                  className="hidden shrink-0 sm:block"
+                >
+                  <path d="M12 3v18" />
+                  <path d="M12 3l-5 5" />
+                  <path d="M12 3l5 5" />
+                </svg>
+                Encuentra el que cumple las dos
+              </ButtonLink>
+              <span className="rounded-letrero bg-asfalto px-3.5 py-1.5 text-sm text-white sm:text-[15px]">
+                1 minuto, sin registrarte y nadie te va a llamar
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 
