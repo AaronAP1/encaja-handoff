@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { HeaderNav } from "@/components/SiteHeader";
 import { CATALOGO } from "@/lib/catalogo";
-import { MERCADO, ORDEN_TIPOS, totalModelos, type TipoMercado } from "@/lib/mercado";
+import { enumerar, MARCAS_PENDIENTES, MERCADO, ORDEN_TIPOS, totalModelos, type TipoMercado } from "@/lib/mercado";
 import { ListaModelos } from "./ListaModelos";
 
 export const metadata: Metadata = {
@@ -36,9 +36,9 @@ export default async function PaginaModelos({ searchParams }: { searchParams: Pr
         <p className="m-0 max-w-[80ch] text-xs leading-normal text-texto-2">
           Lista consultada el {fechas.length > 1 ? `${fechas[0]} y el ${fechas.at(-1)}` : fechas[0]}. No incluye camiones.{" "}
           {porConcesionario.length
-            ? `Para ${porConcesionario.join(", ")} la lista sale de un concesionario multimarca, porque su sitio no se pudo consultar. `
+            ? `Para ${enumerar(porConcesionario)} la lista sale de un concesionario multimarca, porque su sitio no se pudo consultar. `
             : ""}
-          Aún no están Ford, MG, Jeep, Volkswagen ni Peugeot. Nombres y tipos son los que publica cada marca; precios y fichas técnicas se
+          Aún no están {enumerar(MARCAS_PENDIENTES, "ni")}. Nombres y tipos son los que publica cada marca; precios y fichas técnicas se
           muestran solo en los modelos evaluados.
         </p>
       </main>

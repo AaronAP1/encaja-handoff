@@ -3,6 +3,272 @@
   "actualizado": "2026-11-08",
   "marcas": [
     {
+      "marca": "BAIC",
+      "sitio": "https://baic.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "BJ30",
+          "tipo": "SUV",
+          "url": "https://baic.pe/modelos/bj30",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "BJ30 HEV",
+          "tipo": "SUV",
+          "url": "https://baic.pe/modelos/bj30-hev",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "BJ40",
+          "tipo": "SUV",
+          "url": "https://baic.pe/modelos/bj40",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "BJ40 Pro",
+          "tipo": "SUV",
+          "url": "https://baic.pe/modelos/bj40-pro",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "BJ60",
+          "tipo": "SUV",
+          "url": "https://baic.pe/modelos/bj60",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "U5 Plus",
+          "tipo": "Sedán",
+          "url": "https://baic.pe/modelos/u5-plus",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X35",
+          "tipo": "SUV",
+          "url": "https://baic.pe/modelos/x35",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X55",
+          "tipo": "SUV",
+          "url": "https://baic.pe/modelos/x55",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X7",
+          "tipo": "SUV",
+          "url": "https://baic.pe/modelos/x7",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "BMW",
+      "sitio": "https://www.bmw.com.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "iX",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/ix",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "iX2",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/ix2",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "iX3",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/bmw-ix3",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "M135i",
+          "tipo": "Hatchback",
+          "url": "https://www.bmw.com.pe/m135i",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "M2",
+          "tipo": "Otro",
+          "url": "https://www.bmw.com.pe/bmw-m2",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "M240i",
+          "tipo": "Otro",
+          "url": "https://www.bmw.com.pe/bmw-m240i",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "M3",
+          "tipo": "Sedán",
+          "url": "https://www.bmw.com.pe/m3",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "M4",
+          "tipo": "Otro",
+          "url": "https://www.bmw.com.pe/m4",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "M440",
+          "tipo": "Otro",
+          "url": "https://www.bmw.com.pe/bmw-m440",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "M5",
+          "tipo": "Sedán",
+          "url": "https://www.bmw.com.pe/m5",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Serie 1",
+          "tipo": "Hatchback",
+          "url": "https://www.bmw.com.pe/serie-1",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Serie 2",
+          "tipo": "Otro",
+          "url": "https://www.bmw.com.pe/serie-2",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Serie 3",
+          "tipo": "Sedán",
+          "url": "https://www.bmw.com.pe/serie-3",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Serie 3 Híbrido",
+          "tipo": "Sedán",
+          "url": "https://www.bmw.com.pe/3-hibrido",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Serie 4",
+          "tipo": "Otro",
+          "url": "https://www.bmw.com.pe/serie-4",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Serie 4 Gran Coupé",
+          "tipo": "Otro",
+          "url": "https://www.bmw.com.pe/bmw-serie-4-gc",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Serie 5",
+          "tipo": "Sedán",
+          "url": "https://www.bmw.com.pe/serie-5",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X1",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/x1",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X1 Híbrido Enchufable",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/bmw-x1-hibrido-enchufable",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X2",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/x2",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X3",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/x3",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X3 Híbrido",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/x3-hibrido",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X3 M",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/x3-m",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X4",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/x4",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X5",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/x5",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X5 Híbrido",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/x5-hibrido",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X5 M",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/x5m",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X6",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/x6",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X6 M",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/x6m",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "X7",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/x7",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "XM",
+          "tipo": "SUV",
+          "url": "https://www.bmw.com.pe/bmw-xm",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Z4",
+          "tipo": "Otro",
+          "url": "https://www.bmw.com.pe/Z4",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
       "marca": "BYD",
       "sitio": "https://www.byd.com/pe",
       "fuente": {
@@ -283,6 +549,7 @@
       "sitio": "https://www.chevrolet.com.pe",
       "fuente": {
         "tipo": "concesionario",
+        "concesionario": "Wigo Motors",
         "fecha": "2026-11-08"
       },
       "modelos": [
@@ -349,127 +616,245 @@
       ]
     },
     {
-      "marca": "DFSK",
-      "sitio": "https://www.dfsk.com.pe",
+      "marca": "CUPRA",
+      "sitio": "https://www.cupraofficial.pe",
       "fuente": {
-        "tipo": "concesionario",
+        "tipo": "oficial",
         "fecha": "2026-11-08"
       },
       "modelos": [
         {
-          "nombre": "Glory 500",
+          "nombre": "Formentor",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://www.cupraofficial.pe/autos/formentor",
           "slugEncaja": null
         },
         {
-          "nombre": "Glory 560 Pro",
+          "nombre": "León",
+          "tipo": "Hatchback",
+          "url": "https://www.cupraofficial.pe/autos/leon",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Terramar",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://www.cupraofficial.pe/autos/terramar",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "DFSK",
+      "sitio": "https://www.dfsk.com.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "C35 Cargo Panel",
+          "tipo": "Van",
+          "url": "https://www.dfsk.com.pe/vehiculo/c35-cargo-panel",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "E5 Plus",
+          "tipo": "SUV",
+          "url": "https://www.dfsk.com.pe/vehiculo/dfsk-e5",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Glory 380",
+          "tipo": "Minivan",
+          "url": "https://www.dfsk.com.pe/vehiculo/glory-380",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Glory 500",
+          "tipo": "SUV",
+          "url": "https://www.dfsk.com.pe/vehiculo/glory-500",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Glory 560",
+          "tipo": "SUV",
+          "url": "https://www.dfsk.com.pe/vehiculo/glory-560",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Glory 580",
+          "tipo": "SUV",
+          "url": "https://www.dfsk.com.pe/vehiculo/glory-580",
           "slugEncaja": null
         },
         {
           "nombre": "Glory 600",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://www.dfsk.com.pe/vehiculo/glory-600",
           "slugEncaja": null
         }
       ]
     },
     {
       "marca": "Geely",
-      "sitio": null,
+      "sitio": "https://geely.pe",
       "fuente": {
-        "tipo": "concesionario",
+        "tipo": "oficial",
         "fecha": "2026-11-08"
       },
       "modelos": [
         {
           "nombre": "Cityray",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://geely.pe/car/cityray/",
           "slugEncaja": null
         },
         {
           "nombre": "Coolray",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://geely.pe/car/venta-de-camionetas-new-coolray-geely-peru/",
           "slugEncaja": null
         },
         {
-          "nombre": "Emgrand Sedán",
+          "nombre": "Coolray Lite",
+          "tipo": "SUV",
+          "url": "https://geely.pe/car/venta-de-camionetas-coolray-lite-geely-peru/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Emgrand",
           "tipo": "Sedán",
-          "url": null,
+          "url": "https://geely.pe/car/emgrand/",
           "slugEncaja": null
         },
         {
           "nombre": "EX5",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://geely.pe/car/ex5/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "EX5 EM-i",
+          "tipo": "SUV",
+          "url": "https://geely.pe/car/ex5-em-i/",
           "slugEncaja": null
         },
         {
           "nombre": "GX3 Pro",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://geely.pe/car/gx3-pro/",
           "slugEncaja": null
         },
         {
           "nombre": "Monjaro EM-i",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://geely.pe/car/monjaro-em-i/",
           "slugEncaja": null
         },
         {
           "nombre": "Okavango",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://geely.pe/car/okavango-nuevo/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Okavango Mild Hybrid",
+          "tipo": "SUV",
+          "url": "https://geely.pe/car/okavango-mild-hybrid/",
           "slugEncaja": null
         },
         {
           "nombre": "Starray",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://geely.pe/car/starray/",
           "slugEncaja": null
         }
       ]
     },
     {
-      "marca": "Haval (GWM)",
-      "sitio": "https://www.gwm.pe",
+      "marca": "GWM",
+      "sitio": "https://www.gwm.com.pe",
       "fuente": {
-        "tipo": "concesionario",
+        "tipo": "oficial",
         "fecha": "2026-11-08"
       },
       "modelos": [
         {
-          "nombre": "H6",
+          "nombre": "Haval H6",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://www.gwm.com.pe/vehiculo/haval/nuevo-h6/",
           "slugEncaja": null
         },
         {
-          "nombre": "H6 Híbrido",
+          "nombre": "Haval H6 Híbrida",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://www.gwm.com.pe/vehiculo/haval/new-h6-hibrida/",
           "slugEncaja": null
         },
         {
-          "nombre": "H9",
+          "nombre": "Haval H7",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://www.gwm.com.pe/vehiculo/haval/h7/",
           "slugEncaja": null
         },
         {
-          "nombre": "Jolion",
+          "nombre": "Haval H7 Híbrida",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://www.gwm.com.pe/vehiculo/haval/new-h7-hibrida/",
           "slugEncaja": null
         },
         {
-          "nombre": "Tank",
+          "nombre": "Haval H9",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://www.gwm.com.pe/vehiculo/haval/new-h9/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Haval Jolion",
+          "tipo": "SUV",
+          "url": "https://www.gwm.com.pe/vehiculo/haval/new-jolion/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Haval Jolion Max",
+          "tipo": "SUV",
+          "url": "https://www.gwm.com.pe/vehiculo/haval/new-jolion-max/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Poer",
+          "tipo": "Pick-up",
+          "url": "https://www.gwm.com.pe/vehiculo/poer/poer-automatica/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Poer 2.4",
+          "tipo": "Pick-up",
+          "url": "https://www.gwm.com.pe/vehiculo/poer/new-poer-24-mecanica/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tank 300",
+          "tipo": "SUV",
+          "url": "https://www.gwm.com.pe/vehiculo/tank/tank-300/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Tank 500",
+          "tipo": "SUV",
+          "url": "https://www.gwm.com.pe/vehiculo/tank/tank-500/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Wingle 5",
+          "tipo": "Pick-up",
+          "url": "https://www.gwm.com.pe/vehiculo/poer/wingle-5-diesel/",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Wingle 7",
+          "tipo": "Pick-up",
+          "url": "https://www.gwm.com.pe/vehiculo/poer/wingle-7-diesel/",
           "slugEncaja": null
         }
       ]
@@ -867,6 +1252,53 @@
       ]
     },
     {
+      "marca": "Lexus",
+      "sitio": null,
+      "fuente": {
+        "tipo": "concesionario",
+        "concesionario": "Mitsui Automotriz",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "GX 550 Overtrail",
+          "tipo": "SUV",
+          "url": "https://www.mitsuiautomotriz.com/lexus/gx550overtrail",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "LBX",
+          "tipo": "SUV",
+          "url": "https://www.mitsuiautomotriz.com/lexus/lbx",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "LX 600",
+          "tipo": "SUV",
+          "url": "https://www.mitsuiautomotriz.com/lexus/camioneta-lx-600",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "NX 350",
+          "tipo": "SUV",
+          "url": "https://www.mitsuiautomotriz.com/lexus/suv-nx-350",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "RX 350h",
+          "tipo": "SUV",
+          "url": "https://www.mitsuiautomotriz.com/lexus/camioneta-rx-350h",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "UX 300",
+          "tipo": "SUV",
+          "url": "https://www.mitsuiautomotriz.com/lexus/suv-ux-300",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
       "marca": "Mazda",
       "sitio": "https://www.mazda.pe",
       "fuente": {
@@ -926,6 +1358,46 @@
           "nombre": "MX-5",
           "tipo": "Otro",
           "url": "https://www.mazda.pe/vehiculo/mazda-mx-5/",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "MINI",
+      "sitio": "https://www.mini.com.pe",
+      "fuente": {
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "Aceman",
+          "tipo": "SUV",
+          "url": "https://www.mini.com.pe/mini-aceman",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Cabrio",
+          "tipo": "Otro",
+          "url": "https://www.mini.com.pe/cabrio",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Cooper 3 puertas",
+          "tipo": "Hatchback",
+          "url": "https://www.mini.com.pe/cooper-3-puertas",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Cooper 5 puertas",
+          "tipo": "Hatchback",
+          "url": "https://www.mini.com.pe/cooper-5-puertas",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Countryman",
+          "tipo": "SUV",
+          "url": "https://www.mini.com.pe/countryman",
           "slugEncaja": null
         }
       ]
@@ -1157,29 +1629,75 @@
       ]
     },
     {
-      "marca": "Soueast",
-      "sitio": null,
+      "marca": "SEAT",
+      "sitio": "https://www.seat.pe",
       "fuente": {
-        "tipo": "concesionario",
+        "tipo": "oficial",
+        "fecha": "2026-11-08"
+      },
+      "modelos": [
+        {
+          "nombre": "Arona",
+          "tipo": "SUV",
+          "url": "https://www.seat.pe/autos/arona",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Ateca",
+          "tipo": "SUV",
+          "url": "https://www.seat.pe/autos/ateca/introduccion",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Ibiza",
+          "tipo": "Hatchback",
+          "url": "https://www.seat.pe/autos/ibiza/introduccion",
+          "slugEncaja": null
+        }
+      ]
+    },
+    {
+      "marca": "Soueast",
+      "sitio": "https://soueast.com.pe",
+      "fuente": {
+        "tipo": "oficial",
         "fecha": "2026-11-08"
       },
       "modelos": [
         {
           "nombre": "S06",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://soueast.com.pe/modelo/s06",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "S06 PHEV",
+          "tipo": "SUV",
+          "url": "https://soueast.com.pe/modelo/s06-phev",
           "slugEncaja": null
         },
         {
           "nombre": "S07",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://soueast.com.pe/modelo/s07",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "S07M",
+          "tipo": "SUV",
+          "url": "https://soueast.com.pe/modelo/s07m",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "S08 PHEV",
+          "tipo": "SUV",
+          "url": "https://soueast.com.pe/modelo/s08-phev",
           "slugEncaja": null
         },
         {
           "nombre": "S09",
           "tipo": "SUV",
-          "url": null,
+          "url": "https://soueast.com.pe/modelo/s09",
           "slugEncaja": null
         }
       ]

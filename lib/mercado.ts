@@ -28,3 +28,16 @@ export function anclaMarca(marca: string): string {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 }
+
+/**
+ * Marcas que se venden en Perú y aún no están en el listado: su sitio rechaza la consulta
+ * automática o tiene el certificado vencido (ver scraping/LEEME.md). Un test verifica que
+ * ninguna esté ya en data/mercado.json, para que la nota de /modelos no quede desactualizada.
+ */
+export const MARCAS_PENDIENTES: readonly string[] = ["Ford", "MG", "Jeep", "Volkswagen", "Peugeot", "Mercedes-Benz", "Audi", "Volvo"];
+
+/** "A, B y C" (o "A, B ni C") */
+export function enumerar(xs: readonly string[], conjuncion: "y" | "ni" = "y"): string {
+  if (xs.length <= 1) return xs.join("");
+  return `${xs.slice(0, -1).join(", ")} ${conjuncion} ${xs.at(-1)}`;
+}

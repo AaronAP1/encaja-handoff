@@ -77,6 +77,12 @@ class Marca:
     tipo_por_ruta: Callable[[str], str | None] = lambda ruta: None
     #: regex de rutas que calzan con el patrón pero no son modelos (listados, landings)
     excluir: str = ""
+    #: sufijos a quitar del slug ("…-geely-peru")
+    sufijos_slug: tuple[str, ...] = ()
+    #: qué segmento de la ruta es el modelo (-1: el último; 1 en "/autos/arona/introduccion")
+    segmento_slug: int = -1
+    #: si la lista no viene del sitio de la marca sino de un concesionario, su nombre
+    concesionario: str = ""
 
 
 def _tipo_chevrolet(ruta: str) -> str | None:
@@ -105,6 +111,35 @@ def _tipo_mitsubishi(ruta: str) -> str | None:
     if "/sedan" in ruta:
         return "Sedán"
     return None
+
+
+def _ultimo(ruta: str) -> str:
+    return ruta.rstrip("/").rsplit("/", 1)[-1].lower()
+
+
+def _tipo_bmw(ruta: str) -> str | None:
+    """BMW usa rutas planas (/x3, /serie-3, /m135i). Coupés y roadsters quedan sin tipo (se publican como "Otro")."""
+    seg = _ultimo(ruta).removeprefix("bmw-")
+    if re.match(r"(x\d|ix|xm)", seg):
+        return "SUV"
+    if re.fullmatch(r"serie-[357]|m[35]|\d-hibrido", seg):
+        return "Sedán"
+    if re.fullmatch(r"serie-1|m1\d\di", seg):
+        return "Hatchback"
+    return None
+
+
+def _tipo_lexus(ruta: str) -> str | None:
+    seg = _ultimo(ruta)
+    if re.match(r"(camioneta|suv)-|(lbx|ux|nx|rx|gx|lx)(\b|\d)", seg):
+        return "SUV"
+    if re.match(r"(sedan-)?(es|is|ls)(\b|\d)", seg):
+        return "Sedán"
+    return None
+
+
+def _tipo_dfsk(ruta: str) -> str | None:
+    return "SUV" if re.fullmatch(r"(dfsk-)?e5", _ultimo(ruta)) else None
 
 
 MARCAS: dict[str, Marca] = {
@@ -270,6 +305,102 @@ MARCAS: dict[str, Marca] = {
         portadas=("/pe/",),
         patron_modelo=r"^/pe/(\d{4}/)?(avenger|commander|compass|gladiator|grand-cherokee|renegade|wrangler|cherokee)\.html$",
     ),
+    # ── Segunda tanda, revisada el 2026-11-08: robots.txt permite todo lo que se lee ──
+    "geely": Marca(
+        clave="geely",
+        nombre="Geely",
+        base="https://geely.pe",
+        sitemaps=("/producto-sitemap.xml",),  # la portada repite modelos con rutas viejas (ex5-emi)
+        portadas=(),
+        patron_modelo=r"^/car/[a-z0-9-]+/?$",
+        prefijos_slug=("venta-de-camionetas-",),
+        sufijos_slug=("-geely-peru",),
+    ),
+    "baic": Marca(
+        clave="baic",
+        nombre="BAIC",
+        base="https://baic.pe",
+        sitemaps=("/sitemap.xml",),
+        portadas=("/",),
+        patron_modelo=r"^/modelos/[a-z0-9-]+/?$",
+    ),
+    "gwm": Marca(
+        # Great Wall Motors: Haval, Tank, Poer y Wingle en un solo sitio
+        clave="gwm",
+        nombre="GWM",
+        base="https://www.gwm.com.pe",
+        sitemaps=(),  # su robots.txt apunta a otro dominio
+        portadas=("/", "/haval/", "/tank/", "/poer/", "/ora/"),
+        patron_modelo=r"^/vehiculo/(haval|tank|poer|ora|wey)/[a-z0-9-]+/?$",
+    ),
+    "soueast": Marca(
+        clave="soueast",
+        nombre="Soueast",
+        base="https://soueast.com.pe",
+        sitemaps=(),
+        portadas=("/",),
+        patron_modelo=r"^/modelo/[a-z0-9-]+/?$",
+    ),
+    "dfsk": Marca(
+        clave="dfsk",
+        nombre="DFSK",
+        base="https://www.dfsk.com.pe",
+        sitemaps=(),  # su sitemap no lista vehículos
+        portadas=("/linea-glory", "/comerciales"),
+        patron_modelo=r"^/vehiculo/[a-z0-9-]+/?$",
+        prefijos_slug=("dfsk-",),
+        tipo_por_ruta=_tipo_dfsk,
+    ),
+    "bmw": Marca(
+        clave="bmw",
+        nombre="BMW",
+        base="https://www.bmw.com.pe",
+        sitemaps=(),  # su sitemap apunta a un servidor de pruebas que no responde
+        portadas=("/",),
+        patron_modelo=r"(?i)^/(bmw-)?(serie-\d(-gc)?|x\d(m|-m|-hibrido(-enchufable)?)?|ix\d?|z4|m\d{1,3}i?|xm|\d-hibrido)$",
+        prefijos_slug=("bmw-",),
+        tipo_por_ruta=_tipo_bmw,
+    ),
+    "mini": Marca(
+        clave="mini",
+        nombre="MINI",
+        base="https://www.mini.com.pe",
+        sitemaps=(),  # idem BMW (mismo importador)
+        portadas=("/",),
+        # las versiones John Cooper Works (/jcw-…) y las landings (/mini-electric) no son modelos aparte
+        patron_modelo=r"^/(cooper-[35]-puertas|cabrio|countryman|mini-aceman)$",
+        prefijos_slug=("mini-",),
+    ),
+    "seat": Marca(
+        clave="seat",
+        nombre="SEAT",
+        base="https://www.seat.pe",
+        sitemaps=(),
+        portadas=("/",),
+        patron_modelo=r"^/autos/[a-z0-9-]+(/introduccion)?/?$",
+        segmento_slug=1,
+    ),
+    "cupra": Marca(
+        clave="cupra",
+        nombre="CUPRA",
+        base="https://www.cupraofficial.pe",
+        sitemaps=(),
+        portadas=("/",),
+        patron_modelo=r"^/autos/[a-z0-9-]+/?$",
+    ),
+    "lexus": Marca(
+        # lexus.pe tiene el certificado inválido: se usa la lista de su concesionario Mitsui Automotriz
+        clave="lexus",
+        nombre="Lexus",
+        base="https://www.mitsuiautomotriz.com",
+        sitemaps=(),  # su sitemap apunta al servidor de pruebas (qa.)
+        portadas=("/lexus",),
+        patron_modelo=r"^/lexus/[a-z0-9-]+$",
+        excluir=r"/(locales|promociones)$",
+        prefijos_slug=("camioneta-", "suv-", "sedan-"),
+        tipo_por_ruta=_tipo_lexus,
+        concesionario="Mitsui Automotriz",
+    ),
 }
 
 #: Palabras clave por tipo. Se busca primero lo más específico (frases con guion).
@@ -286,18 +417,24 @@ TIPOS_POR_PALABRA: list[tuple[str, tuple[str, ...]]] = [
             "montana", "s10", "bt-50", "oroch", "hunter", "f70", "t6", "t8", "t9", "poer", "wingle", "shark", "gladiator", "himla",
         ),
     ),
-    ("Van", ("hiace", "apv", "furgon", "van", "vans", "h100", "staria", "master", "minibus", "supervan", "refine", "sunray", "urvan", "solaty")),
-    ("Minivan", ("avanza", "innova", "ertiga", "carens", "carnival")),
+    (
+        "Van",
+        ("hiace", "apv", "furgon", "van", "vans", "h100", "staria", "master", "minibus", "supervan", "refine", "sunray", "urvan", "solaty", "c35"),
+    ),
+    ("Minivan", ("avanza", "innova", "ertiga", "carens", "carnival", "glory-330", "glory-380")),
     ("Sedán", (
         "sedan", "corolla", "dzire", "city", "civic", "accord", "camry",
         "accent", "elantra", "sonata", "soluto", "k3", "versa", "sentra", "sail", "onix", "arrizo", "arrizo5", "alsvin", "emgrand", "logan",
-        "301", "wrx", "seal", "han",
+        "301", "wrx", "seal", "han", "u5",
     )),
     ("Sedán", ("grand-i10-sedan", "emgrand-sedan")),
     ("Hatchback", ("mazda-3-sport", "mazda3-sport", "impreza")),
     (
         "Hatchback",
-        ("agya", "baleno", "celerio", "s-presso", "alto", "swift", "hatchback", "hatch", "grand-i10", "picanto", "kwid", "march", "mazda2", "seagull", "dolphin"),
+        (
+            "agya", "baleno", "celerio", "s-presso", "alto", "swift", "hatchback", "hatch", "grand-i10", "picanto", "kwid", "march", "mazda2",
+            "seagull", "dolphin", "cooper", "ibiza", "leon",
+        ),
     ),
     (
         "SUV",
@@ -319,6 +456,9 @@ TIPOS_POR_PALABRA: list[tuple[str, tuple[str, ...]]] = [
             "yuan", "song", "atto", "sealion", "tang", "boreal", "kardian", "trailseeker", "evoltis", "e-30x",
             "c5", "c5shs", "c7", "c7shs", "j5", "j5ev", "j7", "j8",
             "avenger", "commander", "compass", "grand-cherokee", "renegade", "wrangler", "cherokee",
+            # segunda tanda (Geely, BAIC, GWM, Soueast, MINI, SEAT, CUPRA)
+            "cityray", "gx3", "ex5", "bj30", "bj40", "bj60", "x35", "x55", "h7", "h9", "s06", "s07", "s07m", "s08", "s09",
+            "countryman", "aceman", "arona", "ateca", "tarraco", "formentor", "terramar",
         ),
     ),
 ]
@@ -854,10 +994,20 @@ class ModeloDescubierto:
 
 
 def slug_de(marca: Marca, ruta: str) -> str:
-    seg = re.sub(r"\.html?$", "", ruta.rstrip("/").rsplit("/", 1)[-1].lower())
+    segmentos = [x for x in ruta.split("/") if x]
+    try:
+        seg = segmentos[marca.segmento_slug]
+    except IndexError:
+        seg = segmentos[-1] if segmentos else ""
+    seg = re.sub(r"\.html?$", "", seg.lower())
     for p in marca.prefijos_slug:
         if seg.startswith(p):
-            return seg[len(p):]
+            seg = seg[len(p):]
+            break
+    for sufijo in marca.sufijos_slug:
+        if seg.endswith(sufijo):
+            seg = seg[: -len(sufijo)]
+            break
     return seg
 
 
@@ -944,9 +1094,12 @@ def descubrir(cliente: Cliente, marca: Marca, avisos: list[str] | None = None) -
             for enlace in ex.enlaces:
                 considerar(enlace, r.url)
 
-    modelos = []
+    modelos, slugs = [], set()
     for ruta, url in sorted(encontrados.items()):
         slug = slug_de(marca, ruta)
+        if not slug or slug in slugs:  # dos rutas al mismo modelo ("/autos/arona" y "/autos/arona/introduccion")
+            continue
+        slugs.add(slug)
         tipo, motivo = clasificar(marca, ruta, slug)
         modelos.append(ModeloDescubierto(marca.clave, slug, url, tipo, motivo))
     return modelos

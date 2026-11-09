@@ -37,13 +37,15 @@ EVALUADOS = {
 #: Sitio oficial de las marcas que solo se conocen por el concesionario (None = no enlazar)
 SITIOS_SIN_LISTADO = {
     "chevrolet": "https://www.chevrolet.com.pe",
-    "greatwall": "https://www.gwm.pe",
-    "haval": "https://www.gwm.pe",
+    "gwm": "https://www.gwm.com.pe",
     "dfsk": "https://www.dfsk.com.pe",
-    "geely": None,  # certificado inválido: no se envía a la gente ahí
-    "soueastauto": None,
+    "geely": "https://geely.pe",
+    "soueast": "https://soueast.com.pe",
 }
-NOMBRE_MARCA = {"haval": "Haval (GWM)", "dfsk": "DFSK", "soueastauto": "Soueast", "jac": "JAC", "mg": "MG", "byd": "BYD"}
+#: Cómo llama Wigo a marcas que aquí tienen otra clave (Haval y Great Wall son del grupo GWM)
+ALIAS_WIGO = {"greatwall": "gwm", "haval": "gwm", "soueastauto": "soueast"}
+NOMBRE_MARCA = {"gwm": "GWM", "dfsk": "DFSK", "soueast": "Soueast", "jac": "JAC", "mg": "MG", "byd": "BYD"}
+WIGO = "Wigo Motors"
 
 #: Nombres que la regla general no escribe bien
 NOMBRES = {
@@ -54,7 +56,38 @@ NOMBRES = {
     ("jac", "e-30x"): "E30X",
     ("byd", "song-plus-dmi"): "Song Plus DM-i",
     ("changan", "new-van"): "New Van",
+    # segunda tanda
+    ("geely", "okavango-nuevo"): "Okavango",
+    ("gwm", "new-poer-24-mecanica"): "Poer 2.4",
+    ("gwm", "nueva-poer-24-automatica"): "Poer 2.4",
+    ("gwm", "poer-automatica"): "Poer",
+    ("gwm", "poer-mecanica"): "Poer",
+    ("gwm", "wingle-5-diesel"): "Wingle 5",
+    ("gwm", "wingle-5-gasolina"): "Wingle 5",
+    ("gwm", "wingle-7-diesel"): "Wingle 7",
+    ("dfsk", "e5"): "E5 Plus",
+    ("bmw", "serie-4-gc"): "Serie 4 Gran Coupé",
+    ("bmw", "3-hibrido"): "Serie 3 Híbrido",
+    ("bmw", "x3-m"): "X3 M",
+    ("bmw", "x5m"): "X5 M",
+    ("bmw", "x6m"): "X6 M",
+    ("bmw", "ix"): "iX",
+    ("bmw", "ix2"): "iX2",
+    ("bmw", "ix3"): "iX3",
+    ("bmw", "m135i"): "M135i",
+    ("bmw", "m240i"): "M240i",
+    ("bmw", "xm"): "XM",
+    ("cupra", "leon"): "León",
+    ("lexus", "lbx"): "LBX",
+    ("lexus", "ux-300"): "UX 300",
+    ("lexus", "nx-350"): "NX 350",
+    ("lexus", "rx-350h"): "RX 350h",
+    ("lexus", "gx550overtrail"): "GX 550 Overtrail",
+    ("lexus", "lx-600"): "LX 600",
 }
+
+#: Línea de la marca que va delante del nombre según la ruta (GWM vende Haval, Tank, Poer y Wingle)
+PREFIJO_POR_RUTA = {"gwm": (("/vehiculo/haval/", "Haval "),)}
 
 FRASES = {
     "x-trail": "X-Trail", "xtrail": "X-Trail", "s-presso": "S-Presso", "santa-fe": "Santa Fe", "land-cruiser": "Land Cruiser",
@@ -142,7 +175,12 @@ def main() -> int:
             tipo = tipo_publico(d["tipo"])
             if not tipo:
                 continue
-            nombre = NOMBRES.get((clave, d["slug"])) or nombre_bonito(d["slug"], marca.nombre)
+            nombre = NOMBRES.get((clave, d["slug"]))
+            if not nombre:
+                nombre = nombre_bonito(d["slug"], marca.nombre)
+                for ruta, prefijo in PREFIJO_POR_RUTA.get(clave, ()):
+                    if ruta in d["url"] and not nombre.startswith(prefijo):
+                        nombre = prefijo + nombre
             if nombre.lower() in vistos:  # el mismo modelo con dos páginas (vieja y nueva)
                 continue
             vistos.add(nombre.lower())
@@ -150,14 +188,12 @@ def main() -> int:
         if not modelos:
             continue
         con_listado.add(clave_marca(marca.nombre))
-        marcas.append(
-            {
-                "marca": marca.nombre,
-                "sitio": marca.base + (marca.portadas[0] if marca.portadas and marca.portadas[0] != "/" else ""),
-                "fuente": {"tipo": "oficial", "fecha": fecha_de(archivo)},
-                "modelos": sorted(modelos, key=lambda m: m["nombre"].lower()),
-            }
-        )
+        portada = marca.portadas[0] if marca.portadas else ""
+        if marca.concesionario:  # el sitio es del concesionario, no de la marca: no se enlaza como "sitio de la marca"
+            sitio, fuente = None, {"tipo": "concesionario", "concesionario": marca.concesionario, "fecha": fecha_de(archivo)}
+        else:  # la portada solo cuenta si es la sección de Perú de un sitio global (kia.com/pe, byd.com/pe)
+            sitio, fuente = marca.base + (portada if portada.startswith("/pe") else ""), {"tipo": "oficial", "fecha": fecha_de(archivo)}
+        marcas.append({"marca": marca.nombre, "sitio": sitio, "fuente": fuente, "modelos": sorted(modelos, key=lambda m: m["nombre"].lower())})
 
     # Marcas que no se pudieron leer en su sitio: sus modelos según el concesionario
     wigo = SALIDA / "wigo" / "versiones.json"
@@ -165,7 +201,7 @@ def main() -> int:
         por_marca: dict[str, list[dict]] = {}
         for v in json.loads(wigo.read_text(encoding="utf-8")):
             k = clave_marca(v["marca"])
-            k = "haval" if k == "greatwall" else k  # Wigo lista modelos Haval también bajo "Great Wall" (grupo GWM)
+            k = ALIAS_WIGO.get(k, k)
             if k in con_listado or k.startswith("omoda"):
                 continue
             por_marca.setdefault(k, []).append(v)
@@ -175,7 +211,6 @@ def main() -> int:
             for v in versiones:
                 tipo = tipo_publico(v["tipo"])
                 slug = re.sub(r"[^a-z0-9]+", "-", v["modelo"].lower()).strip("-")
-                slug = re.sub(r"^haval-", "", slug) if k == "haval" else slug
                 nombre = NOMBRES.get((k, slug)) or nombre_bonito(slug, nombre_marca)
                 if not tipo or nombre.lower() in vistos:
                     continue
@@ -185,7 +220,7 @@ def main() -> int:
                 {
                     "marca": nombre_marca,
                     "sitio": SITIOS_SIN_LISTADO.get(k),
-                    "fuente": {"tipo": "concesionario", "fecha": fecha_de(wigo)},
+                    "fuente": {"tipo": "concesionario", "concesionario": WIGO, "fecha": fecha_de(wigo)},
                     "modelos": sorted(modelos, key=lambda m: m["nombre"].lower()),
                 }
             )

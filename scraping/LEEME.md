@@ -1,6 +1,6 @@
 # Scraper de fichas oficiales
 
-`scraper.py` recorre los sitios oficiales en Perú de **Toyota, Honda, Suzuki, Mitsubishi, Jetour, Hyundai, Kia, Nissan, Changan, Chery, BYD, Renault, Mazda, Subaru, JAC y Omoda | Jaecoo**, descubre todos sus modelos y, para los **SUV y sedanes**, baja la página del modelo y los PDF que enlaza (fichas técnicas, catálogos). De cada uno saca **candidatos** de datos: precio, HP, torque, cilindrada, caja, tracción, altura al piso, asientos, airbags, turbo, GLP y frenado automático, siempre con el texto de alrededor y la fuente (URL y página del PDF).
+`scraper.py` recorre los sitios oficiales en Perú de **Toyota, Honda, Suzuki, Mitsubishi, Jetour, Hyundai, Kia, Nissan, Changan, Chery, BYD, Renault, Mazda, Subaru, JAC, Omoda | Jaecoo, Geely, BAIC, GWM (Haval, Tank, Poer, Wingle), Soueast, DFSK, BMW, MINI, SEAT y CUPRA**, más **Lexus** desde la lista de su concesionario Mitsui Automotriz. Descubre todos sus modelos y, para los **SUV y sedanes**, baja la página del modelo y los PDF que enlaza (fichas técnicas, catálogos). De cada uno saca **candidatos** de datos: precio, HP, torque, cilindrada, caja, tracción, altura al piso, asientos, airbags, turbo, GLP y frenado automático, siempre con el texto de alrededor y la fuente (URL y página del PDF).
 
 Los candidatos **no son datos verificados**. Se revisan contra la fuente antes de pasarlos a `data/modelos/` (ver `data/modelos/LEEME.md`).
 
@@ -11,7 +11,7 @@ Solo usa la librería estándar de Python 3.10+. Para leer el texto de los PDF n
 ## Uso
 
 ```bash
-python scraping/scraper.py                         # una pasada por las 5 marcas y Wigo
+python scraping/scraper.py                         # una pasada por todas las marcas y Wigo
 python scraping/scraper.py --marcas wigo           # solo el listado multimarca de Wigo
 python scraping/scraper.py --marcas toyota,suzuki  # solo algunas marcas
 python scraping/scraper.py --solo-descubrir        # solo lista modelos y su tipo (rápido)
@@ -42,7 +42,9 @@ python scraping/exportar_mercado.py
 npm test
 ```
 
-Solo exporta datos de identificación: marca, nombre del modelo, tipo, enlace oficial, fuente y fecha. **No publica precios ni datos técnicos**, porque siguen siendo candidatos. Deja fuera los camiones y une los modelos repetidos (por ejemplo, la página vieja y la nueva de un mismo modelo). Para las marcas cuyo sitio no se pudo leer usa el listado de Wigo. Los nombres que la regla general no escribe bien se corrigen en `NOMBRES` dentro del script.
+Solo exporta datos de identificación: marca, nombre del modelo, tipo, enlace oficial, fuente (y el nombre del concesionario cuando la lista sale de uno) y fecha. **No publica precios ni datos técnicos**, porque siguen siendo candidatos. Deja fuera los camiones y une los modelos repetidos (por ejemplo, la página vieja y la nueva de un mismo modelo). Para las marcas cuyo sitio no se pudo leer usa el listado de Wigo (hoy solo Chevrolet). Los nombres que la regla general no escribe bien se corrigen en `NOMBRES` dentro del script, y `PREFIJO_POR_RUTA` antepone la línea cuando la marca agrupa varias ("Haval H6" en GWM).
+
+Las marcas que aún no se pueden leer están en `MARCAS_PENDIENTES` (`lib/mercado.ts`), que arma la nota al pie de `/modelos`. Si una marca entra al listado, sácala de ahí: un test lo exige.
 
 ## Dejarlo en segundo plano (Windows)
 
@@ -99,11 +101,13 @@ Esta carpeta está en `.gitignore`. Son páginas y documentos de las marcas, con
 | Marca | Motivo | Cómo se cubre |
 |---|---|---|
 | Kia (`kia.com.pe`) | Su `robots.txt` prohíbe todo | Se usa el sitio global `kia.com/pe`, que sí lo permite |
-| Chevrolet, MG, Jeep | Responden 403 a clientes automáticos. Están configuradas: si un día abren el acceso, entran solas | Chevrolet por precios de Wigo; MG y Jeep a mano |
-| Ford | Responde 403 | A mano |
-| Geely, Volkswagen | Certificado de seguridad inválido en su sitio | Geely por precios de Wigo; Volkswagen a mano |
-| DFSK, GWM/Haval | Sus portadas se arman con JavaScript y no exponen enlaces a modelos | Precios de Wigo |
-| Peugeot | No se encontró el sitio oficial peruano | — |
+| Chevrolet, MG, Jeep | Responden 403 a clientes automáticos (Jeep también en `jeep.com/pe`). Están configuradas: si un día abren el acceso, entran solas | Chevrolet por la lista de Wigo; MG y Jeep a mano |
+| Ford, Peugeot, Citroën, Fiat, Audi, Mercedes-Benz, Porsche, KGM (SsangYong), Maxus | Responden 403 | A mano |
+| Volkswagen, Volvo, Lexus, Land Rover, Mahindra, Dongfeng, JMC | Certificado de seguridad inválido o vencido en su sitio | Lexus por la lista de Mitsui Automotriz; el resto a mano |
+| Isuzu | Su sitio no responde | — |
+| Foton | Su sitio se lee, pero casi todo son camiones y minibuses; falta separar lo de uso personal (Tunland, View, Toano) | Pendiente |
+
+**Fuentes multimarca revisadas y descartadas:** NeoAuto, Autoland y Divemotor responden 403 al scraper. Autocosmos prohíbe en su `robots.txt` a los rastreadores de inteligencia artificial (ClaudeBot, GPTBot y otros), así que no se usa, aunque el scraper se identifique con otro nombre. Para usar su catálogo hay que pedirles permiso. Derco publica su catálogo, pero sus marcas ya se leen en sus sitios oficiales.
 
 El script **nunca** se disfraza de navegador para saltarse un bloqueo: si un sitio rechaza clientes automáticos, se respeta y queda anotado en el resumen.
 
@@ -138,3 +142,13 @@ Lo que no calza queda como **Desconocido** y se procesa igual: al leer la págin
 ## Agregar una marca
 
 Agrega una entrada en `MARCAS` con su dominio, sitemaps o portadas y la expresión regular de sus páginas de modelo. Antes, revisa su `robots.txt`. Prueba con `--marcas nueva --solo-descubrir`.
+
+Campos que ayudan con sitios raros:
+
+- `prefijos_slug` / `sufijos_slug`: limpian el nombre de la ruta (`/car/venta-de-camionetas-new-coolray-geely-peru/` → `new-coolray`).
+- `segmento_slug`: qué parte de la ruta es el modelo (SEAT usa `/autos/arona/introduccion`).
+- `tipo_por_ruta`: tipo según la ruta cuando el nombre no basta (BMW: `/x3`, `/serie-3`, `/m135i`).
+- `excluir`: rutas que calzan con el patrón pero no son modelos.
+- `concesionario`: si la lista sale de un concesionario y no del sitio de la marca (Lexus → Mitsui Automotriz). En `/modelos` se nombra el concesionario y no se enlaza como sitio oficial.
+
+Si dos rutas llevan al mismo slug, se queda la primera en orden alfabético.

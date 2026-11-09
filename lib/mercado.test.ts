@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { z } from "zod";
 import { CATALOGO } from "./catalogo";
 import { Mercado } from "./fichas/esquema";
-import { anclaMarca, MERCADO, normalizarBusqueda, totalModelos } from "./mercado";
+import { anclaMarca, enumerar, MARCAS_PENDIENTES, MERCADO, normalizarBusqueda, totalModelos } from "./mercado";
 
 describe("data/mercado.json", () => {
   it("cumple el esquema", () => {
@@ -32,6 +32,11 @@ describe("data/mercado.json", () => {
     }
   });
 
+  it("las marcas pendientes de la nota no están ya en el listado", () => {
+    const presentes = new Set(MERCADO.marcas.map((m) => anclaMarca(m.marca)));
+    for (const m of MARCAS_PENDIENTES) expect(presentes.has(anclaMarca(m)), m).toBe(false);
+  });
+
   it("solo publica datos de identificación (nada de precios ni ficha sin revisar)", () => {
     expect(totalModelos()).toBeGreaterThan(100);
     for (const marca of MERCADO.marcas)
@@ -44,6 +49,13 @@ describe("búsqueda", () => {
     expect(normalizarBusqueda("  Sedán ")).toBe("sedan");
     expect(anclaMarca("Omoda | Jaecoo")).toBe("omoda-jaecoo");
     expect(anclaMarca("Haval (GWM)")).toBe("haval-gwm");
+  });
+
+  it("enumera con coma y conjunción", () => {
+    expect(enumerar([])).toBe("");
+    expect(enumerar(["Ford"])).toBe("Ford");
+    expect(enumerar(["Chevrolet", "Lexus"])).toBe("Chevrolet y Lexus");
+    expect(enumerar(["Ford", "MG", "Jeep"], "ni")).toBe("Ford, MG ni Jeep");
   });
 });
 

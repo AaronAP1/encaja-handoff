@@ -137,7 +137,7 @@ export const TIPOS_MERCADO = ["SUV", "Sedán", "Hatchback", "Minivan", "Pick-up"
 export const ModeloMercado = z.strictObject({
   nombre: z.string().min(1),
   tipo: z.enum(TIPOS_MERCADO),
-  /** Página del modelo en el sitio oficial; null si solo se conoce por un concesionario */
+  /** Página del modelo (en el sitio oficial, o en el del concesionario si la lista sale de ahí); null si no hay */
   url: z.url().nullable(),
   /** slug en data/modelos/ si ya está evaluado en la web */
   slugEncaja: z.string().regex(/^[a-z0-9-]+$/).nullable(),
@@ -154,6 +154,8 @@ export const Mercado = z
           sitio: z.url().nullable().describe("Sitio oficial de la marca en Perú (null si no conviene enlazarlo)"),
           fuente: z.strictObject({
             tipo: z.enum(["oficial", "concesionario"]).describe("De dónde sale la lista de modelos"),
+            /** Nombre del concesionario cuando la lista sale de uno */
+            concesionario: z.string().min(1).optional(),
             fecha,
           }),
           modelos: z.array(ModeloMercado).min(1),
@@ -163,6 +165,12 @@ export const Mercado = z
   })
   .superRefine((m, ctx) => {
     for (const [i, marca] of m.marcas.entries()) {
+      if ((marca.fuente.tipo === "concesionario") !== Boolean(marca.fuente.concesionario))
+        ctx.addIssue({
+          code: "custom",
+          message: `${marca.marca}: el nombre del concesionario va si y solo si la fuente es un concesionario`,
+          path: ["marcas", i, "fuente"],
+        });
       const nombres = marca.modelos.map((x) => x.nombre.toLowerCase());
       if (new Set(nombres).size !== nombres.length)
         ctx.addIssue({ code: "custom", message: `${marca.marca}: modelos repetidos`, path: ["marcas", i, "modelos"] });

@@ -138,7 +138,7 @@ export function ListaModelos({ marcas, tipoInicial, busquedaInicial }: Props) {
               {m.marca} <span className="text-base font-semibold text-texto-2">{m.modelos.length}</span>
             </h2>
             <span className="flex flex-wrap items-center gap-x-3 text-[13px] text-texto-2">
-              {m.fuente.tipo === "concesionario" ? "Lista de un concesionario multimarca" : "Lista del sitio oficial"}
+              {m.fuente.concesionario ? `Lista del concesionario ${m.fuente.concesionario}` : "Lista del sitio oficial"}
               {m.sitio ? (
                 <a href={m.sitio} target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center gap-1 font-semibold">
                   Sitio de {m.marca}
@@ -168,9 +168,11 @@ export function ListaModelos({ marcas, tipoInicial, busquedaInicial }: Props) {
                       </Link>
                     ) : x.url ? (
                       <a href={x.url} target="_blank" rel="noopener noreferrer" className="flex min-h-11 items-center gap-1 text-sm font-semibold">
-                        Ver en el sitio oficial
+                        {m.fuente.concesionario ? "Ver en el concesionario" : "Ver en el sitio oficial"}
                         <IconoExterno />
-                        <span className="solo-lector">de {m.marca}, se abre en otra pestaña</span>
+                        <span className="solo-lector">
+                          {m.fuente.concesionario ? m.fuente.concesionario : `de ${m.marca}`}, se abre en otra pestaña
+                        </span>
                       </a>
                     ) : (
                       <span className="flex min-h-11 items-center text-sm text-texto-2">Aún sin evaluar</span>
