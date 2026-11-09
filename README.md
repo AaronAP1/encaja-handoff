@@ -32,6 +32,7 @@ npm run build
 - `lib/` — lógica pura con tests: `reglas.ts` (motor de reglas), `catalogo.ts`, `deducciones.ts`, `contador.ts`, `respuestas.ts` (estado en la URL), `swipe.ts`, `costo.ts`, `situaciones.ts`, `hero.ts`, `senal.ts`. El nombre provisional está en `lib/marca.ts`.
 - `data/modelos/` — **catálogo real**: un JSON por modelo, con una entrada por versión y la fuente de cada dato. Guía de carga en [data/modelos/LEEME.md](data/modelos/LEEME.md). Esquema y validación en `lib/fichas/`.
 - `data/precios.json` — precio de lista por versión, con fecha y fuente (separado porque cambia más seguido).
+- `data/fichas-minimas.json` — **fichas mínimas**: solo los datos que usan las reglas, cada uno con su fuente y su cita literal. Dan los veredictos por uso de los modelos «Con ficha» en `/modelos`. Proceso en [scraping/LEEME.md](scraping/LEEME.md#fichas-mínimas-de-los-candidatos-a-los-veredictos-por-uso).
 - `data/mercado.json` — listado de los modelos que cada marca vende en Perú (solo nombre, tipo y enlace oficial) para la página `/modelos`. Se genera con `scraping/exportar_mercado.py` después de una pasada del scraper (`scraping/LEEME.md`).
 - `data/esquemas/` — esquemas JSON generados para autocompletar en el editor (`npm run esquemas`).
 - El resto de `data/*.json` son los datos semilla del paquete de diseño; un test verifica que el catálogo siga fiel a ellos.
@@ -40,9 +41,12 @@ npm run build
 
 ### Cómo decide el motor (`lib/reglas.ts`)
 
-Cada aspecto (ciudad, trocha, sierra, pasajeros, GLP, tráfico, seguridad, talleres) tiene una regla declarativa sobre la ficha técnica (docs/04). Si falta un dato de la ficha o un umbral aún no validado, la regla no decide y se usa la evaluación editorial del catálogo; si tampoco hay, se muestra `[por evaluar]` (nunca un veredicto inventado). Un test verifica que lo editorial nunca contradiga a la regla.
+Cada aspecto (ciudad, trocha, sierra, pasajeros, GLP, seguridad, talleres) tiene una regla declarativa sobre la ficha técnica (docs/04). Si falta un dato de la ficha o un umbral aún no validado, la regla no decide y se usa la evaluación editorial del catálogo; si tampoco hay, se muestra `[por evaluar]` (nunca un veredicto inventado). Un test verifica que lo editorial nunca contradiga a la regla.
 
 ### Pendiente de revisar con el dueño del producto
+
+- **Altura mínima para trocha: 200 mm provisional** (`UMBRALES` en `lib/reglas.ts`). Los umbrales de talleres siguen sin definir.
+- **Portada, tarjeta «GLP y tráfico»**: promete decir «si una automática te cambia el día», pero la pregunta de tráfico se quitó.
 
 - **Respuestas pre-llenadas por situación** (`lib/situaciones.ts`): el paquete no dice cuáles; se eligieron 2 por situación para que "Te faltan 5 preguntas" sea cierto.
 - **Copia nueva mínima** (no estaba en el paquete): estados vacíos ("Ningún modelo del catálogo encaja…", "Marca tu uso y aquí aparece el veredicto.", "Aún no evaluamos ese modelo"), aviso de "Guardar mi búsqueda", textos de criterio en `/como-evaluamos`, porqués de reglas que hoy no se muestran (turbo, inyección directa, caja manual) y `destaca`/`rasgoCorto` de cada modelo (tomados de su resumen).

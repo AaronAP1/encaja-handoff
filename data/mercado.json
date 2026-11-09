@@ -1483,6 +1483,12 @@
         {
           "nombre": "Kicks",
           "tipo": "SUV",
+          "url": "https://www.nissan.pe/vehiculos/nuevos/nuevo-kicks.html",
+          "slugEncaja": null
+        },
+        {
+          "nombre": "Kicks Play",
+          "tipo": "SUV",
           "url": "https://www.nissan.pe/vehiculos/nuevos/nissan-kicks.html",
           "slugEncaja": null
         },

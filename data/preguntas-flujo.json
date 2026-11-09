@@ -87,30 +87,6 @@
     ]
   },
   {
-    "key": "trafico",
-    "multi": false,
-    "seccion": "Tu día a día",
-    "titulo": "¿Cuánto tráfico enfrentas?",
-    "ayuda": "Esto decide si una caja automática te cambia la vida o es un gasto extra.",
-    "opciones": [
-      {
-        "v": "mucho",
-        "label": "Mucho",
-        "sub": "Horas en hora punta"
-      },
-      {
-        "v": "algo",
-        "label": "Algo",
-        "sub": "Algunos atracos al día"
-      },
-      {
-        "v": "poco",
-        "label": "Poco",
-        "sub": "Calles fluidas casi siempre"
-      }
-    ]
-  },
-  {
     "key": "noche",
     "multi": false,
     "seccion": "Tu día a día",

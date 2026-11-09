@@ -66,7 +66,7 @@ export const Version = z.strictObject({
   fuente: Fuente.describe("Ficha oficial Perú de esta versión"),
 });
 
-const Dimensiones = ["ciudad", "carretera", "trocha", "sierra", "glp", "trafico", "seguridad", "talleres"] as const;
+const Dimensiones = ["ciudad", "carretera", "trocha", "sierra", "glp", "seguridad", "talleres"] as const;
 
 export const FichaModelo = z
   .strictObject({
@@ -177,6 +177,62 @@ export const Mercado = z
     }
   });
 
+/**
+ * data/fichas-minimas.json: solo los datos que usan las reglas (docs/04), para dar
+ * veredictos por uso sin textos editoriales. Cada dato lleva su fuente oficial y la
+ * cita literal que lo respalda; lo que la fuente no dice queda en null ("[por evaluar]").
+ */
+const FuenteDato = z.strictObject({
+  url: z.url(),
+  pagina: z.int().positive().nullable().describe("Página del PDF; null si es una página web"),
+  fecha,
+});
+
+const dato = <T extends z.ZodType>(valor: T) =>
+  z
+    .strictObject({
+      valor,
+      fuente: FuenteDato,
+      cita: z.string().min(2).max(160).describe("Texto de la fuente que respalda el valor, tal cual aparece"),
+      nota: z.string().min(3).max(220).optional().describe("Cómo se lee la cita cuando no es obvio (columna, sigla, ausencia en la tabla)"),
+    })
+    .nullable();
+
+export const FichaMinima = z.strictObject({
+  slug: z.string().regex(/^[a-z0-9-]+$/).describe('"toyota-raize": marca y modelo'),
+  marca: z.string().min(1).describe("Igual que en data/mercado.json"),
+  nombre: z.string().min(1).describe("Nombre del modelo igual que en data/mercado.json, sin la marca"),
+  carroceria: z.enum(["SUV", "Sedán", "Hatchback", "Minivan", "Pick-up", "Van"]),
+  version: z
+    .string()
+    .min(1)
+    .describe("Versión de referencia (la más equipada con caja automática, como en las fichas completas)"),
+  revisado: fecha.describe("Cuándo se revisó cada dato contra su fuente"),
+  datos: z.strictObject({
+    asientos: dato(z.int().min(2).max(9)),
+    alturaPisoMm: dato(z.int().min(100).max(400)),
+    traccion: dato(z.enum(["delantera", "trasera", "4x4", "AWD"])),
+    transmision: dato(z.enum(["MT", "AT", "CVT", "DCT"])),
+    turbo: dato(z.boolean()),
+    hp: dato(z.number().min(40).max(800)),
+    inyeccion: dato(z.enum(["directa", "indirecta"])),
+    glpCompatible: dato(z.boolean()),
+    frenadoAutomatico: dato(z.enum(["si", "no", "versiones-altas"]).describe("A nivel modelo: si todas las versiones lo traen o solo las altas")),
+  }),
+});
+
+export const FichasMinimas = z
+  .strictObject({
+    $schema: z.string().optional(),
+    fichas: z.array(FichaMinima),
+  })
+  .superRefine((f, ctx) => {
+    const slugs = f.fichas.map((x) => x.slug);
+    for (const [i, s] of slugs.entries())
+      if (slugs.indexOf(s) !== i) ctx.addIssue({ code: "custom", message: `${s}: ficha repetida`, path: ["fichas", i, "slug"] });
+  });
+
+export type FichaMinima = z.infer<typeof FichaMinima>;
 export type FichaModelo = z.infer<typeof FichaModelo>;
 export type Version = z.infer<typeof Version>;
 export type Precio = z.infer<typeof Precio>;

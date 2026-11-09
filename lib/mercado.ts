@@ -29,6 +29,11 @@ export function anclaMarca(marca: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
+/** Clave de un modelo del listado (marca + nombre), para cruzarlo con sus fichas */
+export function claveModelo(marca: string, nombre: string): string {
+  return `${anclaMarca(marca)}/${normalizarBusqueda(nombre)}`;
+}
+
 /**
  * Marcas que se venden en Perú y aún no están en el listado: su sitio rechaza la consulta
  * automática o tiene el certificado vencido (ver scraping/LEEME.md). Un test verifica que

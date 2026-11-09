@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { TOTAL_PREGUNTAS } from "@/lib/preguntas";
 import { clasesBoton } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { FotoModelo } from "@/components/FotoModelo";
@@ -101,7 +102,7 @@ export function RevisarModelo({ slug, inicial }: { slug: string; inicial: Respue
             </div>
           </fieldset>
           <Link href={`/preguntas${q}`} className="flex min-h-11 items-center self-start text-sm font-semibold">
-            Prefiero responder las 7 preguntas completas
+            Prefiero responder las {TOTAL_PREGUNTAS} preguntas completas
           </Link>
         </Card>
 

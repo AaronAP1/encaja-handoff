@@ -17,7 +17,7 @@ export interface Pregunta {
   opciones: OpcionPregunta[];
 }
 
-/** Las 7 preguntas tal cual data/preguntas-flujo.json (validadas en preguntas.test.ts) */
+/** Las preguntas tal cual data/preguntas-flujo.json (validadas en preguntas.test.ts) */
 export const PREGUNTAS = preguntasJson as Pregunta[];
 
 export const TOTAL_PREGUNTAS = PREGUNTAS.length;

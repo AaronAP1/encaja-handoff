@@ -9,7 +9,6 @@ export const NIVELES: readonly Nivel[] = ["Bien", "Justo", "Difícil"];
 export type Pasajeros = "1-2" | "3-4" | "5" | "6-7";
 export type Uso = "ciudad" | "carretera" | "trocha" | "sierra";
 export type Km = "poco" | "medio" | "mucho" | "nose";
-export type Trafico = "mucho" | "algo" | "poco";
 export type Noche = "seguido" | "aveces" | "nunca";
 export type Carga = "bebe" | "mercado" | "viaje" | "trabajo";
 /** Rangos de presupuesto mensual 1–4; los montos están por definir (docs/05). */
@@ -21,7 +20,6 @@ export const VALORES = {
   pas: ["1-2", "3-4", "5", "6-7"],
   usos: ["ciudad", "carretera", "trocha", "sierra"],
   km: ["poco", "medio", "mucho", "nose"],
-  trafico: ["mucho", "algo", "poco"],
   noche: ["seguido", "aveces", "nunca"],
   carga: ["bebe", "mercado", "viaje", "trabajo"],
   pres: ["1", "2", "3", "4"],
@@ -33,7 +31,6 @@ export interface Respuestas {
   pas: Pasajeros | null;
   usos: Partial<Record<Uso, boolean>>;
   km: Km | null;
-  trafico: Trafico | null;
   noche: Noche | null;
   carga: Partial<Record<Carga, boolean>>;
   pres: Presupuesto | null;
@@ -43,8 +40,8 @@ export interface Respuestas {
   gusto: Rasgo[];
 }
 
-/** Las 7 preguntas del flujo */
-export type ClavePregunta = "pas" | "usos" | "km" | "trafico" | "noche" | "carga" | "pres";
+/** Las preguntas del flujo (data/preguntas-flujo.json) */
+export type ClavePregunta = "pas" | "usos" | "km" | "noche" | "carga" | "pres";
 
 // ── Catálogo ──────────────────────────────────────────────────────────────
 
@@ -60,7 +57,6 @@ export type Dimension =
   | "sierra"
   | "pasajeros"
   | "glp"
-  | "trafico"
   | "seguridad"
   | "talleres";
 

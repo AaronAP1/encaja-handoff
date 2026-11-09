@@ -6,9 +6,9 @@ import { elegir, respuestasVacias } from "./respuestas";
 import { VALORES } from "./tipos";
 
 describe("data/preguntas-flujo.json", () => {
-  it("tiene las 7 preguntas en orden", () => {
-    expect(TOTAL_PREGUNTAS).toBe(7);
-    expect(PREGUNTAS.map((p) => p.key)).toEqual(["pas", "usos", "km", "trafico", "noche", "carga", "pres"]);
+  it("tiene las 6 preguntas en orden (sin la de tráfico, que se quitó)", () => {
+    expect(TOTAL_PREGUNTAS).toBe(6);
+    expect(PREGUNTAS.map((p) => p.key)).toEqual(["pas", "usos", "km", "noche", "carga", "pres"]);
   });
 
   it("cada opción usa un valor que el tipo Respuestas entiende", () => {
@@ -70,11 +70,9 @@ describe("contador con el catálogo de prueba", () => {
     expect(contarEnCatalogoDePrueba(r)).toBe(7);
     r = elegir(r, "usos", "trocha");
     expect(contarEnCatalogoDePrueba(r)).toBe(5);
-    r = elegir(r, "trafico", "mucho");
-    expect(contarEnCatalogoDePrueba(r)).toBe(4);
     r = elegir(r, "pres", "2");
-    expect(contarEnCatalogoDePrueba(r)).toBe(1);
+    expect(contarEnCatalogoDePrueba(r)).toBe(2);
     r = elegir(r, "km", "mucho");
-    expect(contarEnCatalogoDePrueba(r)).toBe(1);
+    expect(contarEnCatalogoDePrueba(r)).toBe(2);
   });
 });

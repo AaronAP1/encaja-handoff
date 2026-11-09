@@ -5,7 +5,7 @@ Referencia visual de cada ruta en `referencia-diseno/web/` (y `movil/` para las 
 | Ruta | Pantalla | Referencia |
 |---|---|---|
 | `/` | Landing | `web/01-landing.dc.html` |
-| `/preguntas` | Flujo de 7 preguntas | `web/02-preguntas.dc.html` |
+| `/preguntas` | Flujo de 6 preguntas | `web/02-preguntas.dc.html` |
 | `/descubre` | "No sé qué comprar" (swipe) | `web/03-descubre-swipe.dc.html` |
 | `/situacion/[slug]` | Empezar por tu situación | `web/04-situacion.dc.html` |
 | `/revisar/[modelo]` | ¿Te sirve este auto? | `web/05-revisar-modelo.dc.html` |

@@ -46,6 +46,31 @@ Solo exporta datos de identificación: marca, nombre del modelo, tipo, enlace of
 
 Las marcas que aún no se pueden leer están en `MARCAS_PENDIENTES` (`lib/mercado.ts`), que arma la nota al pie de `/modelos`. Si una marca entra al listado, sácala de ahí: un test lo exige.
 
+## Fichas mínimas: de los candidatos a los veredictos por uso
+
+Una **ficha mínima** (`data/fichas-minimas.json`) guarda solo los datos que usan las reglas: asientos, altura al piso, tracción, caja, turbo, potencia, inyección, GLP y frenado automático. Cada dato lleva su fuente oficial (URL y página del PDF) y la **cita literal** que lo respalda. Con eso `/modelos` muestra para qué usos va cada modelo (trocha, sierra, 6 o 7 pasajeros, GLP, seguridad) sin textos editoriales. Lo que la fuente no dice queda en `null` y se ve como «[por evaluar]».
+
+```bash
+python scraping/borradores.py            # hojas de revisión en salida/borradores/ (por dato, las líneas de la web y del PDF con su página)
+# revisar cada dato contra su fuente y copiarlo a data/fichas-minimas.json con su cita
+python scraping/verificar_fichas.py      # comprueba que cada cita esté tal cual en su fuente y página
+npm test                                 # esquema, cruce con data/mercado.json y veredictos de ejemplo
+```
+
+**Cómo se leen las fichas** (las inferencias siempre llevan `nota`):
+
+- **Turbo «No»**: la tabla de motor de la ficha está completa y no lo menciona. Las marcas lo escriben cuando lo hay («1.5 Turbo», «Turbocompresor», «TCe»).
+- **Frenado automático «No»**: la tabla de seguridad está completa y no lo incluye. La asistencia al frenado (BA, BAS, EBA) **no** cuenta, porque no frena sola. Si la ficha lo marca en unas versiones y en otras no, va «En algunas versiones».
+- **Inyección**: MPI, MPFI, multipunto o EFI de Toyota es **indirecta**. GDI, D-4S o «inyección directa» es **directa**.
+- **Caja**: IVT de Hyundai y Kia es CVT.
+- **Tracción**: «2WD» o «4x2» a secas queda en `null`; solo se carga «delantera» si la ficha lo dice (o FWD). La regla de trocha solo cuenta la tracción a favor cuando es trasera, 4x4 o AWD confirmada.
+- **Columnas**: en tablas con varias versiones se usa la versión de referencia (la más equipada con caja automática) y la `nota` dice qué columna es.
+- **Ojo con Chery**: cada página de modelo enlaza los PDF de otros modelos. La cita debe venir del PDF del modelo correcto.
+
+**Primera tanda (2026-11-08):** 30 modelos prioritarios (`PRIORIDAD` en `borradores.py`). El criterio fue marcas líderes en ventas según la AAP, que publica por marca y no por modelo; uso personal; segmentos de entrada y medio; y ficha oficial descargada. Entraron **23 fichas con 136 datos**. Quedaron pendientes 7 cuya fuente oficial no da datos suficientes para ningún veredicto: Kia Seltos, Sportage y Soluto, Suzuki Fronx y XL7, Jetour X50 y Changan CS35 Max. Para ellas falta su ficha técnica en PDF.
+
+La altura mínima para trocha (`UMBRALES.alturaMinimaTrochaMm` en `lib/reglas.ts`) está en **200 mm, provisional**, hasta validarla con conductores de provincia.
+
 ## Dejarlo en segundo plano (Windows)
 
 **Opción 1: proceso oculto que repite cada 24 h.** En PowerShell, desde la carpeta del proyecto:

@@ -117,11 +117,6 @@ describe("reglas declarativas (docs/04)", () => {
     expect(g({ glpCompatible: null, motor: { ...brv.motor, inyeccion: "directa" } })).toBe("Justo");
   });
 
-  it("mucho tráfico: manual Justo, automática Bien", () => {
-    expect(REGLAS.trafico.evaluar(base({ transmision: "MT" }), r, UMBRALES_DE_PRUEBA)?.nivel).toBe("Justo");
-    expect(REGLAS.trafico.evaluar(base({ transmision: "CVT" }), r, UMBRALES_DE_PRUEBA)?.nivel).toBe("Bien");
-  });
-
   it("talleres según red regional y umbrales", () => {
     const t = (n: number | null) => REGLAS.talleres.evaluar(base({ redTalleresRegiones: n }), r, UMBRALES_DE_PRUEBA)?.nivel;
     expect(t(25)).toBe("Bien");

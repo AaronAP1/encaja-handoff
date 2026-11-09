@@ -29,7 +29,7 @@ export function buscarSituacion(slug: string): Situacion | undefined {
 }
 
 /**
- * Respuestas que cada situación deja pre-llenadas (2 de 7 → "Te faltan 5 preguntas").
+ * Respuestas que cada situación deja pre-llenadas (2 de 6 → "Te faltan 4 preguntas").
  * POR VALIDAR con el dueño del producto: el paquete no dice qué respuestas se infieren.
  * La persona puede cambiarlas volviendo atrás en el flujo.
  */

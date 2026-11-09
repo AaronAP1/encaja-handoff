@@ -17,7 +17,6 @@ export function deducciones(r: Respuestas): Deduccion[] {
   if (r.usos.sierra) d.push({ que: "Fuerza en altura.", porque: "Un motor sin turbo pierde potencia sobre 3,000 m." });
   if (glpProbablementeConviene(r))
     d.push({ que: "El GLP probablemente te conviene.", porque: "Calculamos en cuánto tiempo recuperas la conversión." });
-  if (r.trafico === "mucho") d.push({ que: "Automática.", porque: "Con tanto tráfico, te cambia el día a día." });
   if (r.noche === "seguido") d.push({ que: "Seguridad activa.", porque: "Priorizamos frenado automático y buenos faros." });
   if (r.carga.viaje && r.pas === "6-7")
     d.push({ que: "Maletero con la tercera fila en uso.", porque: "Con 7 a bordo, muchos autos casi no tienen maletero." });

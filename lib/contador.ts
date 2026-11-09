@@ -9,7 +9,7 @@ import type { Respuestas } from "./tipos";
  */
 export const USAR_CATALOGO_DE_PRUEBA = true;
 
-/** [asientos, alto, glp, automatica, rangoPrecio] */
+/** [asientos, alto, glp, automatica, rangoPrecio]; "automatica" ya no filtra: se quitó la pregunta de tráfico */
 type EntradaPrueba = readonly [number, 0 | 1, 0 | 1, 0 | 1, 1 | 2 | 3 | 4];
 
 export const CATALOGO_DE_PRUEBA: readonly EntradaPrueba[] = [
@@ -18,11 +18,10 @@ export const CATALOGO_DE_PRUEBA: readonly EntradaPrueba[] = [
 ];
 
 export function contarEnCatalogoDePrueba(r: Respuestas): number {
-  return CATALOGO_DE_PRUEBA.filter(([asientos, alto, glp, auto, tier]) => {
+  return CATALOGO_DE_PRUEBA.filter(([asientos, alto, glp, , tier]) => {
     if (r.pas === "6-7" && asientos < 7) return false;
     if (r.usos.trocha && !alto) return false;
     if (r.km === "mucho" && !glp) return false;
-    if (r.trafico === "mucho" && !auto) return false;
     if (r.pres && tier > Number(r.pres)) return false;
     return true;
   }).length;

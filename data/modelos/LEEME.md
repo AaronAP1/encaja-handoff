@@ -19,7 +19,7 @@ Si abres los archivos en VS Code, el editor autocompleta los campos, marca en ro
 | Campo | Regla que alimenta |
 |---|---|
 | `motor.turbo` | Sierra: sin turbo es Justo, con turbo es Bien |
-| `transmision` | Mucho tráfico (manual es Justo) y trocha (CVT es Justo) |
+| `transmision` | Trocha (CVT es Justo) |
 | `alturaPisoMm` y `traccion` | Trocha (el umbral de altura aún está por validar) |
 | `asientos` y `terceraFila` | 6 o 7 pasajeros |
 | `glpCompatible` y `motor.inyeccion` | Convertir a GLP |

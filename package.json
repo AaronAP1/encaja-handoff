@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "esquemas": "vitest run lib/fichas.test.ts lib/mercado.test.ts -t \"esquemas? JSON\" -u"
+    "esquemas": "vitest run lib/fichas.test.ts lib/mercado.test.ts lib/fichas-minimas.test.ts -t \"esquemas? JSON\" -u"
   },
   "dependencies": {
     "next": "16.4.5",

@@ -56,6 +56,7 @@ NOMBRES = {
     ("jac", "e-30x"): "E30X",
     ("byd", "song-plus-dmi"): "Song Plus DM-i",
     ("changan", "new-van"): "New Van",
+    ("nissan", "nissan-kicks"): "Kicks Play",  # la página nissan-kicks es la Kicks Play; la nueva Kicks es nuevo-kicks
     # segunda tanda
     ("geely", "okavango-nuevo"): "Okavango",
     ("gwm", "new-poer-24-mecanica"): "Poer 2.4",

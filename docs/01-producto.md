@@ -35,7 +35,7 @@ Lo que vale la pena tomar de ellos: el conteo en vivo de modelos por opción, el
 
 ## Cuatro formas de entrar
 
-- **Preguntas completas** (7 preguntas, 1 minuto) → resultados.
+- **Preguntas completas** (6 preguntas, 1 minuto) → resultados.
 - **"¿Ya tienes uno en mente? Mira si te sirve"** → veredicto de un modelo concreto.
 - **Empezar por tu situación** (primer auto, familia grande, viajo a provincia, lo uso para trabajar).
 - **"No sé qué comprar"** → swipe tipo Tinder que arma un perfil de gusto y luego pasa a las preguntas de uso.

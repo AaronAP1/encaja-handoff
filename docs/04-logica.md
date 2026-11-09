@@ -35,7 +35,6 @@ interface Respuestas {
   pasajeros: '1-2' | '3-4' | '5' | '6-7';
   usos: { ciudad?: boolean; carretera?: boolean; trocha?: boolean; sierra?: boolean };
   km: 'poco' | 'medio' | 'mucho' | 'nose';
-  trafico: 'mucho' | 'algo' | 'poco';
   noche: 'seguido' | 'aveces' | 'nunca';
   carga: { bebe?: boolean; mercado?: boolean; viaje?: boolean; trabajo?: boolean };
   presupuestoMensual: 1 | 2 | 3 | 4;       // rangos por definir
@@ -44,6 +43,8 @@ interface Respuestas {
 
 ## Reglas de traducción sugeridas (evaluación de un modelo para un uso)
 
+> **Cambio del 2026-11-08:** el dueño del producto quitó la pregunta «¿Cuánto tráfico enfrentas?». Con ella salieron la regla «Mucho tráfico» (manual Justo, automática Bien), la deducción «Automática.» y el filtro de caja automática del contador de prueba. El flujo queda en 6 preguntas.
+
 Escríbelas como reglas declarativas `(modelo, respuestas) => { uso, nivel, porque }` y publícalas en `/como-evaluamos`:
 
 - **Sierra cargado**: sin turbo → Justo ("sobre 3,000 m pierde fuerza"); turbo → Bien.
@@ -51,7 +52,6 @@ Escríbelas como reglas declarativas `(modelo, respuestas) => { uso, nivel, porq
 - **6–7 pasajeros**: tercera fila solo niños → Justo; adultos → Bien; 5 asientos → Difícil.
 - **GLP**: inyección indirecta → Bien (con aviso de la llanta de repuesto y la garantía); directa → Justo/Difícil.
 - **Talleres en provincia**: según red regional (umbrales por definir).
-- **Mucho tráfico**: MT → Justo; AT/CVT → Bien.
 
 Los umbrales (mm, HP, talleres) deben validarse con mecánicos y conductores de provincia antes de publicarse.
 
@@ -66,7 +66,6 @@ const d = [];
     if (r.usos.trocha) d.push({ que: 'Altura al piso alta.', porque: 'Y evitamos cajas que sufren en barro profundo.' });
     if (r.usos.sierra) d.push({ que: 'Fuerza en altura.', porque: 'Un motor sin turbo pierde potencia sobre 3,000 m.' });
     if (r.km === 'mucho' || (r.km === 'medio' && r.usos.carretera)) d.push({ que: 'El GLP probablemente te conviene.', porque: 'Calculamos en cuánto tiempo recuperas la conversión.' });
-    if (r.trafico === 'mucho') d.push({ que: 'Automática.', porque: 'Con tanto tráfico, te cambia el día a día.' });
     if (r.noche === 'seguido') d.push({ que: 'Seguridad activa.', porque: 'Priorizamos frenado automático y buenos faros.' });
     if (r.carga.viaje && r.pas === '6-7') d.push({ que: 'Maletero con la tercera fila en uso.', porque: 'Con 7 a bordo, muchos autos casi no tienen maletero.' });
     if (r.carga.bebe) d.push({ que: 'Maletero ancho y puertas amplias.', porque: 'Para el coche de bebé sin pelearte.' });
@@ -80,7 +79,6 @@ const d = [];
       if (r.pas === '6-7' && asientos < 7) return false;
       if (r.usos.trocha && !alto) return false;
       if ((r.km === 'mucho') && !glp) return false;
-      if (r.trafico === 'mucho' && !auto) return false;
       if (r.pres && tier > Number(r.pres)) return false;
       return true;
     }).length;
@@ -94,7 +92,6 @@ Filtro del contador en el prototipo (catálogo de prueba; en producción usar la
 if (r.pas === '6-7' && asientos < 7) return false;
 if (r.usos.trocha && !alto) return false;
 if (r.km === 'mucho' && !glp) return false;
-if (r.trafico === 'mucho' && !auto) return false;
 if (r.pres && tier > Number(r.pres)) return false;
 ```
 

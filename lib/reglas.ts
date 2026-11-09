@@ -24,7 +24,8 @@ export interface Umbrales {
 }
 
 export const UMBRALES: Umbrales = {
-  alturaMinimaTrochaMm: null,
+  /** PROVISIONAL (2026-11-08, acordado con el dueño del producto): validar con conductores de provincia */
+  alturaMinimaTrochaMm: 200,
   talleresParaBien: null,
   talleresParaJusto: null,
 };
@@ -127,17 +128,6 @@ export const REGLAS: Record<Dimension, Regla> = {
       "Inyección directa: Justo o Difícil.",
     ],
   },
-  trafico: {
-    dimension: "trafico",
-    aplica: (r) => r.trafico === "mucho",
-    evaluar: (m) => {
-      if (m.transmision === null) return null;
-      return m.transmision === "MT"
-        ? v("Justo", "Caja manual: con tanto tráfico, cansa.")
-        : v("Bien", "Caja automática: con tanto tráfico, te cambia el día a día.");
-    },
-    criterio: ["Con mucho tráfico: caja manual, Justo; automática (AT, CVT o DCT), Bien."],
-  },
   seguridad: {
     dimension: "seguridad",
     aplica: (r) => r.noche === "seguido",
@@ -172,7 +162,6 @@ export const ORDEN_DIMENSIONES: readonly Dimension[] = [
   "sierra",
   "pasajeros",
   "glp",
-  "trafico",
   "seguridad",
   "talleres",
 ];
@@ -191,7 +180,6 @@ const ETIQUETAS: Record<Exclude<Dimension, "pasajeros">, Record<Contexto, string
   trocha: { tarjeta: "Trocha", revisar: "Trocha", comparar: "Trocha", detalle: "Trocha con barro" },
   sierra: { tarjeta: "Sierra cargado", revisar: "Sierra", comparar: "Sierra con carro lleno", detalle: "Sierra con el carro lleno" },
   glp: { tarjeta: "Usar GLP", revisar: "Convertir a GLP", comparar: "Convertir a GLP", detalle: "Convertir a GLP" },
-  trafico: { tarjeta: "Mucho tráfico", revisar: "Mucho tráfico", comparar: "Mucho tráfico", detalle: "Mucho tráfico" },
   seguridad: { tarjeta: "Seguridad en viaje", revisar: "Seguridad en viaje", comparar: "Seguridad en viaje", detalle: "Seguridad en viaje" },
   talleres: {
     tarjeta: "Talleres en provincia",

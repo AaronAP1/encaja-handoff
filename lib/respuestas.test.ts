@@ -24,6 +24,12 @@ describe("respuestas en la URL", () => {
     expect(consulta(respuestasVacias())).toBe("");
   });
 
+  it("los enlaces viejos con la pregunta de tráfico siguen abriendo, sin ella", () => {
+    const r = leerRespuestas(new URLSearchParams("pas=5&trafico=mucho&noche=seguido"));
+    expect(r).toEqual({ ...respuestasVacias(), pas: "5", noche: "seguido" });
+    expect(consulta(r)).toBe("?pas=5&noche=seguido");
+  });
+
   it("ignora valores desconocidos o manipulados", () => {
     const r = leerRespuestas(new URLSearchParams("pas=9&usos=ciudad,luna,ciudad&km=&pres=7&gusto=urbano,x"));
     expect(r.pas).toBeNull();
@@ -44,10 +50,10 @@ describe("respuestas en la URL", () => {
     expect(estaRespondida(r, "usos")).toBe(true);
     r = elegir(r, "usos", "sierra");
     expect(estaRespondida(r, "usos")).toBe(false);
-    r = elegir(r, "trafico", "mucho");
-    r = elegir(r, "trafico", "poco");
-    expect(r.trafico).toBe("poco");
-    expect(elegir(r, "trafico", "inventado")).toBe(r);
+    r = elegir(r, "noche", "seguido");
+    r = elegir(r, "noche", "nunca");
+    expect(r.noche).toBe("nunca");
+    expect(elegir(r, "noche", "inventado")).toBe(r);
   });
 
   it("hayPerfil detecta cualquier respuesta, pero no el gusto solo", () => {

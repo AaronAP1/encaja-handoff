@@ -1,0 +1,1599 @@
+{
+  "$schema": "./esquemas/fichas-minimas.json",
+  "fichas": [
+    {
+      "slug": "toyota-raize",
+      "marca": "Toyota",
+      "nombre": "Raize",
+      "carroceria": "SUV",
+      "version": "Raize 1.2 MID CVT",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": null,
+        "alturaPisoMm": {
+          "valor": 200,
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2025-09/catalogo-2025-raize.pdf",
+            "pagina": 8,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Distancia libre al suelo mm 200"
+        },
+        "traccion": {
+          "valor": "delantera",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2025-09/catalogo-2025-raize.pdf",
+            "pagina": 8,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Tracción 2WD delantera"
+        },
+        "transmision": {
+          "valor": "CVT",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2025-09/catalogo-2025-raize.pdf",
+            "pagina": 8,
+            "fecha": "2026-11-08"
+          },
+          "cita": "RAIZE 1.2 MID CVT"
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2025-09/catalogo-2025-raize.pdf",
+            "pagina": 8,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Cilindrada cm3 1,198",
+          "nota": "La ficha describe el motor y no indica turbo; la marca lo indica cuando lo tiene."
+        },
+        "hp": {
+          "valor": 87.2,
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2025-09/catalogo-2025-raize.pdf",
+            "pagina": 8,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia HP / RPM 87.2 / 6,000"
+        },
+        "inyeccion": {
+          "valor": "indirecta",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2025-09/catalogo-2025-raize.pdf",
+            "pagina": 8,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Inyección electrónica de combustible (EFI)",
+          "nota": "Toyota llama EFI a la inyección en el múltiple (indirecta) y D-4S a la mixta con inyección directa."
+        },
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "no",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2025-09/catalogo-2025-raize.pdf",
+            "pagina": 8,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Asistencia al frenado (BA) Sí",
+          "nota": "La tabla de seguridad de la ficha no incluye frenado automático; la asistencia al frenado (BA, BAS o EBA) no frena sola."
+        }
+      }
+    },
+    {
+      "slug": "toyota-yaris-cross",
+      "marca": "Toyota",
+      "nombre": "Yaris Cross",
+      "carroceria": "SUV",
+      "version": "Yaris Cross 1.5 FULL CVT",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": null,
+        "alturaPisoMm": {
+          "valor": 210,
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-02/catalogo-yaris-cross-2026.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Distancia libre al suelo mm 210"
+        },
+        "traccion": null,
+        "transmision": {
+          "valor": "CVT",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-02/catalogo-yaris-cross-2026.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "CVT/ 7 velocidades"
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-02/catalogo-yaris-cross-2026.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Cilindrada cm³ 1,496 1,496 1,496 1,496",
+          "nota": "La ficha describe el motor y no indica turbo; la marca lo indica cuando lo tiene."
+        },
+        "hp": {
+          "valor": 104.6,
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-02/catalogo-yaris-cross-2026.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia HP / RPM 104.6 / 6,000 104.6 / 6,000"
+        },
+        "inyeccion": {
+          "valor": "indirecta",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-02/catalogo-yaris-cross-2026.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Sistema de admisión de combustible EFI EFI EFI EFI",
+          "nota": "Toyota llama EFI a la inyección en el múltiple (indirecta) y D-4S a la mixta con inyección directa."
+        },
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "no",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-02/catalogo-yaris-cross-2026.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Asistencia al frenado (BA)",
+          "nota": "La tabla de seguridad de la ficha no incluye frenado automático; la asistencia al frenado (BA, BAS o EBA) no frena sola."
+        }
+      }
+    },
+    {
+      "slug": "toyota-corolla-cross",
+      "marca": "Toyota",
+      "nombre": "Corolla Cross",
+      "carroceria": "SUV",
+      "version": "Corolla Cross Hybrid 1.8 CVT",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": null,
+        "alturaPisoMm": {
+          "valor": 161,
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-06/catalogo-corollacross-2026.pdf",
+            "pagina": 11,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Distancia libre al suelo mm. 161"
+        },
+        "traccion": {
+          "valor": "delantera",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-06/catalogo-corollacross-2026.pdf",
+            "pagina": 11,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Tracción 2WD delantera"
+        },
+        "transmision": {
+          "valor": "CVT",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-06/catalogo-corollacross-2026.pdf",
+            "pagina": 11,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Transmisión Tipo Direct Shift CVT CVT",
+          "nota": "Segunda columna: la versión híbrida usa CVT; la 2.0, Direct Shift CVT."
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-06/catalogo-corollacross-2026.pdf",
+            "pagina": 11,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia HP / RPM 169 / 6,600 96.6 / 5,200",
+          "nota": "La ficha describe el motor y no indica turbo; la marca lo indica cuando lo tiene."
+        },
+        "hp": {
+          "valor": 96.6,
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-06/catalogo-corollacross-2026.pdf",
+            "pagina": 11,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia HP / RPM 169 / 6,600 96.6 / 5,200",
+          "nota": "Motor a gasolina de la versión híbrida (segunda columna); la potencia combinada es 120.7 HP."
+        },
+        "inyeccion": {
+          "valor": "indirecta",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-06/catalogo-corollacross-2026.pdf",
+            "pagina": 11,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Sistema de inyección mixta (D-4S) Inyección electrónica de combustible (EFI)",
+          "nota": "Toyota llama EFI a la inyección en el múltiple (indirecta) y D-4S a la mixta con inyección directa. La híbrida usa EFI."
+        },
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "versiones-altas",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-06/catalogo-corollacross-2026.pdf",
+            "pagina": 11,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Sistema de pre-colisión (PCS) --- Sí",
+          "nota": "Según la tabla, la versión 2.0 no lo trae y la híbrida sí."
+        }
+      }
+    },
+    {
+      "slug": "toyota-yaris-sedan",
+      "marca": "Toyota",
+      "nombre": "Yaris Sedán",
+      "carroceria": "Sedán",
+      "version": "Yaris GLI 1.3 CVT",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": null,
+        "alturaPisoMm": null,
+        "traccion": {
+          "valor": "delantera",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2025-09/catalogo-2025-yaris.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Tracción 2WD delantera"
+        },
+        "transmision": {
+          "valor": "CVT",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/carro-yaris-sedan",
+            "pagina": null,
+            "fecha": "2026-11-08"
+          },
+          "cita": "una CVT secuencial de 7 velocidades"
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2025-09/catalogo-2025-yaris.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia HP / RPM 93.8 / 6,000",
+          "nota": "La ficha describe el motor y no indica turbo; la marca lo indica cuando lo tiene."
+        },
+        "hp": {
+          "valor": 93.8,
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2025-09/catalogo-2025-yaris.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia HP / RPM 93.8 / 6,000"
+        },
+        "inyeccion": {
+          "valor": "indirecta",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2025-09/catalogo-2025-yaris.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Inyección electrónica de combustible (EFI)",
+          "nota": "Toyota llama EFI a la inyección en el múltiple (indirecta) y D-4S a la mixta con inyección directa."
+        },
+        "glpCompatible": {
+          "valor": true,
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/listado-modelos-toyota/carro-yaris-sedan",
+            "pagina": null,
+            "fecha": "2026-11-08"
+          },
+          "cita": "YARIS GLI 1.3 CVT GLP",
+          "nota": "Toyota vende versiones de fábrica a GLP y a GNV."
+        },
+        "frenadoAutomatico": {
+          "valor": "no",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2025-09/catalogo-2025-yaris.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Asistencia al frenado (BA) Sí",
+          "nota": "La tabla de seguridad de la ficha no incluye frenado automático; la asistencia al frenado (BA, BAS o EBA) no frena sola."
+        }
+      }
+    },
+    {
+      "slug": "toyota-corolla",
+      "marca": "Toyota",
+      "nombre": "Corolla",
+      "carroceria": "Sedán",
+      "version": "Corolla Hybrid CVT",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": null,
+        "alturaPisoMm": {
+          "valor": 148,
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-01/catalogo-corolla-2026.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Distancia libre al suelo mm 128 148",
+          "nota": "Segunda columna, la versión híbrida; la 2.0 tiene 128 mm."
+        },
+        "traccion": null,
+        "transmision": {
+          "valor": "CVT",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-01/catalogo-corolla-2026.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "CVT secuencial de 10 velocidades CVT",
+          "nota": "Segunda columna: la versión híbrida."
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-01/catalogo-corolla-2026.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia HP / RPM 168 / 6,600 96.6 / 5,200",
+          "nota": "La ficha describe el motor y no indica turbo; la marca lo indica cuando lo tiene."
+        },
+        "hp": {
+          "valor": 96.6,
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-01/catalogo-corolla-2026.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia HP / RPM 168 / 6,600 96.6 / 5,200",
+          "nota": "Motor a gasolina de la versión híbrida (segunda columna)."
+        },
+        "inyeccion": {
+          "valor": "indirecta",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-01/catalogo-corolla-2026.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "D-4S Inyección electrónica de combustible (EFI)",
+          "nota": "Toyota llama EFI a la inyección en el múltiple (indirecta) y D-4S a la mixta con inyección directa. La híbrida usa EFI."
+        },
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "no",
+          "fuente": {
+            "url": "https://www.toyotaperu.com.pe/sites/default/files/2026-01/catalogo-corolla-2026.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Asistencia al frenado (BA) SÍ",
+          "nota": "La tabla de seguridad de la ficha no incluye frenado automático; la asistencia al frenado (BA, BAS o EBA) no frena sola."
+        }
+      }
+    },
+    {
+      "slug": "hyundai-creta",
+      "marca": "Hyundai",
+      "nombre": "Creta",
+      "carroceria": "SUV",
+      "version": "Creta IVT Design Plus",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": null,
+        "alturaPisoMm": null,
+        "traccion": {
+          "valor": "delantera",
+          "fuente": {
+            "url": "https://hyundai.pe/wp-content/uploads/2026/09/OP1_FT-CRETA.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Tracción delantera 4x2"
+        },
+        "transmision": {
+          "valor": "CVT",
+          "fuente": {
+            "url": "https://hyundai.pe/wp-content/uploads/2026/09/OP1_FT-CRETA.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "MT DESIGN IVT DESIGN PLUS",
+          "nota": "IVT es la caja de variación continua (CVT) de Hyundai y Kia."
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://hyundai.pe/wp-content/uploads/2026/09/OP1_FT-CRETA.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "1,497 cc MPI / 113 hp a 6,300 rpm",
+          "nota": "La ficha describe el motor y no indica turbo; la marca lo indica cuando lo tiene."
+        },
+        "hp": {
+          "valor": 113,
+          "fuente": {
+            "url": "https://hyundai.pe/wp-content/uploads/2026/09/OP1_FT-CRETA.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "1,497 cc MPI / 113 hp a 6,300 rpm"
+        },
+        "inyeccion": {
+          "valor": "indirecta",
+          "fuente": {
+            "url": "https://hyundai.pe/wp-content/uploads/2026/09/OP1_FT-CRETA.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "1,497 cc MPI / 113 hp a 6,300 rpm",
+          "nota": "MPI o MPFI: inyección multipunto, es decir, indirecta."
+        },
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "no",
+          "fuente": {
+            "url": "https://hyundai.pe/wp-content/uploads/2026/09/OP1_FT-CRETA.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Asistente de prevención de - - - - colisión frontal (FCA)",
+          "nota": "Los guiones marcan que no viene en ninguna de las 4 versiones."
+        }
+      }
+    },
+    {
+      "slug": "hyundai-tucson",
+      "marca": "Hyundai",
+      "nombre": "Tucson",
+      "carroceria": "SUV",
+      "version": "Tucson AT Limited",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": null,
+        "alturaPisoMm": null,
+        "traccion": null,
+        "transmision": {
+          "valor": "AT",
+          "fuente": {
+            "url": "https://hyundai.pe/wp-content/uploads/2026/06/FT-TUCSON-HEV-06.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "6MT 6AT 6MT 6AT 6AT",
+          "nota": "Las versiones AT usan caja automática de 6 velocidades."
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://hyundai.pe/wp-content/uploads/2026/06/FT-TUCSON-HEV-06.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "1.999 cc /154 hp a 6.200 RPM",
+          "nota": "El 2.0 de las versiones a gasolina no es turbo; la ficha marca «turbo» solo en el 1.6 de la híbrida."
+        },
+        "hp": {
+          "valor": 154,
+          "fuente": {
+            "url": "https://hyundai.pe/wp-content/uploads/2026/06/FT-TUCSON-HEV-06.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "1.999 cc /154 hp a 6.200 RPM",
+          "nota": "Versiones a gasolina."
+        },
+        "inyeccion": null,
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "si",
+          "fuente": {
+            "url": "https://hyundai.pe/wp-content/uploads/2026/06/FT-TUCSON-HEV-06.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Asistente de anticolision frontal (FCA)",
+          "nota": "La ficha marca con guion las versiones que no traen un sistema; en el FCA no hay guiones."
+        }
+      }
+    },
+    {
+      "slug": "hyundai-accent",
+      "marca": "Hyundai",
+      "nombre": "Accent",
+      "carroceria": "Sedán",
+      "version": "Accent AT Full Plus",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": null,
+        "alturaPisoMm": null,
+        "traccion": null,
+        "transmision": {
+          "valor": "CVT",
+          "fuente": {
+            "url": "https://hyundai.pe/wp-content/uploads/2026/11/FT-ACCENT-2026_compressed-1.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "IVT/7Vel",
+          "nota": "IVT es la caja de variación continua (CVT) de Hyundai y Kia."
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://hyundai.pe/wp-content/uploads/2026/11/FT-ACCENT-2026_compressed-1.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "1,497 cc MPI / 113 hp a 6,300 RPM",
+          "nota": "La ficha describe el motor y no indica turbo; la marca lo indica cuando lo tiene."
+        },
+        "hp": {
+          "valor": 113,
+          "fuente": {
+            "url": "https://hyundai.pe/wp-content/uploads/2026/11/FT-ACCENT-2026_compressed-1.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "1,497 cc MPI / 113 hp a 6,300 RPM"
+        },
+        "inyeccion": {
+          "valor": "indirecta",
+          "fuente": {
+            "url": "https://hyundai.pe/wp-content/uploads/2026/11/FT-ACCENT-2026_compressed-1.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "1,497 cc MPI / 113 hp a 6,300 RPM",
+          "nota": "MPI o MPFI: inyección multipunto, es decir, indirecta."
+        },
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "no",
+          "fuente": {
+            "url": "https://hyundai.pe/wp-content/uploads/2026/11/FT-ACCENT-2026_compressed-1.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Frenos ABS + distribución electrónica de frenado (EBD)",
+          "nota": "La ficha técnica no incluye frenado automático (FCA)."
+        }
+      }
+    },
+    {
+      "slug": "kia-sonet",
+      "marca": "Kia",
+      "nombre": "Sonet",
+      "carroceria": "SUV",
+      "version": "Sonet IVT",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": null,
+        "alturaPisoMm": null,
+        "traccion": null,
+        "transmision": {
+          "valor": "CVT",
+          "fuente": {
+            "url": "https://www.kia.com/pe/showroom/new-sonet.html",
+            "pagina": null,
+            "fecha": "2026-11-08"
+          },
+          "cita": "transmisión variable",
+          "nota": "IVT es la caja de variación continua (CVT) de Hyundai y Kia."
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://www.kia.com/pe/showroom/new-sonet.html",
+            "pagina": null,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Motor 1.5 MPI",
+          "nota": "La ficha describe el motor y no indica turbo; la marca lo indica cuando lo tiene."
+        },
+        "hp": {
+          "valor": 113,
+          "fuente": {
+            "url": "https://www.kia.com/pe/showroom/new-sonet.html",
+            "pagina": null,
+            "fecha": "2026-11-08"
+          },
+          "cita": "motor 1.5 L MPI con 113 hp de potencia"
+        },
+        "inyeccion": {
+          "valor": "indirecta",
+          "fuente": {
+            "url": "https://www.kia.com/pe/showroom/new-sonet.html",
+            "pagina": null,
+            "fecha": "2026-11-08"
+          },
+          "cita": "motor 1.5 L MPI con 113 hp de potencia",
+          "nota": "MPI o MPFI: inyección multipunto, es decir, indirecta."
+        },
+        "glpCompatible": null,
+        "frenadoAutomatico": null
+      }
+    },
+    {
+      "slug": "suzuki-dzire-smart-hybrid",
+      "marca": "Suzuki",
+      "nombre": "Dzire Smart Hybrid",
+      "carroceria": "Sedán",
+      "version": "Dzire GLX CVT",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": {
+          "valor": 5,
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/jkije0dq/ficha-t%C3%A9cnica-dzire-2026.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Asientos 5"
+        },
+        "alturaPisoMm": {
+          "valor": 145,
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/jkije0dq/ficha-t%C3%A9cnica-dzire-2026.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Despeje libre del suelo (mm) 145"
+        },
+        "traccion": {
+          "valor": "delantera",
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/jkije0dq/ficha-t%C3%A9cnica-dzire-2026.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Tracción Delantera"
+        },
+        "transmision": {
+          "valor": "CVT",
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/jkije0dq/ficha-t%C3%A9cnica-dzire-2026.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Tipo 5MT CVT"
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/jkije0dq/ficha-t%C3%A9cnica-dzire-2026.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia máxima 80.4 hp @ 5,700 rpm",
+          "nota": "La ficha describe el motor y no indica turbo; la marca lo indica cuando lo tiene."
+        },
+        "hp": {
+          "valor": 80.4,
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/jkije0dq/ficha-t%C3%A9cnica-dzire-2026.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia máxima 80.4 hp @ 5,700 rpm",
+          "nota": "Motor a gasolina; el sistema híbrido suave suma un motor eléctrico de 3.08 hp."
+        },
+        "inyeccion": {
+          "valor": "indirecta",
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/jkije0dq/ficha-t%C3%A9cnica-dzire-2026.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Inyección Multipunto doble - DUALJET",
+          "nota": "MPI o MPFI: inyección multipunto, es decir, indirecta."
+        },
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "no",
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/jkije0dq/ficha-t%C3%A9cnica-dzire-2026.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Sistema de frenos ABS + EBD + BAS",
+          "nota": "La tabla de seguridad de la ficha no incluye frenado automático; la asistencia al frenado (BA, BAS o EBA) no frena sola."
+        }
+      }
+    },
+    {
+      "slug": "suzuki-jimny-5-puertas",
+      "marca": "Suzuki",
+      "nombre": "Jimny 5 puertas",
+      "carroceria": "SUV",
+      "version": "Jimny 5 puertas 4AT",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": {
+          "valor": 4,
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/2jbpek5v/suzuki-pe_ficha-tecnica-2024_jimny-5-puertas_v2.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Cantidad de asientos 4"
+        },
+        "alturaPisoMm": {
+          "valor": 210,
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/2jbpek5v/suzuki-pe_ficha-tecnica-2024_jimny-5-puertas_v2.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Despeje de suelo (mm) 210"
+        },
+        "traccion": {
+          "valor": "4x4",
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/2jbpek5v/suzuki-pe_ficha-tecnica-2024_jimny-5-puertas_v2.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Sistema de tracción AllGrip Pro",
+          "nota": "AllGrip Pro es la tracción 4x4 de Suzuki con caja reductora."
+        },
+        "transmision": {
+          "valor": "AT",
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/2jbpek5v/suzuki-pe_ficha-tecnica-2024_jimny-5-puertas_v2.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Tipo 5MT 4AT"
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/2jbpek5v/suzuki-pe_ficha-tecnica-2024_jimny-5-puertas_v2.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia máxima 100 hp @ 6000 rpm",
+          "nota": "La ficha describe el motor y no indica turbo; la marca lo indica cuando lo tiene."
+        },
+        "hp": {
+          "valor": 100,
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/2jbpek5v/suzuki-pe_ficha-tecnica-2024_jimny-5-puertas_v2.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia máxima 100 hp @ 6000 rpm"
+        },
+        "inyeccion": {
+          "valor": "indirecta",
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/2jbpek5v/suzuki-pe_ficha-tecnica-2024_jimny-5-puertas_v2.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Inyección Multipunto",
+          "nota": "MPI o MPFI: inyección multipunto, es decir, indirecta."
+        },
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "no",
+          "fuente": {
+            "url": "https://www.suzuki.com.pe/media/2jbpek5v/suzuki-pe_ficha-tecnica-2024_jimny-5-puertas_v2.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Sistema de frenos ABS + BAS",
+          "nota": "La tabla de seguridad de la ficha no incluye frenado automático; la asistencia al frenado (BA, BAS o EBA) no frena sola."
+        }
+      }
+    },
+    {
+      "slug": "chery-tiggo-2-pro-max",
+      "marca": "Chery",
+      "nombre": "Tiggo 2 Pro Max",
+      "carroceria": "SUV",
+      "version": "Tiggo 2 Pro Max 1.5 CVT Full FL",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": {
+          "valor": 5,
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/tiggo-2-pro-max/productos/fichaTecnica/16990-09032026-nt2-pro-max.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "N° de asientos 5"
+        },
+        "alturaPisoMm": null,
+        "traccion": {
+          "valor": "delantera",
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/tiggo-2-pro-max/productos/fichaTecnica/16990-09032026-nt2-pro-max.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Tracción 4x2 Delantera"
+        },
+        "transmision": {
+          "valor": "CVT",
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/tiggo-2-pro-max/productos/fichaTecnica/16990-09032026-nt2-pro-max.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Mecánica de 5 velocidades + CVT"
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/tiggo-2-pro-max/productos/fichaTecnica/16990-09032026-nt2-pro-max.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Descripción motor 4 cilindros en línea 4 cilindros en línea/ SOHC/",
+          "nota": "La ficha no indica turbo; Chery escribe «Turbocompresor» cuando lo tiene."
+        },
+        "hp": {
+          "valor": 107,
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/tiggo-2-pro-max/productos/fichaTecnica/16990-09032026-nt2-pro-max.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia motor (HP @ rpm) 111 @ 6,150 107 @ 6,000",
+          "nota": "Segunda columna: la versión CVT."
+        },
+        "inyeccion": {
+          "valor": "indirecta",
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/tiggo-2-pro-max/productos/fichaTecnica/16990-09032026-nt2-pro-max.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Gasolina / MPFI",
+          "nota": "MPI o MPFI: inyección multipunto, es decir, indirecta."
+        },
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "no",
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/tiggo-2-pro-max/productos/fichaTecnica/16990-09032026-nt2-pro-max.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Sistema de frenado de emergencia (EBA)",
+          "nota": "La tabla de seguridad de la ficha no incluye frenado automático; la asistencia al frenado (BA, BAS o EBA) no frena sola."
+        }
+      }
+    },
+    {
+      "slug": "chery-tiggo-4",
+      "marca": "Chery",
+      "nombre": "Tiggo 4",
+      "carroceria": "SUV",
+      "version": "Tiggo 4 1.5 CVT Full",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": {
+          "valor": 5,
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/new-tiggo-4/productos/fichaTecnica/25294-ft_16062025_newtiggo4_v2.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "N° de asientos 5"
+        },
+        "alturaPisoMm": null,
+        "traccion": {
+          "valor": "delantera",
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/new-tiggo-4/productos/fichaTecnica/25294-ft_16062025_newtiggo4_v2.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Tracción 4x2 Delantera"
+        },
+        "transmision": {
+          "valor": "CVT",
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/new-tiggo-4/productos/fichaTecnica/25294-ft_16062025_newtiggo4_v2.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Automática CVT"
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/new-tiggo-4/productos/fichaTecnica/25294-ft_16062025_newtiggo4_v2.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Descripción motor 4 cilindros en línea/ DOHC/16 válvulas",
+          "nota": "La ficha no indica turbo; Chery escribe «Turbocompresor» cuando lo tiene."
+        },
+        "hp": {
+          "valor": 114,
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/new-tiggo-4/productos/fichaTecnica/25294-ft_16062025_newtiggo4_v2.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia motor (HP @ rpm) 114 @ 6150"
+        },
+        "inyeccion": {
+          "valor": "indirecta",
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/new-tiggo-4/productos/fichaTecnica/25294-ft_16062025_newtiggo4_v2.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Gasolina / MPFI/ DVVT",
+          "nota": "MPI o MPFI: inyección multipunto, es decir, indirecta."
+        },
+        "glpCompatible": null,
+        "frenadoAutomatico": null
+      }
+    },
+    {
+      "slug": "chery-tiggo-7",
+      "marca": "Chery",
+      "nombre": "Tiggo 7",
+      "carroceria": "SUV",
+      "version": "Tiggo 7 1.5T DCT Premium",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": {
+          "valor": 5,
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/new-tiggo-7/productos/fichaTecnica/71046-ft_newtiggo7_22012026.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "N° de asientos 5"
+        },
+        "alturaPisoMm": null,
+        "traccion": {
+          "valor": "delantera",
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/new-tiggo-7/productos/fichaTecnica/71046-ft_newtiggo7_22012026.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Tracción 4x2 Delantera"
+        },
+        "transmision": {
+          "valor": "DCT",
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/new-tiggo-7/productos/fichaTecnica/71046-ft_newtiggo7_22012026.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "6DCT + retroceso"
+        },
+        "turbo": {
+          "valor": true,
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/new-tiggo-7/productos/fichaTecnica/71046-ft_newtiggo7_22012026.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Gasolina / Turbocompresor con Intercooler / MPFI"
+        },
+        "hp": {
+          "valor": 145,
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/new-tiggo-7/productos/fichaTecnica/71046-ft_newtiggo7_22012026.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia motor (HP @ rpm) 145 @ 5500"
+        },
+        "inyeccion": {
+          "valor": "indirecta",
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/new-tiggo-7/productos/fichaTecnica/71046-ft_newtiggo7_22012026.pdf",
+            "pagina": 7,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Gasolina / Turbocompresor con Intercooler / MPFI",
+          "nota": "MPI o MPFI: inyección multipunto, es decir, indirecta."
+        },
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "si",
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/new-tiggo-7/productos/fichaTecnica/71046-ft_newtiggo7_22012026.pdf",
+            "pagina": 8,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Frenado de emergencia (AEB)",
+          "nota": "Ficha de una sola versión (Premium)."
+        }
+      }
+    },
+    {
+      "slug": "chery-arrizo-5-pro",
+      "marca": "Chery",
+      "nombre": "Arrizo 5 Pro",
+      "carroceria": "Sedán",
+      "version": "Arrizo 5 Pro 1.5 MT Full",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": {
+          "valor": 5,
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/arrizo-5-pro/productos/fichaTecnica/17717-arrizo5pro_02012024.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "N° de asientos 5"
+        },
+        "alturaPisoMm": null,
+        "traccion": {
+          "valor": "delantera",
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/arrizo-5-pro/productos/fichaTecnica/17717-arrizo5pro_02012024.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Tracción 4x2 Delantera"
+        },
+        "transmision": {
+          "valor": "MT",
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/arrizo-5-pro/productos/fichaTecnica/17717-arrizo5pro_02012024.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Mecánica de 5 velocidades + retroceso",
+          "nota": "La ficha solo trae la versión mecánica."
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/arrizo-5-pro/productos/fichaTecnica/17717-arrizo5pro_02012024.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Descripción motor 4 cilindros en línea /DOHC/16 válvulas",
+          "nota": "La ficha no indica turbo; Chery escribe «Turbocompresor» cuando lo tiene."
+        },
+        "hp": {
+          "valor": 115,
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/arrizo-5-pro/productos/fichaTecnica/17717-arrizo5pro_02012024.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia motor (HP @ rpm) 115 @ 6,150"
+        },
+        "inyeccion": {
+          "valor": "indirecta",
+          "fuente": {
+            "url": "https://dhteemohy7ejo.cloudfront.net/web/modelos/arrizo-5-pro/productos/fichaTecnica/17717-arrizo5pro_02012024.pdf",
+            "pagina": 6,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Gasolina / MPFI / DVVT",
+          "nota": "MPI o MPFI: inyección multipunto, es decir, indirecta."
+        },
+        "glpCompatible": null,
+        "frenadoAutomatico": null
+      }
+    },
+    {
+      "slug": "changan-cs55-plus",
+      "marca": "Changan",
+      "nombre": "CS55 Plus",
+      "carroceria": "SUV",
+      "version": "CS55 Plus 1.5 DCT",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": {
+          "valor": 5,
+          "fuente": {
+            "url": "https://www.changan.com.pe/media/3mkffz1z/ft-new-cs55-3.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Asientos 5"
+        },
+        "alturaPisoMm": null,
+        "traccion": {
+          "valor": "delantera",
+          "fuente": {
+            "url": "https://www.changan.com.pe/media/3mkffz1z/ft-new-cs55-3.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Transmisión 7DCT+Retroceso FWD",
+          "nota": "FWD: tracción delantera."
+        },
+        "transmision": {
+          "valor": "DCT",
+          "fuente": {
+            "url": "https://www.changan.com.pe/media/3mkffz1z/ft-new-cs55-3.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Transmisión 7DCT+Retroceso FWD"
+        },
+        "turbo": {
+          "valor": true,
+          "fuente": {
+            "url": "https://www.changan.com.pe/media/3mkffz1z/ft-new-cs55-3.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Tecnología del Motor NE15TG-AC Turbo"
+        },
+        "hp": {
+          "valor": 178,
+          "fuente": {
+            "url": "https://www.changan.com.pe/media/3mkffz1z/ft-new-cs55-3.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia Maxima (HP/rpm) 178/5,500"
+        },
+        "inyeccion": null,
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "versiones-altas",
+          "fuente": {
+            "url": "https://www.changan.com.pe/media/3mkffz1z/ft-new-cs55-3.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Frenado automatico de emergencia entre vehículos(AEB-C/I) —",
+          "nota": "La ficha lo marca con guion en alguna de sus 3 versiones."
+        }
+      }
+    },
+    {
+      "slug": "changan-alsvin-plus",
+      "marca": "Changan",
+      "nombre": "Alsvin Plus",
+      "carroceria": "Sedán",
+      "version": "Alsvin Plus 1.5 DCT",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": null,
+        "alturaPisoMm": {
+          "valor": 155,
+          "fuente": {
+            "url": "https://www.changan.com.pe/media/btxbgyvj/ft-new-alsvin-plus_v250526.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Distancia al suelo (mm) 155"
+        },
+        "traccion": {
+          "valor": "delantera",
+          "fuente": {
+            "url": "https://www.changan.com.pe/media/btxbgyvj/ft-new-alsvin-plus_v250526.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Tracción Delantera"
+        },
+        "transmision": {
+          "valor": "DCT",
+          "fuente": {
+            "url": "https://www.changan.com.pe/media/btxbgyvj/ft-new-alsvin-plus_v250526.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Transmisión 5MT DCT/DF733"
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://www.changan.com.pe/media/btxbgyvj/ft-new-alsvin-plus_v250526.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Maxima potencia (HP) 102HP",
+          "nota": "La ficha no indica turbo; Changan lo escribe en «Tecnología del Motor» cuando lo tiene."
+        },
+        "hp": {
+          "valor": 102,
+          "fuente": {
+            "url": "https://www.changan.com.pe/media/btxbgyvj/ft-new-alsvin-plus_v250526.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Maxima potencia (HP) 102HP"
+        },
+        "inyeccion": null,
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "no",
+          "fuente": {
+            "url": "https://www.changan.com.pe/media/btxbgyvj/ft-new-alsvin-plus_v250526.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Columna de dirección colapsable",
+          "nota": "La ficha de seguridad no incluye frenado automático de emergencia (AEB)."
+        }
+      }
+    },
+    {
+      "slug": "jetour-x70-fl",
+      "marca": "Jetour",
+      "nombre": "X70 FL",
+      "carroceria": "SUV",
+      "version": "X70 FL Limited",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": {
+          "valor": 7,
+          "fuente": {
+            "url": "https://www.jetour.com.pe/modelos/x70-fl",
+            "pagina": null,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Siete asientos y sunroof panorámico para disfrutar cada viaje. (Deluxe y Limited)"
+        },
+        "alturaPisoMm": null,
+        "traccion": null,
+        "transmision": {
+          "valor": "DCT",
+          "fuente": {
+            "url": "https://www.jetour.com.pe/modelos/x70-fl",
+            "pagina": null,
+            "fecha": "2026-11-08"
+          },
+          "cita": "transmisión automática 6DCT. (Limited)"
+        },
+        "turbo": {
+          "valor": true,
+          "fuente": {
+            "url": "https://www.jetour.com.pe/modelos/x70-fl",
+            "pagina": null,
+            "fecha": "2026-11-08"
+          },
+          "cita": "1.5 Turbo"
+        },
+        "hp": {
+          "valor": 145,
+          "fuente": {
+            "url": "https://www.jetour.com.pe/modelos/x70-fl",
+            "pagina": null,
+            "fecha": "2026-11-08"
+          },
+          "cita": "145 HP"
+        },
+        "inyeccion": null,
+        "glpCompatible": null,
+        "frenadoAutomatico": null
+      }
+    },
+    {
+      "slug": "mitsubishi-xpander",
+      "marca": "Mitsubishi",
+      "nombre": "Xpander",
+      "carroceria": "SUV",
+      "version": "Xpander (la que describe la página oficial)",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": {
+          "valor": 7,
+          "fuente": {
+            "url": "https://www.mitsubishi-motors.com.pe/suv/xpander",
+            "pagina": null,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Cuenta con 7 asientos para adultos"
+        },
+        "alturaPisoMm": null,
+        "traccion": {
+          "valor": "delantera",
+          "fuente": {
+            "url": "https://www.mitsubishi-motors.com.pe/suv/xpander",
+            "pagina": null,
+            "fecha": "2026-11-08"
+          },
+          "cita": "2WD: Delantera"
+        },
+        "transmision": null,
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://www.mitsubishi-motors.com.pe/suv/xpander",
+            "pagina": null,
+            "fecha": "2026-11-08"
+          },
+          "cita": "El motor MIVEC 1.5L de 16 válvulas",
+          "nota": "La ficha describe el motor y no indica turbo; la marca lo indica cuando lo tiene."
+        },
+        "hp": null,
+        "inyeccion": null,
+        "glpCompatible": null,
+        "frenadoAutomatico": null
+      }
+    },
+    {
+      "slug": "nissan-kicks-play",
+      "marca": "Nissan",
+      "nombre": "Kicks Play",
+      "carroceria": "SUV",
+      "version": "Kicks Play Advance CVT",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": {
+          "valor": 5,
+          "fuente": {
+            "url": "https://www.nissan-cdn.net/content/dam/Nissan/pe/fichas_tecnicas/FTs/FT-Nuevo-Kicks.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Número de pasajeros 5"
+        },
+        "alturaPisoMm": null,
+        "traccion": {
+          "valor": "delantera",
+          "fuente": {
+            "url": "https://www.nissan-cdn.net/content/dam/Nissan/pe/fichas_tecnicas/FTs/FT-Nuevo-Kicks.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Tipo de Tracción 4x2 Delantera"
+        },
+        "transmision": {
+          "valor": "CVT",
+          "fuente": {
+            "url": "https://www.nissan-cdn.net/content/dam/Nissan/pe/fichas_tecnicas/FTs/FT-Nuevo-Kicks.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "CVT (Continua variable)"
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://www.nissan-cdn.net/content/dam/Nissan/pe/fichas_tecnicas/FTs/FT-Nuevo-Kicks.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia (Hp / rpm) 118 / 6.300",
+          "nota": "La ficha describe el motor y no indica turbo; la marca lo indica cuando lo tiene."
+        },
+        "hp": {
+          "valor": 118,
+          "fuente": {
+            "url": "https://www.nissan-cdn.net/content/dam/Nissan/pe/fichas_tecnicas/FTs/FT-Nuevo-Kicks.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia (Hp / rpm) 118 / 6.300"
+        },
+        "inyeccion": null,
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "versiones-altas",
+          "fuente": {
+            "url": "https://www.nissan-cdn.net/content/dam/Nissan/pe/fichas_tecnicas/FTs/FT-Nuevo-Kicks.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Frenado Frontal de Emergencia(FEB)",
+          "nota": "La ficha lo lista, pero no indica si viene en todas las versiones."
+        }
+      }
+    },
+    {
+      "slug": "nissan-versa",
+      "marca": "Nissan",
+      "nombre": "Versa",
+      "carroceria": "Sedán",
+      "version": "Versa Advance CVT",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": {
+          "valor": 5,
+          "fuente": {
+            "url": "https://www.nissan-cdn.net/content/dam/Nissan/pe/fichas_tecnicas/2026/octubre/2710/ft_new_versa_27102026.pdf",
+            "pagina": 1,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Número de pasajeros 5 pasajeros"
+        },
+        "alturaPisoMm": null,
+        "traccion": null,
+        "transmision": {
+          "valor": "CVT",
+          "fuente": {
+            "url": "https://www.nissan-cdn.net/content/dam/Nissan/pe/fichas_tecnicas/2026/octubre/2710/ft_new_versa_27102026.pdf",
+            "pagina": 1,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Automática variable CVT"
+        },
+        "turbo": {
+          "valor": false,
+          "fuente": {
+            "url": "https://www.nissan-cdn.net/content/dam/Nissan/pe/fichas_tecnicas/2026/octubre/2710/ft_new_versa_27102026.pdf",
+            "pagina": 1,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Motor (L) 1.6 L",
+          "nota": "La ficha describe el motor y no indica turbo; la marca lo indica cuando lo tiene."
+        },
+        "hp": {
+          "valor": 122,
+          "fuente": {
+            "url": "https://www.nissan-cdn.net/content/dam/Nissan/pe/fichas_tecnicas/2026/octubre/2710/ft_new_versa_27102026.pdf",
+            "pagina": 1,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia máxima (HP/RPM) 122 HP @6,400"
+        },
+        "inyeccion": null,
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "versiones-altas",
+          "fuente": {
+            "url": "https://www.nissan-cdn.net/content/dam/Nissan/pe/fichas_tecnicas/2026/octubre/2710/ft_new_versa_27102026.pdf",
+            "pagina": 1,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Frenado frontal de emergencia (FEB)",
+          "nota": "La ficha lo lista, pero no indica si viene en todas las versiones."
+        }
+      }
+    },
+    {
+      "slug": "renault-kardian",
+      "marca": "Renault",
+      "nombre": "Kardian",
+      "carroceria": "SUV",
+      "version": "Kardian Privilege 1.0T DCT",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": {
+          "valor": 5,
+          "fuente": {
+            "url": "https://www.renault.pe/media/1ubjc5qy/ficha-tecnica_kardian_pe.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Número de plazas 5 (4 pasajeros + 1 conductor)"
+        },
+        "alturaPisoMm": {
+          "valor": 209,
+          "fuente": {
+            "url": "https://www.renault.pe/media/1ubjc5qy/ficha-tecnica_kardian_pe.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Distancia libre al suelo (mm) 209 209 209"
+        },
+        "traccion": null,
+        "transmision": {
+          "valor": "DCT",
+          "fuente": {
+            "url": "https://www.renault.pe/media/4zwpbhv5/brochure-kardian-peru.pdf",
+            "pagina": 13,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Automática de doble embrague"
+        },
+        "turbo": {
+          "valor": true,
+          "fuente": {
+            "url": "https://www.renault.pe/media/4zwpbhv5/brochure-kardian-peru.pdf",
+            "pagina": 13,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Turbo No Sí Sí",
+          "nota": "Sí en las versiones 1.0T (Intens y Privilege)."
+        },
+        "hp": {
+          "valor": 114,
+          "fuente": {
+            "url": "https://www.renault.pe/media/4zwpbhv5/brochure-kardian-peru.pdf",
+            "pagina": 13,
+            "fecha": "2026-11-08"
+          },
+          "cita": "114 @ 5000 rpm"
+        },
+        "inyeccion": {
+          "valor": "directa",
+          "fuente": {
+            "url": "https://www.renault.pe/media/4zwpbhv5/brochure-kardian-peru.pdf",
+            "pagina": 13,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Inyección indirecta Inyección directa Inyección directa",
+          "nota": "El 1.0 turbo usa inyección directa; el 1.6 de la Zen, indirecta."
+        },
+        "glpCompatible": null,
+        "frenadoAutomatico": {
+          "valor": "versiones-altas",
+          "fuente": {
+            "url": "https://www.renault.pe/media/1ubjc5qy/ficha-tecnica_kardian_pe.pdf",
+            "pagina": 2,
+            "fecha": "2026-11-08"
+          },
+          "cita": "emergencia (AEB) No Sí Sí",
+          "nota": "No en la Zen; sí en la Intens y la Privilege."
+        }
+      }
+    },
+    {
+      "slug": "renault-duster",
+      "marca": "Renault",
+      "nombre": "Duster",
+      "carroceria": "SUV",
+      "version": "Duster 1.3 CVT 4x2 Turbo",
+      "revisado": "2026-11-08",
+      "datos": {
+        "asientos": {
+          "valor": 5,
+          "fuente": {
+            "url": "https://www.renault.pe/media/fz5k0eah/ft_duster_jun2025.pdf",
+            "pagina": 1,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Número de plazas 5 (4 pasajeros + 1 conductor)"
+        },
+        "alturaPisoMm": null,
+        "traccion": null,
+        "transmision": {
+          "valor": "CVT",
+          "fuente": {
+            "url": "https://www.renault.pe/media/fz5k0eah/ft_duster_jun2025.pdf",
+            "pagina": 1,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Automática CVT"
+        },
+        "turbo": {
+          "valor": true,
+          "fuente": {
+            "url": "https://www.renault.pe/media/fz5k0eah/ft_duster_jun2025.pdf",
+            "pagina": 1,
+            "fecha": "2026-11-08"
+          },
+          "cita": "H5h 1.3L turbo"
+        },
+        "hp": {
+          "valor": 154,
+          "fuente": {
+            "url": "https://www.renault.pe/media/fz5k0eah/ft_duster_jun2025.pdf",
+            "pagina": 1,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Potencia máxima hp@rpm 113 @ 5,550 154 @ 5,550",
+          "nota": "Segunda cifra: el 1.3 turbo."
+        },
+        "inyeccion": {
+          "valor": "directa",
+          "fuente": {
+            "url": "https://www.renault.pe/media/fz5k0eah/ft_duster_jun2025.pdf",
+            "pagina": 1,
+            "fecha": "2026-11-08"
+          },
+          "cita": "Inyección electrónica Inyección directa",
+          "nota": "El 1.3 turbo usa inyección directa."
+        },
+        "glpCompatible": null,
+        "frenadoAutomatico": null
+      }
+    }
+  ]
+}

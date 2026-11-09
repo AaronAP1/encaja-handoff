@@ -8,7 +8,7 @@ export type ParamsEntrada =
   | undefined;
 
 export function respuestasVacias(): Respuestas {
-  return { pas: null, usos: {}, km: null, trafico: null, noche: null, carga: {}, pres: null, comb: null, gusto: [] };
+  return { pas: null, usos: {}, km: null, noche: null, carga: {}, pres: null, comb: null, gusto: [] };
 }
 
 function leer(params: ParamsEntrada, clave: string): string | null {
@@ -47,7 +47,6 @@ export function leerRespuestas(params: ParamsEntrada): Respuestas {
     pas: uno(leer(params, "pas"), VALORES.pas),
     usos: aMapa(lista(leer(params, "usos"), VALORES.usos)),
     km: uno(leer(params, "km"), VALORES.km),
-    trafico: uno(leer(params, "trafico"), VALORES.trafico),
     noche: uno(leer(params, "noche"), VALORES.noche),
     carga: aMapa(lista(leer(params, "carga"), VALORES.carga)),
     pres: uno(leer(params, "pres"), VALORES.pres),
@@ -63,7 +62,6 @@ export function escribirRespuestas(r: Respuestas): URLSearchParams {
   const usos = marcados<Uso>(r.usos, VALORES.usos);
   if (usos.length) p.set("usos", usos.join(","));
   if (r.km) p.set("km", r.km);
-  if (r.trafico) p.set("trafico", r.trafico);
   if (r.noche) p.set("noche", r.noche);
   const carga = marcados<Carga>(r.carga, VALORES.carga);
   if (carga.length) p.set("carga", carga.join(","));
@@ -92,7 +90,6 @@ export function hayPerfil(r: Respuestas): boolean {
     r.pas !== null ||
     estaRespondida(r, "usos") ||
     r.km !== null ||
-    r.trafico !== null ||
     r.noche !== null ||
     estaRespondida(r, "carga") ||
     r.pres !== null ||
@@ -121,10 +118,6 @@ export function elegir(r: Respuestas, clave: ClavePregunta, valor: string): Resp
     case "km": {
       const v = uno(valor, VALORES.km);
       return v ? { ...r, km: v } : r;
-    }
-    case "trafico": {
-      const v = uno(valor, VALORES.trafico);
-      return v ? { ...r, trafico: v } : r;
     }
     case "noche": {
       const v = uno(valor, VALORES.noche);

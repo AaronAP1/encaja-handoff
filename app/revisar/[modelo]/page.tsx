@@ -4,6 +4,7 @@ import { BuscadorModelo } from "@/components/BuscadorModelo";
 import { Card } from "@/components/Card";
 import { Logo } from "@/components/SiteHeader";
 import { buscarModelo, buscarPorTexto, CATALOGO } from "@/lib/catalogo";
+import { TOTAL_PREGUNTAS } from "@/lib/preguntas";
 import { leerRespuestas } from "@/lib/respuestas";
 import { RevisarModelo } from "./RevisarModelo";
 
@@ -62,7 +63,7 @@ export default async function PaginaRevisar({
             ))}
           </ul>
           <Link href="/preguntas" className="flex min-h-11 items-center self-start text-sm font-semibold">
-            Prefiero responder las 7 preguntas completas
+            Prefiero responder las {TOTAL_PREGUNTAS} preguntas completas
           </Link>
         </main>
       )}
